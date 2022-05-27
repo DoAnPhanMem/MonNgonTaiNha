@@ -15,8 +15,8 @@
                                 <ul>
                                     <?php  if(isset($_SESSION['login'])){ ?>
                                     <li><b>Chào <?=$_SESSION['login']['Ho']?> <?=$_SESSION['login']['Ten']?></b></li>
-                                    <li><a href="?act=taikhoan&xuli=account">Tài khoản</a></li>
-                                    <li><a href="?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
+                                    <li><a href="?act=personal&handle=account">Tài khoản</a></li>
+                                    <li><a href="?act=taikhoan&handle=dangxuat">Đăng xuất</a></li>
                                     <?php
                                         if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien'])){ ?>
                                         <li><a href="admin/?mod=login">Trang quản lý</a></li>
@@ -126,7 +126,7 @@
                         <?php if(isset($_SESSION['sanpham'])){
                             foreach ($_SESSION['sanpham'] as $value) { ?>
                         <div class="sin-itme clearfix">
-                        <a href="?act=cart&xuli=deleteall&id=<?= $value['MaSP'] ?>"><i class="mdi mdi-close" title="Remove this product"></i></a>
+                        <a href="?act=cart&handle=deleteall&id=<?= $value['MaSP'] ?>"><i class="mdi mdi-close" title="Remove this product"></i></a>
                             <a class="cart-img" href="?act=cart"><img src="public/<?=$value['HinhAnh1']?>" alt="" /></a>
                             <div class="menu-cart-text">
                                 <a href="?act=detail&id=<?=$value['MaSP']?>">

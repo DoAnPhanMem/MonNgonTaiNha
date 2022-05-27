@@ -1,6 +1,6 @@
 <!-- banner-start -->
 <?php
-require_once("banner.php")
+/* require_once("banner.php") */
 ?>
 <!-- banner-end -->
 <!-- tab-products section start -->
@@ -11,9 +11,10 @@ require_once("banner.php")
                 <div class="section-title text-center">
                     <div class="product-tab nav nav-tabs">
                         <ul>
-                            <li class="active"><a data-toggle="tab" href="#arrival">Điện thoại <span>/</span></a></li>
-                            <li><a data-toggle="tab" href="#popular">Ốp lưng <span>/</span></a></li>
-                            <li><a data-toggle="tab" href="#best">Phụ kiện</a></li>
+                            <li class="active"><a data-toggle="tab" href="#arrival">Trang Chủ <span>/</span></a></li>
+                            <li><a data-toggle="tab" href="#popular">Công Thức <span>/</span></a></li>
+                            <li><a data-toggle="tab" href="#best">Gửi Công Thức</a></li>
+                            <li><a data-toggle="tab" href="#best">Chủ Đề</a></li>
                         </ul>
                     </div>
                 </div>

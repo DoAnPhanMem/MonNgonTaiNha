@@ -10,15 +10,15 @@ class HomeController
     
     function list()
     {
-        $data_danhmuc = $this->home_model->danhmuc();
+        $data_chude = $this->home_model->danhmuc();
 
         $data_chitietDM = array();
 
-        for($i=1; $i <=count($data_danhmuc);$i++){
+       /*  for($i=1; $i <=count($data_chude);$i++){
             $data_chitietDM[$i] = $this->home_model->chitietdanhmuc($i);
-        }
+        } */
 
-        $data_limit1 = $this->home_model->limit(0,4);
+      /*   $data_limit1 = $this->home_model->limit(0,4);
         $data_limit2 = $this->home_model->limit(4,4);
         $data_limit3 = $this->home_model->limit(8,4);
         $data_limit4 = $this->home_model->limit(12,4);
@@ -29,7 +29,7 @@ class HomeController
 
         $data_sanpham1 = $this->home_model->sanpham_danhmuc(0,8,1);
         $data_sanpham2 = $this->home_model->sanpham_danhmuc(0,8,2);
-        $data_sanpham3 = $this->home_model->sanpham_danhmuc(0,8,3);
+        $data_sanpham3 = $this->home_model->sanpham_danhmuc(0,8,3); */
 
         require_once('Views/index.php');
     }

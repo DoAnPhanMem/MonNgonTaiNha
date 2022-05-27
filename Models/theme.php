@@ -1,11 +1,11 @@
 <?php
 require_once("model.php");
-class Shop extends Model
+class Theme extends Model
 {
     
     function loaisp($a,$b)
     {
-        $query = "SELECT * FROM loaisanpham WHERE   MaDM = 1 LIMIT $a, $b";
+        $query = "SELECT * FROM chude WHERE   MaDM = 1 LIMIT $a, $b";
 
         require("result.php");
         

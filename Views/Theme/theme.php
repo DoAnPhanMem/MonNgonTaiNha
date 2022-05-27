@@ -45,7 +45,7 @@
 								<ul class="clearfix">
 									<?php if ($data_tong > 9 and isset($test)) {
 										for ($i = 1; $i <= $data_tong / 9; $i++) { ?>
-											<li><a href="?act=shop&trang=<?= $i ?>"><?= $i ?></a></li>
+											<li><a href="?act=theme&trang=<?= $i ?>"><?= $i ?></a></li>
 									<?php }
 									}
 									?>

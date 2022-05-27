@@ -77,7 +77,7 @@
                                     <p><?= $data['MoTa'] ?></p>
                                 <?php }?>
                                 <div class="list-btn">
-                                    <a href="?act=cart&xuli=add&id=<?=$data['MaSP']?>">Thêm vào giỏ</a>
+                                    <a href="?act=cart&handle=add&id=<?=$data['MaSP']?>">Thêm vào giỏ</a>
                                     <?php if ($data['MaDM'] == 1) { ?>
                                     <a href="#info">Chi tiết</a>
                                     <?php }?>

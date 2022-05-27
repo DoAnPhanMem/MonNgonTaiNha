@@ -1,3 +1,5 @@
+<?php require_once("nav-personal.php")?>
+
 <!-- pages-title-start -->
 <div class="pages-title section-padding">
 	<div class="container">
@@ -42,7 +44,7 @@
 												} ?>
 											</b>
 											<div class="custom-input">
-												<form action="?act=taikhoan&xuli=update" method="post">
+												<form action="?act=taikhoan&handle=update" method="post">
 													<div class="row">
 														<div class="col-md-6">
 															<input type="text" name="Ho" placeholder="Họ.." required value="<?= $data['Ho'] ?>" />
@@ -79,7 +81,7 @@
 								<div id="collapse4" class="panel-collapse collapse">
 									<div class="single-log-info">
 										<div class="custom-input">
-											<form action="?act=taikhoan&xuli=update" method="post">
+											<form action="?act=taikhoan&handle=update" method="post">
 												<input type="password" placeholder="Mật khẩu hiện tại .. " name="MatKhau" minlength="6" required />
 												<input type="password" placeholder="Mật khẩu mới .. " name="MatKhauMoi" />
 												<input type="password" placeholder="Xác nhận lại mật khẩu .." name="MatKhauXN" />

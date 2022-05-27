@@ -18,7 +18,7 @@ class model
     }
     function danhmuc()
     {
-        $query =  "SELECT * from DanhMuc ";
+        $query =  "SELECT * from chude ";
 
         require("result.php");
         

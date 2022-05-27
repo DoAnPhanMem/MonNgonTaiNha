@@ -4,13 +4,13 @@
         function __construct()
         {
             //Thong so ket noi CSDL
-            $severname ="localhost"; 
+            $servername ="localhost"; 
             $username ="root";
             $password =""; 
-            $db_name ="monngontainha";
+            $db_name ="monngon";
  
             //Tao ket noi CSDL
-            $this->conn = new mysqli($severname,$username,$password,$db_name);
+            $this->conn = new mysqli($servername,$username,$password,$db_name);
             $this->conn->set_charset("utf8");
 
             //check connection

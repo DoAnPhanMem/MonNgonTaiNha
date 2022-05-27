@@ -8,7 +8,7 @@ switch ($act) {
         require_once("shop/shop.php");
         break;
     case "checkout":
-        $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
+        $act = isset($_GET['handle']) ? $_GET['handle'] : "list";
         switch ($act) {
             case 'list':
                 require_once("order/checkout.php");
@@ -34,7 +34,7 @@ switch ($act) {
         require_once("cart/cart.php");
         break;
     case "taikhoan":
-        $act = isset($_GET['xuli']) ? $_GET['xuli'] : "login";
+        $act = isset($_GET['handle']) ? $_GET['handle'] : "login";
         if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
             switch ($act) {
                 case 'login':
@@ -72,7 +72,11 @@ switch ($act) {
             }
             break;
         }
-    default:
+        break;
+        case "personal" : 
+            require_once("personal/index.php");
+           break;
+        default:
         require_once("error-404.php");
         break;
 }

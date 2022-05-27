@@ -7,13 +7,13 @@ switch ($mod) {
         $controller_obj = new HomeController();
         $controller_obj->list();
         break;
-    case 'shop':
-        require_once('Controllers/ShopController.php');
-        $controller_obj = new ShopController();
+    case 'theme':
+        require_once('Controllers/ThemeController.php');
+        $controller_obj = new ThemeController();
         $controller_obj->list();
         break;
     case 'checkout':
-        $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
+        $act = isset($_GET['handle']) ? $_GET['handle'] : "list";
         require_once('Controllers/CheckoutController.php');
         $controller_obj = new CheckoutController();
         switch ($act) {
@@ -36,13 +36,8 @@ switch ($mod) {
         $controller_obj = new DetailController();
         $controller_obj->list();
         break;
-    case 'quickview':
-        require_once('Controllers/QuickviewController.php');
-        $controller_obj = new QuickviewController();
-        $controller_obj->list();
-        break;
     case 'cart':
-        $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
+        $act = isset($_GET['handle']) ? $_GET['handle'] : "list";
         require_once('Controllers/CartController.php');
         $controller_obj = new CartController();
         switch ($act) {
@@ -67,7 +62,7 @@ switch ($mod) {
         }
         break;
     case 'taikhoan':
-        $act = isset($_GET['xuli']) ? $_GET['xuli'] : "taikhoan";
+        $act = isset($_GET['handle']) ? $_GET['handle'] : "taikhoan";
         require_once('Controllers/LoginController.php');
         $controller_obj = new LoginController();
         if ((isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true)) {
@@ -121,6 +116,13 @@ switch ($mod) {
                 break;
             }
         }
+        
+    
+    case 'personal' :
+        require_once('Controllers/PersonalController.php');
+        $controller_obj = new PersonalController();
+        $controller_obj->personal();
+            break;
     default:
         require_once('Controllers/HomeController.php');
         $controller_obj = new Homecontroller();

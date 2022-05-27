@@ -25,7 +25,7 @@
 						<h3><strong>Chi tiết hóa đơn</strong></h3>
 					</div>
 					<div class="custom-input">
-						<form action="?act=checkout&xuli=save" method="post">
+						<form action="?act=checkout&handle=save" method="post">
 							<input type="text" name="NguoiNhan" placeholder="Người nhận" required value="<?php echo $_SESSION['login']['Ho']." ".$_SESSION['login']['Ten']  ?>"/>
 							<input type="email" name="Email" placeholder="Địa chỉ Email.." required  value="<?=$_SESSION['login']['Email']?>"/>
 							<input type="text" name="SDT" placeholder="Số điện thoại.." required pattern="[0-9]+" minlength="10"  value="<?=$_SESSION['login']['SDT']?>"/>

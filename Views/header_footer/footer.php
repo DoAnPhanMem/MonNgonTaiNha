@@ -37,7 +37,7 @@
                             </div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="?act=taikhoan&xuli=account"><i class="mdi mdi-menu-right"></i>Tài khoản</a></li>
+                                    <li><a href="?act=taikhoan&handle=account"><i class="mdi mdi-menu-right"></i>Tài khoản</a></li>
                                     <li><a href="?act=cart"><i class="mdi mdi-menu-right"></i>Giỏ Hàng</a></li>
                                     <li><a href="?act=taikhoan"><i class="mdi mdi-menu-right"></i>Đăng Nhập</a></li>
                                     <li><a href="?act=checkout"><i class="mdi mdi-menu-right"></i>Thanh Toán</a></li>

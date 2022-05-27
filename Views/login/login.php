@@ -32,7 +32,7 @@
 									<strong>Thông báo</strong> <?= $_COOKIE['msg1'] ?>
 								</div>
 							<?php } ?>
-							<form action="?act=taikhoan&xuli=dangnhap" method="post" id="form1">
+							<form action="?act=taikhoan&handle=dangnhap" method="post" id="form1">
 								<input type="text" name="taikhoan" placeholder="Tài khoản" />
 								<input type="password" name="matkhau" placeholder="Mật khẩu" />
 								<a class="forget" href="#">Quên mật khẩu?</a>
@@ -55,7 +55,7 @@
 						</div>
 					<?php } ?>
 					<div class="custom-input">
-						<form action="?act=taikhoan&xuli=dangky" method="post" id="form2">
+						<form action="?act=taikhoan&handle=dangky" method="post" id="form2">
 							<input type="text" name="Ho" placeholder="Họ.." required />
 							<input type="text" name="Ten" placeholder="Tên.." required />
 							<input type="text" name="TaiKhoan" placeholder="Tên tài khoản đăng nhập.." required  minlength="6"/>
