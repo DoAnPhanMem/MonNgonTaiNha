@@ -21,14 +21,6 @@ class ThemeController
         }
 
 
-        // if (isset($_GET['trang'])) {
-        //     $id = $_GET['trang'];
-        //     $limit = 9;
-        //     $start = ($id - 1) * $limit;
-        //     $data = $this->theme_model->limit($start, $limit);
-        //     $data_noibat = $this->theme_model->sanpham_noibat();
-        //     $data_tong = 9;
-        // } else {
         if (isset($_GET['sp']) and isset($_GET['loai'])) {
             $data_loai = $this->theme_model->chitiet_loai($_GET['loai'], $_GET['sp']);
             if ($data_loai != null) {

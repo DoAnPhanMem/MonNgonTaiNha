@@ -13,12 +13,7 @@ class DetailController
 
         $data_danhmuc = $this->detail_model->danhmuc();
 
-        $data_chitietDM = array();
-
-        for($i=1; $i <=count($data_danhmuc);$i++){
-            $data_chitietDM[$i] = $this->detail_model->chitietdanhmuc($i);
-        }
-
+       
         $id = $_GET['id'];
 
         $data = $this->detail_model->detail_sp($id);
