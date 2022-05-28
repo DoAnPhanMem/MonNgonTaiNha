@@ -31,35 +31,27 @@
 <!-- Nav Item - Charts -->
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
 <li class="nav-item">
-  <a class="nav-link" href="?mod=nguoidung">
+  <a class="nav-link" href="?mod=user">
     <i class="fas fa-fw fa-table"></i>
     <span>Quản lý Tài khoản</span></a>
 </li>
 <?php } ?>
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-  <a class="nav-link" href="?mod=sanpham">
+  <a class="nav-link" href="?mod=recipe">
     <i class="fas fa-fw fa-table"></i>
-    <span>Quản lý Sản phẩm</span></a>
+    <span>Quản lý Công thức</span></a>
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="?mod=loaisanpham">
+  <a class="nav-link" href="?mod=theme">
     <i class="fas fa-fw fa-table"></i>
-    <span>Quản lý Loại sản phẩm</span></a>
+    <span>Quản lý Chủ đề</span></a>
 </li>
 
-<li class="nav-item">
-  <a class="nav-link" href="?mod=hoadon">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Xét duyệt hóa đơn</span></a>
-</li>
 
-<li class="nav-item">
-  <a class="nav-link" href="?mod=danhmuc">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Quản lý danh mục sản phẩm</span></a>
-</li>
+
+
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
 <li class="nav-item">
   <a class="nav-link" href="?mod=banner">
@@ -69,11 +61,7 @@
 <?php }?>
 
 
-<li class="nav-item">
-  <a class="nav-link" href="?mod=khuyenmai">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Quản lý khuyến mãi</span></a>
-</li>
+
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">
   <button class="rounded-circle border-0" id="sidebarToggle"></button>

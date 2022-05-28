@@ -8,7 +8,7 @@
             $severname ="localhost"; 
             $username ="root";
             $password =""; 
-            $db_name ="shopphone";
+            $db_name ="monngon";
 
             //Tao ket noi CSDL
             $this->conn = new mysqli($severname,$username,$password,$db_name);

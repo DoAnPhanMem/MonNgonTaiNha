@@ -1,22 +1,22 @@
 <?php
-require_once("MVC/models/nguoidung.php");
-class NguoiDungController
+require_once("MVC/models/user.php");
+class UserController
 {
-    var $nguoidung_model;
+    var $user_model;
     public function __construct()
     {
-        $this->nguoidung_model = new nguoidung();
+        $this->user_model = new user();
     }
     public function list()
     {
-        $data = $this->nguoidung_model->All();
+        $data = $this->user_model->All();
         require_once("MVC/Views/Admin/index.php");
         //require_once("MVC/Views/authors/list.php");
     }
     public function detail()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : 1;
-        $data = $this->nguoidung_model->find($id);
+        $data = $this->user_model->find($id);
         require_once("MVC/Views/Admin/index.php");
         //require_once("MVC/Views/authors/detail.php");
     }
@@ -45,17 +45,17 @@ class NguoiDungController
                 $data[$key] = $value;
             }
         }
-        $this->nguoidung_model->store($data);
+        $this->user_model->store($data);
     }
     public function delete()
     {
         $id = $_GET['id'];
-        $this->nguoidung_model->delete($id);
+        $this->user_model->delete($id);
     }
     public function edit()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : 1;
-        $data = $this->nguoidung_model->find($id);
+        $data = $this->user_model->find($id);
         require_once("MVC/Views/Admin/index.php");
         //require_once("MVC/Views/authors/edit.php");
     }
@@ -80,6 +80,6 @@ class NguoiDungController
                 $data[$key] = $value;
             }
         }
-        $this->nguoidung_model->update($data);
+        $this->user_model->update($data);
     }
 }

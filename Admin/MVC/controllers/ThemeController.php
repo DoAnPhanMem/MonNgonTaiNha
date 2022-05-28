@@ -1,24 +1,24 @@
 <?php
-require_once("MVC/Models/loaisanpham.php");
-class LoaisanphamController
+require_once("MVC/Models/theme.php");
+class ThemeController
 {
-	var $loaisanpham_model;
+	var $theme_model;
 	function __construct()
 	{
-		$this->loaisanpham_model = new loaisanpham();
+		$this->theme_model = new theme();
 	}
 
 	public function list()
 	{
 		$data = array();
-		$data = $this->loaisanpham_model->All(); 
+		$data = $this->theme_model->All(); 
 		require_once("MVC/Views/Admin/index.php");
 		//require_once('MVC/views/categories/list.php');
 	}
 
 	public function add()
 	{
-		$data = $this->loaisanpham_model->danhmuc();
+		$data = $this->theme_model->danhmuc();
 		require_once("MVC/Views/Admin/index.php");
 		//require_once('MVC/views/categories/add.php');
 	}
@@ -47,27 +47,27 @@ class LoaisanphamController
                 $data[$key] = $value;
             }
 		}	
-		$this->loaisanpham_model->store($data);
+		$this->theme_model->store($data);
 	}
 	public function detail()
 	{
 		$id = isset($_GET['id']) ? $_GET['id'] : 5;
-		$data = $this->loaisanpham_model->find($id);
+		$data = $this->theme_model->find($id);
 		require_once("MVC/Views/Admin/index.php");
 		//require_once('MVC/views/categories/detail.php');
 	}
 	public function delete()
 	{
 		if (isset($_GET['id'])) {
-			$this->loaisanpham_model->delete($_GET['id']);
+			$this->theme_model->delete($_GET['id']);
 		}
 	}
 	public function edit()
 	{
 		$id = isset($_GET['id']) ? $_GET['id'] : 5;
-		$data_detail = $this->loaisanpham_model->find($id);
+		$data_detail = $this->theme_model->find($id);
 
-		$data = $this->loaisanpham_model->danhmuc();
+		$data = $this->theme_model->danhmuc();
 
 		require_once("MVC/Views/Admin/index.php");
 		//require_once('MVC/views/categories/edit.php');
@@ -102,6 +102,6 @@ class LoaisanphamController
 		if ($HinhAnh == "") {
             unset($data['HinhAnh']);
         }
-		$this->loaisanpham_model->update($data);
+		$this->theme_model->update($data);
 	}
 }

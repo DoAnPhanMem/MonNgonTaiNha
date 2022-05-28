@@ -8,6 +8,7 @@
             </ul>
         </nav>
     </header>
+    
     <div class="content-personal">
         <?php 
              $act = isset($_GET['handle']) ? $_GET['handle'] : "account";

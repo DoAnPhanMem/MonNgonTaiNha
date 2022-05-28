@@ -65,25 +65,6 @@
                   $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
                   $act = isset($_GET['act']) ? $_GET['act'] : "admin";
                   switch ($mod) {
-                    case 'khuyenmai':
-                      switch ($act) {
-                        case 'list':
-                          require_once('MVC/views/khuyenmai/list.php');
-                          break;
-                        case 'add':
-                          require_once('MVC/views/khuyenmai/add.php');
-                          break;
-                        case 'detail':
-                          require_once('MVC/views/khuyenmai/detail.php');
-                          break;
-                        case 'edit':
-                          require_once('MVC/views/khuyenmai/edit.php');
-                          break;
-                        default:
-                          require_once('MVC/views/khuyenmai/list.php');
-                          break;
-                      }
-                      break;
                     case 'banner':
                       switch ($act) {
                         case 'list':
@@ -103,76 +84,57 @@
                           break;
                       }
                       break;
-                    case 'nguoidung':
+                    case 'user':
                       switch ($act) {
                         case 'list':
-                          require_once('MVC/views/nguoidung/list.php');
+                          require_once('MVC/views/user/list.php');
                           break;
                         case 'add':
-                          require_once('MVC/views/nguoidung/add.php');
+                          require_once('MVC/views/user/add.php');
                           break;
                         case 'detail':
-                          require_once('MVC/views/nguoidung/detail.php');
+                          require_once('MVC/views/user/detail.php');
                           break;
                         case 'edit':
-                          require_once('MVC/views/nguoidung/edit.php');
+                          require_once('MVC/views/user/edit.php');
                           break;
                         default:
-                          require_once('MVC/views/nguoidung/list.php');
+                          require_once('MVC/views/user/list.php');
                           break;
                       }
                       break;
-                    case 'sanpham':
+                    case 'recipe':
                       switch ($act) {
                         case 'list':
-                          require_once('MVC/views/sanpham/list.php');
+                          require_once('MVC/views/recipe/list.php');
                           break;
                         case 'add':
-                          require_once('MVC/views/sanpham/add.php');
+                          require_once('MVC/views/recipe/add.php');
                           break;
                         case 'edit':
-                          require_once('MVC/views/sanpham/edit.php');
+                          require_once('MVC/views/recipe/edit.php');
                           break;
                         default:
-                          require_once('MVC/views/sanpham/list.php');
+                          require_once('MVC/views/recipe/list.php');
                           break;
                       }
                       break;
-                    case 'loaisanpham':
+                    case 'theme':
                       switch ($act) {
                         case 'list':
-                          require_once('MVC/views/loaisanpham/list.php');
+                          require_once('MVC/views/theme/list.php');
                           break;
                         case 'add':
-                          require_once('MVC/views/loaisanpham/add.php');
+                          require_once('MVC/views/theme/add.php');
                           break;
                         case 'detail':
-                          require_once('MVC/views/loaisanpham/detail.php');
+                          require_once('MVC/views/theme/detail.php');
                           break;
                         case 'edit':
-                          require_once('MVC/views/loaisanpham/edit.php');
+                          require_once('MVC/views/theme/edit.php');
                           break;
                         default:
-                          require_once('MVC/views/loaisanpham/list.php');
-                          break;
-                      }
-                      break;
-                    case 'danhmuc':
-                      switch ($act) {
-                        case 'list':
-                          require_once('MVC/views/danhmuc/list.php');
-                          break;
-                        case 'add':
-                          require_once('MVC/views/danhmuc/add.php');
-                          break;
-                        case 'detail':
-                          require_once('MVC/views/danhmuc/detail.php');
-                          break;
-                        case 'edit':
-                          require_once('MVC/views/danhmuc/edit.php');
-                          break;
-                        default:
-                          require_once('MVC/views/danhmuc/list.php');
+                          require_once('MVC/views/theme/list.php');
                           break;
                       }
                       break;
@@ -186,90 +148,41 @@
                           break;
                       }
                       break;
-                    case 'hoadon':
-                      switch ($act) {
-                        case 'list':
-                          require_once('MVC/Views/hoadon/list.php');
-                          break;
-                        case 'chitiet':
-                          require_once('MVC/Views/hoadon/detail.php');
-                          break;
-                        default:
-                          require_once('MVC/Views/hoadon/list.php');
-                          break;
-                      }
-                      break;
-                  }
+                 }
                 } else {
                   if (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true) {
                     $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
                     $act = isset($_GET['act']) ? $_GET['act'] : "admin";
                     switch ($mod) {
-                      case 'hoadon':
+                      
+                      case 'theme':
                         switch ($act) {
                           case 'list':
-                            require_once('MVC/Views/hoadon/list.php');
-                            break;
-                          case 'chitiet':
-                            require_once('MVC/Views/hoadon/detail.php');
-                            break;
-                          default:
-                            require_once('MVC/Views/hoadon/list.php');
-                            break;
-                        }
-                        break;
-                      case 'loaisanpham':
-                        switch ($act) {
-                          case 'list':
-                            require_once('MVC/views/loaisanpham/list.php');
+                            require_once('MVC/views/theme/list.php');
                             break;
                           case 'detail':
-                            require_once('MVC/views/loaisanpham/detail.php');
+                            require_once('MVC/views/theme/detail.php');
                             break;
                           default:
-                            require_once('MVC/views/loaisanpham/list.php');
+                            require_once('MVC/views/theme/list.php');
                             break;
                         }
                         break;
-                      case 'danhmuc':
+                     
+                      case 'recipe':
                         switch ($act) {
                           case 'list':
-                            require_once('MVC/views/danhmuc/list.php');
+                            require_once('MVC/views/recipe/list.php');
                             break;
                           case 'detail':
-                            require_once('MVC/views/danhmuc/detail.php');
+                            require_once('MVC/views/recipe/detail.php');
                             break;
                           default:
-                            require_once('MVC/views/danhmuc/list.php');
+                            require_once('MVC/views/recipe/list.php');
                             break;
                         }
                         break;
-                      case 'sanpham':
-                        switch ($act) {
-                          case 'list':
-                            require_once('MVC/views/sanpham/list.php');
-                            break;
-                          case 'detail':
-                            require_once('MVC/views/sanpham/detail.php');
-                            break;
-                          default:
-                            require_once('MVC/views/sanpham/list.php');
-                            break;
-                        }
-                        break;
-                      case 'khuyenmai':
-                        switch ($act) {
-                          case 'list':
-                            require_once('MVC/views/khuyenmai/list.php');
-                            break;
-                          case 'detail':
-                            require_once('MVC/views/khuyenmai/detail.php');
-                            break;
-                          default:
-                            require_once('MVC/views/khuyenmai/list.php');
-                            break;
-                        }
-                        break;
+                      
                     }
                   }
                 }

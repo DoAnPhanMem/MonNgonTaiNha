@@ -1,30 +1,30 @@
 <?php
-require_once("MVC/Models/sanpham.php");
-class SanphamController
+require_once("MVC/Models/recipe.php");
+class RecipeController
 {
-    var $sanpham_model;
+    var $recipe_model;
     public function __construct()
     {
-        $this->sanpham_model = new sanpham();
+        $this->recipe_model = new recipe();
     }
     public function list()
     {
-        $data = $this->sanpham_model->All();
+        $data = $this->recipe_model->All();
         require_once("MVC/Views/Admin/index.php");
-        // require_once("MVC/Views/posts/list.php");
+        
     }
     public function detail()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : 1;
-        $data = $this->sanpham_model->find($id);
+        $data = $this->recipe_model->find($id);
         require_once("MVC/Views/Admin/index.php");
         //require_once("MVC/Views/posts/detail.php");
     }
     public function add()
     {
-        $data_km = $this->sanpham_model->khuyenmai();
-        $data_lsp = $this->sanpham_model->loaisp();
-        $data_dm = $this->sanpham_model->danhmuc();
+        $data_km = $this->recipe_model->khuyenmai();
+        $data_lsp = $this->recipe_model->loaisp();
+        $data_dm = $this->recipe_model->danhmuc();
         require_once("MVC/Views/Admin/index.php");
         //require_once("MVC/Views/posts/add.php");
     }
@@ -94,20 +94,20 @@ class SanphamController
             }
         }
 
-        $this->sanpham_model->store($data);
+        $this->recipe_model->store($data);
     }
     public function delete()
     {
         $id = $_GET['id'];
-        $this->sanpham_model->delete($id);
+        $this->recipe_model->delete($id);
     }
     public function edit()
     {
         $id = isset($_GET['id']) ? $_GET['id'] : 1;
-        $data_km = $this->sanpham_model->khuyenmai();
-        $data_lsp = $this->sanpham_model->loaisp();
-        $data_dm = $this->sanpham_model->danhmuc();
-        $data = $this->sanpham_model->find($id);
+        $data_km = $this->recipe_model->khuyenmai();
+        $data_lsp = $this->recipe_model->loaisp();
+        $data_dm = $this->recipe_model->danhmuc();
+        $data = $this->recipe_model->find($id);
         require_once("MVC/Views/Admin/index.php");
         //require_once("MVC/Views/posts/edit.php");
     }
@@ -185,6 +185,6 @@ class SanphamController
         if ($HinhAnh3 == "") {
             unset($data['HinhAnh3']);
         }
-        $this->sanpham_model->update($data);
+        $this->recipe_model->update($data);
     }
 }
