@@ -86,6 +86,9 @@ switch ($mod) {
                     case 'register':
                         $controller_obj->register();
                         break;
+                    case 'register-action':
+                        $controller_obj->register_action();
+                        break;
                     default:
                         $controller_obj->login();
                         break;

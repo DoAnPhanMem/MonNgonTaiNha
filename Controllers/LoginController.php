@@ -26,7 +26,11 @@ class LoginController
         );
         $this->login_model->login_action($data);
     }
-    function register()
+
+    function register(){
+        require_once('Views/index.php');
+    }
+    function register_action()
     {
         $check1 = 0;
         $check2 = 0;
