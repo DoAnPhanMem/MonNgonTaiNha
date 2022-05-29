@@ -37,7 +37,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<?php require_once("list-products.php") ?>
+						<?php require_once("list-recipes.php") ?>
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
