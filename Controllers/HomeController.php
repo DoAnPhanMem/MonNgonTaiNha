@@ -10,12 +10,12 @@ class HomeController
     
     function list()
     {
-        $data_chude = $this->home_model->danhmuc();
+        $data_chude = $this->home_model->theme();
 
         $data_chitietDM = array();
 
        /*  for($i=1; $i <=count($data_chude);$i++){
-            $data_chitietDM[$i] = $this->home_model->chitietdanhmuc($i);
+            $data_chitietDM[$i] = $this->home_model->chitiettheme($i);
         } */
 
       /*   $data_limit1 = $this->home_model->limit(0,4);
@@ -27,9 +27,9 @@ class HomeController
 
         $data_banner = $this->home_model->banner(0,2);
 
-        $data_sanpham1 = $this->home_model->sanpham_danhmuc(0,8,1);
-        $data_sanpham2 = $this->home_model->sanpham_danhmuc(0,8,2);
-        $data_sanpham3 = $this->home_model->sanpham_danhmuc(0,8,3); */
+        $data_sanpham1 = $this->home_model->sanpham_theme(0,8,1);
+        $data_sanpham2 = $this->home_model->sanpham_theme(0,8,2);
+        $data_sanpham3 = $this->home_model->sanpham_theme(0,8,3); */
 
         require_once('Views/index.php');
     }

@@ -138,6 +138,10 @@
                           break;
                       }
                       break;
+                    case 'statistical':
+                        require_once('MVC/views/statistical/statistical.php');
+                        break;
+                    
                     case 'login':
                       switch ($act) {
                         case 'admin':

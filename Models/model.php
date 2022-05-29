@@ -16,7 +16,7 @@ class model
 
         return $data;
     }
-    function danhmuc()
+    function theme()
     {
         $query =  "SELECT * from chude ";
 
@@ -24,18 +24,10 @@ class model
         
         return $data;
     }
-    function chitietdanhmuc($id)
-    {
-        $query =  "SELECT d.TenDM as Ten, l.* FROM danhmuc as d, loaisanpham as l WHERE d.MaDM = l.MaDM and d.MaDM = $id";
-
-        require("result.php");
-        
-        return $data;
-    }
-
+    
     function loaisanpham($id)
     {
-        $query =  "SELECT d.TenDM as Ten, l.* FROM danhmuc as d, loaisanpham as l WHERE d.MaDM = l.MaDM and d.MaDM = $id";
+        $query =  "SELECT d.TenDM as Ten, l.* FROM theme as d, loaisanpham as l WHERE d.MaDM = l.MaDM and d.MaDM = $id";
 
         require("result.php");
         
@@ -57,9 +49,9 @@ class model
         
         return $data;
     }
-    function sanpham_danhmuc($a, $b, $danhmuc)
+    function sanpham_theme($a, $b, $theme)
     {
-        $query =   "SELECT * from sanpham WHERE TrangThai = 1  and MaDM = $danhmuc ORDER BY ThoiGian DESC limit $a,$b";
+        $query =   "SELECT * from sanpham WHERE TrangThai = 1  and MaDM = $theme ORDER BY ThoiGian DESC limit $a,$b";
 
         require("result.php");
         

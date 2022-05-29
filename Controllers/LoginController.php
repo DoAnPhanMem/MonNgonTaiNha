@@ -9,13 +9,7 @@ class LoginController
     }
     function login()
     {
-        $data_danhmuc = $this->login_model->danhmuc();
-
-        $data_chitietDM = array();
-
-        for ($i = 1; $i <= count($data_danhmuc); $i++) {
-            $data_chitietDM[$i] = $this->login_model->chitietdanhmuc($i);
-        }
+        $data_theme = $this->login_model->theme();
 
         require_once('Views/index.php');
     }
@@ -32,7 +26,7 @@ class LoginController
         );
         $this->login_model->login_action($data);
     }
-    function dangky()
+    function register()
     {
         $check1 = 0;
         $check2 = 0;
@@ -66,28 +60,19 @@ class LoginController
             }
         }
 
-        $this->login_model->dangky_action($data, $check1, $check2);
+        $this->login_model->register_action($data, $check1, $check2);
     }
-    function dangxuat()
+    function logout()
     {
         $this->login_model->logout();
     }
-    function account()
+    function profile()
     {
-        $data_danhmuc = $this->login_model->danhmuc();
-
-        $data_chitietDM = array();
-
-        for ($i = 1; $i <= count($data_danhmuc); $i++) {
-            $data_chitietDM[$i] = $this->login_model->chitietdanhmuc($i);
-        }
-        $data = $this->login_model->account();
-
+        $data_theme= $this->login_model->theme();
         require_once('Views/index.php');
     }
     function update()
     {
-
         if (isset($_POST['Ho'])) {
             $data = array(
                 'Ho' =>    $_POST['Ho'],

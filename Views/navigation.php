@@ -33,20 +33,11 @@ switch ($act) {
     case "cart":
         require_once("cart/cart.php");
         break;
-    case "taikhoan":
+    case "account":
         $act = isset($_GET['handle']) ? $_GET['handle'] : "login";
         if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
-            switch ($act) {
-                case 'login':
-                    require_once("login/login.php");
-                    break;
-                case 'account':
-                    require_once("login/my-account.php");
-                    break;
-                default:
-                    require_once("login/login.php");
-                    break;
-            }
+            require_once("login/login.php");
+            break;
         } else {
             if ((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) || (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true)) {
                 switch ($act) {

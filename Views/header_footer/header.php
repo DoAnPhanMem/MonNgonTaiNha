@@ -15,14 +15,14 @@
                                 <ul>
                                     <?php  if(isset($_SESSION['login'])){ ?>
                                     <li><b>Chào <?=$_SESSION['login']['Ho']?> <?=$_SESSION['login']['Ten']?></b></li>
-                                    <li><a href="?act=personal&handle=account">Tài khoản</a></li>
-                                    <li><a href="?act=taikhoan&handle=dangxuat">Đăng xuất</a></li>
+                                    <li><a href="?act=personal&handle=profile">Tài khoản</a></li>
+                                    <li><a href="?act=account&handle=logout">Đăng xuất</a></li>
                                     <?php
                                         if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien'])){ ?>
                                         <li><a href="admin/?mod=login">Trang quản lý</a></li>
                                   <?php }}else{ ?>
                                     <li><b>Khách hàng</b></li>
-                                    <li><a href="?act=taikhoan">Đăng nhập</a></li>
+                                    <li><a href="?act=account">Đăng nhập</a></li>
                                     <?php } ?>
                                 </ul>
                             </li>

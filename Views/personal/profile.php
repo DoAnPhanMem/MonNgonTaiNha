@@ -1,4 +1,3 @@
-<?php require_once("nav-personal.php")?>
 
 <!-- pages-title-start -->
 <div class="pages-title section-padding">

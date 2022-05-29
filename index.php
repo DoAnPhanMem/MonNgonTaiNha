@@ -61,20 +61,14 @@ switch ($mod) {
                 break;
         }
         break;
-    case 'taikhoan':
-        $act = isset($_GET['handle']) ? $_GET['handle'] : "taikhoan";
+    case 'account':
+        $act = isset($_GET['handle']) ? $_GET['handle'] : "account";
         require_once('Controllers/LoginController.php');
         $controller_obj = new LoginController();
         if ((isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true)) {
             switch ($act) {
-                case 'dangxuat':
-                    $controller_obj->dangxuat();
-                    break;
-                case 'account':
-                    $controller_obj->account();
-                    break;
-                case 'update':
-                    $controller_obj->update();
+                case 'logout':
+                    $controller_obj->logout();
                     break;
                 default:
                     header('location: ?act=error');
@@ -82,32 +76,15 @@ switch ($mod) {
             }
             break;
         } else {
-            if ((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) || (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true)) {
-                switch ($act) {
-                    case 'dangxuat':
-                        $controller_obj->dangxuat();
-                        break;
-                    case 'account':
-                        $controller_obj->account();
-                        break;
-                    case 'update':
-                        $controller_obj->update();
-                        break;
-                    default:
-                        header('location: ?act=error');
-                        break;
-                }
-                break;
-            } else {
                 switch ($act) {
                     case 'login':
                         $controller_obj->login();
                         break;
-                    case 'dangnhap':
+                    case 'login-action':
                         $controller_obj->login_action();
                         break;
-                    case 'dangky':
-                        $controller_obj->dangky();
+                    case 'register':
+                        $controller_obj->register();
                         break;
                     default:
                         $controller_obj->login();
@@ -115,17 +92,20 @@ switch ($mod) {
                 }
                 break;
             }
-        }
-        
-    
     case 'personal' :
         require_once('Controllers/PersonalController.php');
         $controller_obj = new PersonalController();
-        $controller_obj->personal();
+        if ((isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true)) {
+            $controller_obj->personal();
             break;
+        }
+        else{
+            header('location: ?act=error');
+            break;
+        } 
     default:
         require_once('Controllers/HomeController.php');
-        $controller_obj = new Homecontroller();
+        $controller_obj = new HomeController();
         $controller_obj->list();
         break;
 }

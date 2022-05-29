@@ -49,6 +49,12 @@
     <span>Quản lý Chủ đề</span></a>
 </li>
 
+<li class="nav-item">
+  <a class="nav-link" href="?mod=statistical">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Thống Kê</span></a>
+</li>
+
 
 
 

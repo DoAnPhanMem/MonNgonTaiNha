@@ -16,11 +16,11 @@
         // }
         public function admin()
         {
-            $data_tksp1 = $this->login_model->tk_sanpham(1);
+            /* $data_tksp1 = $this->login_model->tk_sanpham(1);
             $data_tksp2 = $this->login_model->tk_sanpham(2);
             $data_tksp3 = $this->login_model->tk_sanpham(3);
-
-            $data_hd = $this->login_model->tk_thongbao();
+ */
+          /*   $data_hd = $this->login_model->tk_thongbao();
 
             $m = date("m");
 
@@ -32,12 +32,12 @@
 
             $data_nguoidung = $this->login_model->tk_nguoidung(1);
 
-            $data_nhanvien = $this->login_model->tk_nguoidung(3);
+            $data_nhanvien = $this->login_model->tk_nguoidung(3); */
             require_once("MVC/Views/Admin/index.php");
         }
-        // public function logout()
-        // {
-        //     $this->login_model->logout();
-        // }
+        public function logout()
+        {
+            $this->login_model->logout();
+        }
     }
 ?>

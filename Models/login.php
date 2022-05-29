@@ -13,7 +13,10 @@ class Login extends Model
         $query = "SELECT * from nguoidung  WHERE taikhoan = '" . $data['taikhoan'] . "' AND matkhau = '" . $data['matkhau'] . "' AND trangthai = 1";
 
         $login = $this->conn->query($query)->fetch_assoc();
+        
         if ($login !== NULL) {
+            $_SESSION['isLogin'] = true;
+            $_SESSION['login'] = $login;
             if($login['MaQuyen'] == 2){
                 $_SESSION['isLogin_Admin'] = true;
                 $_SESSION['login'] = $login;
@@ -21,9 +24,6 @@ class Login extends Model
                 if($login['MaQuyen'] == 3){
                 $_SESSION['isLogin_Nhanvien'] = true;
                 $_SESSION['login'] = $login;
-                }else{
-                    $_SESSION['isLogin'] = true;
-                    $_SESSION['login'] = $login;
                 }
             }
             header('Location: ?mod=login');
@@ -57,7 +57,7 @@ class Login extends Model
 
         return $data;
     }
-    function dangky_action($data, $check1, $check2)
+    function register_action($data, $check1, $check2)
     {
         if ($check1 == 0) {
             if ($check2 == 0) {

@@ -133,6 +133,18 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
                         break;
                 }
                 break;
+                case 'statistical':
+                    require_once('MVC/controllers/LoginController.php');
+                    $controller_obj = new LoginController();
+                    switch ($act) {
+                        case 'admin':
+                            $controller_obj->admin();
+                            break;
+                        default:
+                            $controller_obj->statistical();
+                            break;
+                    }
+                    break;
          default:
             header('location: ?mod=login');
             
