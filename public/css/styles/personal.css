@@ -1,6 +1,15 @@
 .personal{
-    
+    margin: 10px 0;
 }
 .header-personal{
     background-color: var(--primary);
+}
+
+.personal-content{
+    min-height: 1000px;
+    background-color: var(--white);
+    margin: 0 10px ;
+    border-radius: 4px ;
+    border: 1px solid rgba(0, 0, 0, 0.005);
+    box-shadow: 0px 0.5px 3px #333;
 }

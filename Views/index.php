@@ -29,6 +29,7 @@
     <!-- style css -->
     <link rel="stylesheet" href="public/css/styles/home.css">
     <link rel="stylesheet" href="public/css/styles/personal.css">
+    <link rel="stylesheet" href="public/css/styles/myrecipe.css">
     <!-- Điền link css tự code chổ này -->
 
 
