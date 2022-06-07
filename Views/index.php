@@ -2,6 +2,7 @@
 <html class="no-js" lang="vi-vn">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Món Ngon Tại Nhà</title>
@@ -17,7 +18,7 @@
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
     <!-- all css here -->
 
-
+    
     <!-- Root CSS -->
     <link rel="stylesheet" href="public/css/roots/grid.css">
     <link rel="stylesheet" href="public/css/roots/reset.css">
@@ -26,7 +27,8 @@
     <!-- <link rel="stylesheet" href="public/css/owl.carousel.css"> -->
 
     <!-- style css -->
-    <link rel="stylesheet" href="public/css/home.css">
+    <link rel="stylesheet" href="public/css/styles/home.css">
+    <link rel="stylesheet" href="public/css/styles/personal.css">
     <!-- Điền link css tự code chổ này -->
 
 

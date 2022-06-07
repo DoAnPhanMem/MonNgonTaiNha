@@ -1,5 +1,6 @@
 <section class = "personal">
-    <header class="header-personal">
+    <div class="row">
+    <header class="header-personal l-4">
     <h1> Đây là header trang cá nhân</h1>
         <nav>
             <ul>
@@ -8,8 +9,7 @@
             </ul>
         </nav>
     </header>
-    
-    <div class="content-personal">
+    <div class="content-personal l-8">
         <?php 
              $act = isset($_GET['handle']) ? $_GET['handle'] : "profile";
              switch ($act) {
@@ -25,4 +25,8 @@
              }
         ?>
     </div>
+    </div>
+    
+    
+    
 </section>
