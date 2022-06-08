@@ -31,10 +31,119 @@
             
         </div>
         <div class = "my-recipes" >
-                <div class="recipe-item">kkkk</div>
-                <div class="recipe-item">kkkk</div>
-                <div class="recipe-item">kkkk</div>
-                <div class="recipe-item">kkkk</div>
+
+                <div class ="row">
+                    <div class="l-4">
+                        <div class="recipe-item">
+                            <div class = "recipe-item__img">
+                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                            </div>
+                            <div class = "my-recipe__info">
+                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
+                                <p>Thời gian:  <span>1h35</span></p>
+                                <p>Lượt xem:  <span>222</span></p>
+                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
+                                <p>Trạng thái:  <span>Đã duyệt</span></p>
+                            </div>
+                            <div class="recipe-item__action">
+                                <button class="recipe-item__edit">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                </button>
+                                <button class="recipe-item__delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l-4">
+                        <div class="recipe-item">
+                            <div class = "recipe-item__img">
+                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                            </div>
+                            <div class = "my-recipe__info">
+                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
+                                <p>Thời gian:  <span>1h35</span></p>
+                                <p>Lượt xem:  <span>222</span></p>
+                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
+                                <p>Trạng thái:  <span>Đã duyệt</span></p>
+                            </div>
+                            <div class="recipe-item__action">
+                                <button class="recipe-item__edit">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                </button>
+                                <button class="recipe-item__delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l-4">
+                        <div class="recipe-item">
+                            <div class = "recipe-item__img">
+                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                            </div>
+                            <div class = "my-recipe__info">
+                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
+                                <p>Thời gian:  <span>1h35</span></p>
+                                <p>Lượt xem:  <span>222</span></p>
+                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
+                                <p>Trạng thái:  <span>Đã duyệt</span></p>
+                            </div>
+                            <div class="recipe-item__action">
+                                <button class="recipe-item__edit">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                </button>
+                                <button class="recipe-item__delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l-4">
+                        <div class="recipe-item">
+                            <div class = "recipe-item__img">
+                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                            </div>
+                            <div class = "my-recipe__info">
+                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
+                                <p>Thời gian:  <span>1h35</span></p>
+                                <p>Lượt xem:  <span>222</span></p>
+                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
+                                <p>Trạng thái:  <span>Đã duyệt</span></p>
+                            </div>
+                            <div class="recipe-item__action">
+                                <button class="recipe-item__edit">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                </button>
+                                <button class="recipe-item__delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l-4">
+                        <div class="recipe-item">
+                            <div class = "recipe-item__img">
+                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                            </div>
+                            <div class = "my-recipe__info">
+                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
+                                <p>Thời gian:  <span>1h35</span></p>
+                                <p>Lượt xem:  <span>222</span></p>
+                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
+                                <p>Trạng thái:  <span>Đã duyệt</span></p>
+                            </div>
+                            <div class="recipe-item__action">
+                                <button class="recipe-item__edit">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                </button>
+                                <button class="recipe-item__delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
