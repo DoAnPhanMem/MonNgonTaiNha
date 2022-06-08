@@ -1,0 +1,11 @@
+.btn{
+    background-color: var(--primary);
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--white);
+    user-select: none;
+    font-size: 1.6rem;
+}
+.btn-rounded{
+    border-radius: 999px ;
+}
