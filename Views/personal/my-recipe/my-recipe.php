@@ -1,7 +1,7 @@
 <div class="my-recipe">
     <div class="my-recipe__top">
         <h1 class="my-recipe__title">Công Thức Của Tôi</h1>
-        <a class="btn-rounded btn" href = "/"> Tạo mới</a>
+        <a class="btn-rounded btn" href = "?act=personal&handle=create"> Tạo mới</a>
     </div>
     <div class="my-recipe__content">
         <div class="my-recipe__fitter">
@@ -33,10 +33,11 @@
         <div class = "my-recipes" >
 
                 <div class ="row">
+                    
                     <div class="l-4">
                         <div class="recipe-item">
                             <div class = "recipe-item__img">
-                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                                <img  src="./public/img/recipes/1.jpg" alt="" >
                             </div>
                             <div class = "my-recipe__info">
                                 <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
@@ -58,7 +59,7 @@
                     <div class="l-4">
                         <div class="recipe-item">
                             <div class = "recipe-item__img">
-                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                                <img  src="./public/img/recipes/1.jpg" alt="" >
                             </div>
                             <div class = "my-recipe__info">
                                 <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
@@ -80,7 +81,7 @@
                     <div class="l-4">
                         <div class="recipe-item">
                             <div class = "recipe-item__img">
-                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                                <img  src="./public/img/recipes/1.jpg" alt="" >
                             </div>
                             <div class = "my-recipe__info">
                                 <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
@@ -102,7 +103,7 @@
                     <div class="l-4">
                         <div class="recipe-item">
                             <div class = "recipe-item__img">
-                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                                <img  src="./public/img/recipes/1.jpg" alt="" >
                             </div>
                             <div class = "my-recipe__info">
                                 <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
@@ -124,7 +125,7 @@
                     <div class="l-4">
                         <div class="recipe-item">
                             <div class = "recipe-item__img">
-                                <img  src="https://image.cooky.vn/recipe/g3/26407/s640/recipe-cover-r26407.png" alt="" >
+                                <img  src="./public/img/recipes/1.jpg" alt="" >
                             </div>
                             <div class = "my-recipe__info">
                                 <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
@@ -143,7 +144,17 @@
                             </div>
                         </div>
                     </div>
+                   
                 </div>
+                <div class="my-recipe__paging">
+                        <div>
+                        <i class="padding-icon fa-solid fa-caret-left"></i>
+                        <span class="my-recipe__paging-current">1/</span>
+                        <span  class="my-recipe__paging-total">4</span>
+                        <i class="padding-icon fa-solid fa-caret-right"></i>
+                        </div>
+                </div>
+               
         </div>
     </div>
 </div>
