@@ -31,7 +31,7 @@
     <!-- style css -->
     <link rel="stylesheet" href="public/css/styles/home.css">
     <link rel="stylesheet" href="public/css/styles/personal.css">
-    <link rel="stylesheet" href="public/css/styles/myrecipe.css">
+    <link rel="stylesheet" href="public/css/styles/myrecipe.scss">
     <!-- Điền link css tự code chổ này -->
 
 
@@ -44,7 +44,13 @@
     <!-- header section start -->
     <div class="wrapper grid wide">
         <?php
-        require_once("header_footer/header.php")
+        if((isset($_GET['act']) && $_GET['act'] == 'personal')){
+
+        }   
+        else{
+            require_once("header_footer/header.php");
+        }
+        
         ?>
         <!-- header section end -->
 

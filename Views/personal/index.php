@@ -20,6 +20,9 @@
                         case 'recipe':
                             require_once("my-recipe/my-recipe.php");
                             break;
+                        case 'create':
+                            require_once("my-recipe/create.php");
+                            break;
                         default:
                             require_once("profile.php");
                             break;
