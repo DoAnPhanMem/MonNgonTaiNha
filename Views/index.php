@@ -12,8 +12,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="public/img/icon.png">
 
     <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+    <link rel="stylesheet" href="./public/fonts/fontawesome-free-6.1.1-web/css/all.css">
     <!-- Place icon.png in the root directory -->
-    <script src="https://kit.fontawesome.com/9934f292ea.js" crossorigin="anonymous"></script>
+   
     <!-- google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
@@ -31,7 +32,7 @@
     <!-- style css -->
     <link rel="stylesheet" href="public/css/styles/home.css">
     <link rel="stylesheet" href="public/css/styles/personal.css">
-    <link rel="stylesheet" href="public/css/styles/myrecipe.scss">
+    <link rel="stylesheet" href="public/css/styles/myrecipe.css">
     <!-- Điền link css tự code chổ này -->
 
 
