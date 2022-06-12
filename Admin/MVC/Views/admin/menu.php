@@ -62,8 +62,6 @@
   </li>
 
 
-
-
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
   <li class="nav-item">
     <a class="nav-link" href="?mod=banner">
