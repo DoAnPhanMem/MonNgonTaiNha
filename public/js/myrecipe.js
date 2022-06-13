@@ -121,6 +121,8 @@ function HandleThemes(){
 function HandleImages(){
     const inputFile = imgGroup.querySelector('#create-recipe__image-input');
     const preview  = imgGroup.querySelector('.create-recipe__images-preview');
+    const labelView  = imgGroup.querySelector('.create-recipe__image-label');
+    console.log(labelView);
     const fileTypes = [
         "image/apng",
         "image/bmp",
@@ -137,6 +139,7 @@ function HandleImages(){
     function validFileType(file) {
         return fileTypes.includes(file.type);
     }
+
     inputFile.onchange = function(){
         while(preview.firstChild){
             preview.removeChild(preview.firstChild);
@@ -145,7 +148,7 @@ function HandleImages(){
         console.log(curFiles)
         if(curFiles.length === 0  ){
             
-            const para = document.createElement('p');
+            const para = document.createElement('i');
             para.textContent = 'No files currently selected for upload';
             preview.appendChild(para);
         }
@@ -154,19 +157,41 @@ function HandleImages(){
                 alert("Only select 4 images");
                 curFiles.pop();
             }
+
+            labelView.removeChild(labelView.firstElementChild);
+            let i = 0;
             for(const file of curFiles){
                 if(validFileType(file)){
                     preview.classList.add('active');
                     const image = document.createElement('img');
+                    image.setAttribute("data-img-index",i);
+                    image.classList.add("create-recipe__image-item");
+                    image.onclick = function(e){
+                        const imgsBig = labelView.querySelectorAll('img')
+                        for(let j = 0; j < imgsBig.length; j++){
+                            imgsBig[j].classList.contains('active') && imgsBig[j].classList.remove('active');
+                            
+                            console.log("i : "+e.target.dataset.imgIndex, "j : "+j);
+                            if( e.target.dataset.imgIndex  == j){
+                                imgsBig[j].classList.add('active');
+                            }
+                        }
+                       
+                    }
                     image.src = URL.createObjectURL(file);
                     preview.appendChild(image);
+                    labelView.innerHTML += `<img src="${image.src} "/>`
                 }
                 else{
-                    const para = document.createElement('p');
+                    const para = document.createElement('i');
                     para.textContent = 'No files is not validateFile';
                     preview.appendChild(para);
                 }
+                i++;
             }
+
+            const viewBig = labelView.querySelectorAll('img')[0];
+            viewBig.classList.add('active');
         }
        
     }
