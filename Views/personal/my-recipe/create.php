@@ -59,6 +59,7 @@
                                 <input type="file" name="" id="create-recipe__video-input">
                                 <label  class="create-recipe__video-label" for="create-recipe__video-input">
                                     <i class="create-recipe__add-icon fa-solid fa-plus"></i>
+                                  
                                 </label>
 
                             </div>
@@ -69,8 +70,9 @@
                     <h2>Hình ảnh</h2>
                     <div class="create-recipe__item-content">
                         <input type="file"  accept="image/png, image/jpeg" multiple name="" id="create-recipe__image-input">
-                        <label  class="create-recipe__video-label" for="create-recipe__image-input">
+                        <label  class="create-recipe__image-label" for="create-recipe__image-input">
                             <i  class=" create-recipe__add-icon fa-solid fa-plus"></i>
+                            <!-- <img src="./public/img/recipes/1.jpg" alt=""> -->
                         </label>
                     </div>
                     <div class="create-recipe__images-preview">
