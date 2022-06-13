@@ -74,6 +74,7 @@
    
     <!-- main js -->
     <script src="public/js/main.js"></script>
+    <script src="public/js/myrecipe.js"></script>
 </body>
 
 </html>

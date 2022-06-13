@@ -5,7 +5,11 @@
     color: var(--white);
     user-select: none;
     font-size: 1.6rem;
+    cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0,0 , 0.4 );
+}
+.btn:hover{
+    opacity: 0.8;
 }
 .btn-rounded{
     border-radius: 999px ;
