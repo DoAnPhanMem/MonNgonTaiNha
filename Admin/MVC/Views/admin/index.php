@@ -138,6 +138,27 @@
                           break;
                       }
                       break;
+                    
+                    case 'post':
+                      switch ($act) {
+                        case 'list':
+                          require_once('MVC/Views/post/list.php');
+                          break;
+                        case 'add':
+                          require_once('MVC/Views/post/add.php');
+                          break;
+                        case 'detail':
+                          require_once('MVC/Views/post/detail.php');
+                          break;
+                        case 'edit':
+                          require_once('MVC/Views/post/edit.php');
+                          break;
+                        default:
+                          require_once('MVC/Views/post/list.php');
+                          break;
+                      }
+                      break;
+
                     case 'statistical':
                         require_once('MVC/views/statistical/statistical.php');
                         break;

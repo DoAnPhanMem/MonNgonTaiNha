@@ -121,6 +121,17 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
                     break;
             }
             break;
+        
+        case 'post':
+            require_once('MVC/controllers/PostController.php');
+            $controller_obj = new PostController();
+            switch ($act) {
+                case 'add':
+                    $controller_obj->add();
+                    break;
+            }
+            break;
+
             case 'login':
                 require_once('MVC/controllers/LoginController.php');
                 $controller_obj = new LoginController();
