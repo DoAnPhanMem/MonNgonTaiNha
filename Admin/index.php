@@ -129,6 +129,9 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
                 case 'add':
                     $controller_obj->add();
                     break;
+                case 'detail':
+                    $controller_obj->detail();
+                    break;
             }
             break;
 
