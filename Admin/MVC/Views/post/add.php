@@ -22,5 +22,6 @@
             <label for="">Trạng thái</label>
             <input type="text" class="form-control" id="" placeholder="" name="TrangThai">
         </div>
+        <button type="submit" class="btn btn-primary">Create</button>
     </form>
 </table>
