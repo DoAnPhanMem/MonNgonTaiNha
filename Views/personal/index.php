@@ -20,19 +20,22 @@
             <div class="personal-content">
                 <?php 
                     $act = isset($_GET['handle']) ? $_GET['handle'] : "profile";
+                    require_once("./Controllers/MyRecipeController.php");
+                    $controller_obj = new MyRecipeController();
                     switch ($act) {
                         case 'profile':
                             require_once("profile.php");
                             break;
                         case 'recipe':
-                            require_once("my-recipe/my-recipe.php");
+                            $controller_obj->recipe();
+                        
                             break;
                         case 'create':
-                            require_once("my-recipe/create.php");
+                           
+                            $controller_obj->create();
                             break;
                         case 'create-action' :
-                            require_once("./Controllers/MyRecipeController.php");
-                            $controller_obj = new MyRecipeController();
+                           
                             $controller_obj->create_action();
                             break;
                         default:

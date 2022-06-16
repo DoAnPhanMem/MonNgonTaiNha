@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="public/css/roots/common.css">
     <!-- owl.carousel css -->
     <!-- <link rel="stylesheet" href="public/css/owl.carousel.css"> -->
-
+    <link rel="stylesheet" href="public/library/Toast-Messages/messages.css">
+    <script src="public/library/Toast-Messages/messages.js"></script>
     <!-- style css -->
     <link rel="stylesheet" href="public/css/styles/footer.css">
     <link rel="stylesheet" href="public/css/styles/home.css">

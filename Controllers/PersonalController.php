@@ -8,6 +8,7 @@ class PersonalController{
     }
     public function personal() 
     {
+        
         require_once('Views/index.php');
     }
 }
