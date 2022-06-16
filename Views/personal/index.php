@@ -25,10 +25,13 @@
                             require_once("profile.php");
                             break;
                         case 'recipe':
+
                             require_once("my-recipe/my-recipe.php");
                             break;
                         case 'create':
-                            require_once("my-recipe/create.php");
+                            require_once("./Controllers/MyRecipeController.php");
+                            $controller_obj = new MyRecipeController();
+                            $controller_obj->create();
                             break;
                         case 'create-action' :
                             require_once("./Controllers/MyRecipeController.php");

@@ -11,14 +11,11 @@
                     <div class="create-recipe__themes-selected">
                     </div>
                     <?php
-                        $themes = array(
-                            '1' =>   'ăn nhẹ',
-                            '2'  =>  'món á'
-                        ); 
+                        $themes = $data_themes;
                         ?>
                     <script> 
                         var themes = <?php echo json_encode($themes) ?>;
-                        
+                       
                     </script>
                     <div class="create-recipe__theme-search-group">
                         <i class="fa-solid create-recipe__theme-plus-icon fa-file-circle-plus"></i>

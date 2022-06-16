@@ -1,4 +1,13 @@
 <div class="my-recipe">
+        
+    <?php 
+        if(isset($_COOKIE['msg'])){     
+    ?>    
+             <div class="toast-group">
+             </div>
+            <script>showSuccessInsert();</script>    
+    <?php }
+    ?>
     <div class="my-recipe__top">
         <h1 class="my-recipe__title">Công Thức Của Tôi</h1>
         <a class="btn-rounded btn" href = "?act=personal&handle=create"> Tạo mới</a>

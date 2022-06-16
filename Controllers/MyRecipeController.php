@@ -8,13 +8,14 @@ class MyRecipeController{
     }
     public function recipe() 
     {
+        
         require_once('Views/index.php');
     }
+    public function create(){
+        $data_themes = $this->recipe_model->theme();
+        require_once('Views/personal/my-recipe/create.php');
+    }
     public function create_action(){
-
-       
-
-        
         if(isset($_POST['post-themes'])){
 
             //set MaBaiDang
