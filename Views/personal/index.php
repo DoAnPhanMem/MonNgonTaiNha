@@ -1,11 +1,18 @@
 <section class = "personal">
     <div class="row">
         <div class="header-personal l-3">
-            <h1> Đây là header trang cá nhân</h1>
+            <div class="header-personal_info">
+                <img  
+                    src="public/img/avatar/<?= (isset($dataInfo['name'])) ? $dataInfo['name'] : 'avatarDefault.png' ?>"
+                    class="header-personal__info-img" 
+                />
+                <h4 class = "header-personal__info-name">Phạm Văn Thiên</h4>
+            </div>
             <nav>
-                <ul>
-                    <li><a href="?act=personal&handle=profile"> Thông tin cá nhân</a></li>
-                    <li><a href="?act=personal&handle=recipe"> Công thức của tôi</a></li>
+                <ul class = "navbar-list">
+                    <li class = "navbar-item"><a href="?act=personal&handle=profile"> Thông tin tài khoản</a></li>
+                    <li class = "navbar-item"><a href="?act=personal&handle=recipe"> Công thức của tôi</a></li>
+                    <li class = "navbar-item"><a href="?act=personal&handle=recipe"> Thoát</a></li>
                 </ul>
             </nav>
         </div>
