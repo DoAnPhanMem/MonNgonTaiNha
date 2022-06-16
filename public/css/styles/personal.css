@@ -3,6 +3,7 @@
 }
 .header-personal{
     background-color: var(--primary);
+    text-align: center;
 }
 
 .personal-content{
@@ -12,4 +13,40 @@
     border-radius: 4px ;
     border: 1px solid rgba(0, 0, 0, 0.005);
     box-shadow: 0px 0.5px 3px #333;
+}
+.header-personal__info-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
+.header-personal_info{
+    margin: 20px 0 20px ;
+}
+.header-personal__info-name {
+    color: var(--white);
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+.navbar-list{
+    text-align: left;
+}
+.navbar-list a{
+    color: var(--white);
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+    padding: 20px 20px;
+}
+.navbar-item{
+    border: 1px solid #fff;
+   
+}
+.navbar-item:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    background-color:#31c475;
+}
+.navbar-item + .navbar-item {
+    border-top: none ;
 }
