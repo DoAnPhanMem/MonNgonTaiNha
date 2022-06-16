@@ -50,7 +50,7 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="?mod=theme">
+    <a class="nav-link" href="?mod=post">
       <i class="fas fa-fw fa-table"></i>
       <span>Quản lý Bài đăng</span></a>
   </li>
