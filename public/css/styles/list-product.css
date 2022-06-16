@@ -1,0 +1,40 @@
+.cart {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 1px 2px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    height: 240px;
+    margin: 0 10px;
+    margin-bottom: 25px;
+
+}
+
+.cart img {
+    border-radius: 12px 12px 0 0;
+}
+
+.cart .title {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.cart .content {
+    padding: 5px 15px 10px 15px;
+}
+
+.cart .content .post-by {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
