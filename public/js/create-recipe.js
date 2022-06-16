@@ -19,8 +19,9 @@ const stock_array = [
 const step_array = [
   {
     content: "",
-    time: "",
-    unit: "",
+    hour: "",
+    minute: "",
+    second : "",
   }
 ];
 
@@ -300,9 +301,9 @@ function HandleStock() {
     console.log("init" + init);
     for (let stock = init; stock < stock_array.length; stock++) {
       const stockNode = document.createElement("div");
-      stockNode.innerHTML = `<input  type="text" name=""   value = "${stock_array[stock].name}" placeholder="Tên nguyên liệu "  class="create-recipe__stock-name">  
-        <input  type="number" name="" value = "${stock_array[stock].quantity}" placeholder="Số lượng "  class="create-recipe__stock-quantity">  
-        <input  type="text" name="" value = "${stock_array[stock].unit}" placeholder="Đơn vị "  class="create-recipe__stock-unit">  
+      stockNode.innerHTML = `<input required type="text" name=""   value = "${stock_array[stock].name}" placeholder="Tên nguyên liệu "  class="create-recipe__stock-name">  
+        <input required min=1  type="number" name="" value = "${stock_array[stock].quantity}" placeholder="Số lượng "  class="create-recipe__stock-quantity">  
+        <input  required type="text" name="" value = "${stock_array[stock].unit}" placeholder="Đơn vị "  class="create-recipe__stock-unit">  
         <span  class="create-recipe__stock-btn-delete">
             <i class="fa-solid fa-circle-minus"></i>
         </span>`;
@@ -374,9 +375,10 @@ function HandleStep() {
       for (let step = init; step < step_array.length; step++) {
         const stepNode = document.createElement("div");
         stepNode.innerHTML = `
-          <input  type="text" name=""   value ="${step_array[step].content}" placeholder="Nội dung "  class="create-recipe__step-content">  
-          <input  type="number" name="" value = "${step_array[step].time}" placeholder="Thời gian "  class="create-recipe__step-time">  
-          <input  type="text" name="" value = "${step_array[step].unit}" placeholder="Đơn vị thời gian"  class="create-recipe__step-unit">  
+          <input required type="text"  name=""   value ="${step_array[step].content}" placeholder="Nội dung "  class="create-recipe__step-content">  
+          <input required type="number" min=1  name="" value = "${step_array[step].hour  }" placeholder="Giờ "  class="create-recipe__step-hour">  
+          <input required type="number" min=1  name="" value = "${step_array[step].minute}" placeholder="Phút"  class="create-recipe__step-minute">  
+          <input required type="number" min=1 name="" value = "${step_array[step].second}" placeholder="Giây"  class="create-recipe__step-second">  
           <span  class="create-recipe__step-btn-delete">
               <i class="fa-solid fa-circle-minus"></i>
           </span>`;
@@ -407,18 +409,20 @@ function HandleStep() {
           const node = e.target;
           switch (node) {
             case steps[i].querySelector(".create-recipe__step-content"): {
-              console.log("name", i);
               step_array[i].content = e.target.value;
               break;
             }
-            case steps[i].querySelector(".create-recipe__step-time"): {
-              console.log("quantity");
-              step_array[i].time = e.target.value;
+            case steps[i].querySelector(".create-recipe__step-hour"): {
+             
+              step_array[i].hour = e.target.value;
               break;
             }
-            case steps[i].querySelector(".create-recipe__step-unit"): {
-              console.log("quantity");
-              step_array[i].unit = e.target.value;
+            case steps[i].querySelector(".create-recipe__step-minute"): {
+              step_array[i].minute = e.target.value;
+              break;
+            }
+            case steps[i].querySelector(".create-recipe__step-second"): {
+              step_array[i].second = e.target.value;
               break;
             }
           }
@@ -431,19 +435,24 @@ function HandleStep() {
       console.log("lll");
       step_array.push({
         content: "",
-        time: "",
-        unit: "",
+        hour: "",
+        minute: "",
+        second : ""
       });
       renderStep(step_array.length - 1);
     };
   }
 
 
-btnSubmit.onclick = function(){
+btnSubmit.onclick = function(e){
+  if(themes_selected.length == 0){
+    alert("Vui lòng chọn ít nhất một chủ đề");
+    e.preventDefault();
+  }
+
     postTheme.value = JSON.stringify(themes_selected);
     postStock.value = JSON.stringify(stock_array);
     postStep.value = JSON.stringify(step_array);
-    alert("có");
 }
  
 

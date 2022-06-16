@@ -36,7 +36,7 @@
         <div class="create-recipe__form-item">
             <h2>Tên công thức </h2>
             <div class="create-recipe__item-content">
-                <input  type="text" name="post-name" placeholder="Nhập tên công thức " id="create-recipe__name">  
+                <input required type="text" name="post-name" placeholder="Nhập tên công thức " id="create-recipe__name">  
             </div>
                 
         </div>
@@ -57,7 +57,7 @@
                         <div class="create-recipe__video">
                             <h2>Video </h2>
                             <div class="create-recipe__item-content">
-                                <input type="file" name="" id="create-recipe__video-input" accept="video/*">
+                                <input type="file" name="post-video" id="create-recipe__video-input" accept="video/*">
                                 <div class="create-recipe__video-group ">
                                     <label  class="create-recipe__video-label create-recipe__video-label--change" for="create-recipe__video-input">
                                         <i class="create-recipe__add-icon fa-solid fa-plus"></i>
@@ -65,7 +65,7 @@
                                     </label>
                                     <video controls src="" class="create-recipe__video-tag"></video>
                                 </div>
-                               <input type="hidden" name="post-video">
+                             
 
                             </div>
                         </div> 
@@ -74,7 +74,7 @@
                 <div class="create-recipe__images">
                     <h2>Hình ảnh</h2>
                     <div class="create-recipe__item-content">
-                        <input type="file"  accept="image/png, image/jpeg" multiple name="post-imgs[]" id="create-recipe__image-input">
+                        <input required type="file"  accept="image/png, image/jpeg" multiple name="post-imgs[]" id="create-recipe__image-input">
                         <label  class="create-recipe__image-label" for="create-recipe__image-input">
                             <i  class=" create-recipe__add-icon fa-solid fa-plus"></i>
                             <!-- <img src="./public/img/recipes/1.jpg" alt=""> -->
@@ -120,7 +120,7 @@
         </div>
         <div class="create-recipe__form-item">
             <h2>Khẩu phần </h2>
-            <input  type="number" name="post-ration"  placeholder="Khẩu phần " id="create-recipe__ration">  
+            <input required min=1 type="number" name="post-ration"  placeholder="Khẩu phần " id="create-recipe__ration">  
 
         </div>
         <div class="create-recipe__form-item">
@@ -132,10 +132,3 @@
 </div>
 <script src="public/js/create-recipe.js"></script>
 
-INSERT INTO yeuthich (MaND, MaBaiDang) VALUES
-(1, 'BD001'),
-(2, 'BD002'),
-(3, 'BD003'),
-(4, 'BD004'),
-(5, 'BD005'),
-(6, 'BD006');
