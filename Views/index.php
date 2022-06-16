@@ -30,6 +30,7 @@
     <!-- <link rel="stylesheet" href="public/css/owl.carousel.css"> -->
 
     <!-- style css -->
+    <link rel="stylesheet" href="public/css/styles/footer.css">
     <link rel="stylesheet" href="public/css/styles/home.css">
     <link rel="stylesheet" href="public/css/styles/personal.css">
     <link rel="stylesheet" href="public/css/styles/myrecipe.css">
@@ -49,7 +50,7 @@
 
         }   
         else{
-            require_once("header_footer/header.php");
+            // require_once("header_footer/header.php");
         }
         
         ?>
@@ -61,14 +62,14 @@
         ?>
         <!-- slider section end -->
 
-        <!-- footer section start -->
-        <?php
+        
+    </div>
+   <!-- footer section start -->
+   <?php
         require_once("header_footer/footer.php")
         ?>
 
         <!-- footer section end -->
-    </div>
-   
     <!-- all js here -->
    
    
