@@ -76,14 +76,13 @@ class MyRecipe extends Model
         $f = "MaBuocLam,NoiDung,ThoiGian,MaBaiDang";
         $v = "";
         foreach ($data as $key => $value) {
+            $time = $value['hour'] . ":" . $value['minute'] .":".$value['second'] ; 
             print_r($value);
-            $v .= "('null','$MaBaiDang','$value[name]','$value[quantity]','$value[unit]'),";
-            
-           
+            $v .= "('null','$value[content]','$time','$MaBaiDang'),";
         }
         $f = trim($f, ",");
         $v = trim($v, ",");
-        $query = "INSERT INTO nguyenlieu ($f) VALUES $v;";
+        $query = "INSERT INTO buoclam ($f) VALUES $v;";
         echo $query;
         $status = $this->conn->query($query);
      

@@ -363,14 +363,24 @@ hr{
 .create-recipe__stock-name ,.create-recipe__step-content{
     min-width: 200px;
 }
-.create-recipe__stock-quantity, .create-recipe__step-time{
+.create-recipe__stock-quantity{
     width: 100px;
     margin: 0 10px;
 
 }
-.create-recipe__stock-unit, .create-recipe__step-name{
-
+.create-recipe__step-hour{
+    margin:0 10px;
+    width: 88.3333333px;
 }
+.create-recipe__step-minute{
+    margin-right: 10px;
+    width: 88.3333333px;
+}
+.create-recipe__step-second{
+    width: 88.3333333px;
+}
+
+
 .create-recipe__stock-btn-add, .create-recipe__step-btn-add{
     background-color: #fff;
     margin-top: 10px;
