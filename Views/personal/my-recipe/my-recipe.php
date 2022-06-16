@@ -1,4 +1,13 @@
 <div class="my-recipe">
+        
+    <?php 
+        if(isset($_COOKIE['msg'])){     
+    ?>    
+             <div class="toast-group">
+             </div>
+            <script>showSuccessInsert();</script>    
+    <?php }
+    ?>
     <div class="my-recipe__top">
         <h1 class="my-recipe__title">Công Thức Của Tôi</h1>
         <a class="btn-rounded btn" href = "?act=personal&handle=create"> Tạo mới</a>
@@ -10,14 +19,14 @@
                 <input class = "my-recipe__search-input" placeholder = "Nhập tên công thức" />
             </div>
             
-                <select class = "my-recipe-fitter__time-update id = "time-update">
+                <select class = "my-recipe-fitter__time-update" id ="time-update">
                     <option>Mới nhất</option>
                     <option>Lâu nhất</option>
                     <option>1 năm trước</option>
                 </select>
             
             
-                <select  class = "my-recipe-fitter__time-cookingid = "time-cooking">
+                <select  class = "my-recipe-fitter__time-cooking" id = "time-cooking">
                     <option>Dưới 30 phút</option>
                     <option>Trên 30 phút</option>
                     <option>Trên 1 giờ</option>
@@ -33,18 +42,18 @@
         <div class = "my-recipes" >
 
                 <div class ="row">
-                    
+                <?php foreach ($data_recipe  as  $key => $value){ ?>
                     <div class="l-4">
                         <div class="recipe-item">
                             <div class = "recipe-item__img">
-                                <img  src="./public/img/recipes/1.jpg" alt="" >
+                                <img  src="./public/img/recipes/<?= $value['HinhAnh'] ?>" alt="" >
                             </div>
                             <div class = "my-recipe__info">
-                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
-                                <p>Thời gian:  <span>1h35</span></p>
-                                <p>Lượt xem:  <span>222</span></p>
-                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
-                                <p>Trạng thái:  <span>Đã duyệt</span></p>
+                                <h2 class="recipe-item__title"><?= $value['TieuDe'] ?></h2>
+                                <p>Thời gian:  <span><?= $value['ThoiGian'] ?></span></p>
+                                <p>Lượt xem:  <span><?= $value['LuotXem'] ?> </span></p>
+                                <p>Cập nhật lần cuối:  <span><?= $value['Ngay'] ?> </span></p>
+                                <p>Trạng thái:  <span><?= $value['TrangThai'] ?></span></p>
                             </div>
                             <div class="recipe-item__action">
                                 <button class="recipe-item__edit">
@@ -56,95 +65,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="l-4">
-                        <div class="recipe-item">
-                            <div class = "recipe-item__img">
-                                <img  src="./public/img/recipes/1.jpg" alt="" >
-                            </div>
-                            <div class = "my-recipe__info">
-                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
-                                <p>Thời gian:  <span>1h35</span></p>
-                                <p>Lượt xem:  <span>222</span></p>
-                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
-                                <p>Trạng thái:  <span>Đã duyệt</span></p>
-                            </div>
-                            <div class="recipe-item__action">
-                                <button class="recipe-item__edit">
-                                    <i class="fa-solid fa-pen-ruler"></i>
-                                </button>
-                                <button class="recipe-item__delete">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="l-4">
-                        <div class="recipe-item">
-                            <div class = "recipe-item__img">
-                                <img  src="./public/img/recipes/1.jpg" alt="" >
-                            </div>
-                            <div class = "my-recipe__info">
-                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
-                                <p>Thời gian:  <span>1h35</span></p>
-                                <p>Lượt xem:  <span>222</span></p>
-                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
-                                <p>Trạng thái:  <span>Đã duyệt</span></p>
-                            </div>
-                            <div class="recipe-item__action">
-                                <button class="recipe-item__edit">
-                                    <i class="fa-solid fa-pen-ruler"></i>
-                                </button>
-                                <button class="recipe-item__delete">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="l-4">
-                        <div class="recipe-item">
-                            <div class = "recipe-item__img">
-                                <img  src="./public/img/recipes/1.jpg" alt="" >
-                            </div>
-                            <div class = "my-recipe__info">
-                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
-                                <p>Thời gian:  <span>1h35</span></p>
-                                <p>Lượt xem:  <span>222</span></p>
-                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
-                                <p>Trạng thái:  <span>Đã duyệt</span></p>
-                            </div>
-                            <div class="recipe-item__action">
-                                <button class="recipe-item__edit">
-                                    <i class="fa-solid fa-pen-ruler"></i>
-                                </button>
-                                <button class="recipe-item__delete">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="l-4">
-                        <div class="recipe-item">
-                            <div class = "recipe-item__img">
-                                <img  src="./public/img/recipes/1.jpg" alt="" >
-                            </div>
-                            <div class = "my-recipe__info">
-                                <h2 class="recipe-item__title">Khoai tây muối ớt</h2>
-                                <p>Thời gian:  <span>1h35</span></p>
-                                <p>Lượt xem:  <span>222</span></p>
-                                <p>Cập nhật lần cuối:  <span>22/22/2022</span></p>
-                                <p>Trạng thái:  <span>Đã duyệt</span></p>
-                            </div>
-                            <div class="recipe-item__action">
-                                <button class="recipe-item__edit">
-                                    <i class="fa-solid fa-pen-ruler"></i>
-                                </button>
-                                <button class="recipe-item__delete">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                   
+                <?php }?>
                 </div>
                 <div class="my-recipe__paging">
                         <div>
