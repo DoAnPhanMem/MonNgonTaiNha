@@ -25,16 +25,16 @@ class PostController
 
 	public function store()
 	{
-		$target_dir = "../public/img/company/";  // thư mục chứa file upload
+		// $target_dir = "../public/img/company/";  // thư mục chứa file upload
 
-        $HinhAnh = "";
-        $target_file = $target_dir . basename($_FILES["HinhAnh"]["name"]); // link sẽ upload file lên
+        // $HinhAnh = "";
+        // $target_file = $target_dir . basename($_FILES["HinhAnh"]["name"]); // link sẽ upload file lên
 
-        $status_upload = move_uploaded_file($_FILES["HinhAnh"]["tmp_name"], $target_file);
+        // $status_upload = move_uploaded_file($_FILES["HinhAnh"]["tmp_name"], $target_file);
 
-        if ($status_upload) { // nếu upload file không có lỗi 
-            $HinhAnh =  basename($_FILES["HinhAnh"]["name"]);
-		}
+        // if ($status_upload) { // nếu upload file không có lỗi 
+        //     $HinhAnh =  basename($_FILES["HinhAnh"]["name"]);
+		// }
 
 		$data = array(
 			'MaBaiDang' => $_POST['MaBaiDang'],

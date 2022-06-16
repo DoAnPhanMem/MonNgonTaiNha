@@ -1,5 +1,5 @@
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-<a href="?mod=baidang&act=add" type="button" class="btn btn-primary">Thêm mới</a>
+<a href="?mod=post&act=add" type="button" class="btn btn-primary">Thêm mới</a>
 <?php } ?>
 <?php if (isset($_COOKIE['msg'])) { ?>
   <div class="alert alert-success">
@@ -10,10 +10,10 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
   <thead>
     <tr>
-      <th scope="col">Mã bài đăng</th>
-      <th scope="col">Tên người dùng</th>
-      <th scope="col">Tiêu đề</th>
-      <th scope="col">Trạng thái</th>
+      <th scope="col" style="width:14%">Mã bài đăng</th>
+      <th scope="col" style="width:8%">Tên người dùng</th>
+      <th scope="col" style="width:19%">Tiêu đề</th>
+      <th scope="col" style="width:14%">Trạng thái</th>
       <th>#</th>
     </tr>
   </thead>
@@ -24,11 +24,11 @@
         <td><?= $row['hoTen'] ?></td>        
         <td><?= $row['TieuDe'] ?></td>
         <td><?= $row['TrangThai'] ?></td>
-        <td>
-          <a href="?mod=baidang&act=detail&id=<?= $row['MaBaiDang'] ?>" class="btn btn-success">Xem</a>
+        <td style="width:17%">
+          <a href="?mod=post&act=detail&id=<?= $row['MaBaiDang'] ?>" class="btn btn-success">Xem</a>
           <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-          <a href="?mod=baidang&act=edit&id=<?= $row['MaBaiDang'] ?>" class="btn btn-warning">Sửa</a>
-          <a href="?mod=baidang&act=delete&id=<?= $row['MaBaiDang'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
+          <a href="?mod=post&act=edit&id=<?= $row['MaBaiDang'] ?>" class="btn btn-warning">Sửa</a>
+          <a href="?mod=post&act=delete&id=<?= $row['MaBaiDang'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
           <?php }?>
         </td>
       </tr>
