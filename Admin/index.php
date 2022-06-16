@@ -126,11 +126,17 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
             require_once('MVC/controllers/PostController.php');
             $controller_obj = new PostController();
             switch ($act) {
+                case 'list':
+                    $controller_obj->list();
+                    break;
                 case 'add':
                     $controller_obj->add();
                     break;
                 case 'detail':
                     $controller_obj->detail();
+                    break;
+                case 'store':
+                    $controller_obj->store();
                     break;
             }
             break;

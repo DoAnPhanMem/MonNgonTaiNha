@@ -5,7 +5,7 @@
         </div>
     <?php } ?>
 
-    <form action="" method="POST" role="form" enctype="multipart/form-data">
+    <form action="?mod=baidang&act=store" method="POST" role="form" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">Mã bài đăng</label>
             <input type="text" class="form-control" id="" placeholder="" name="MaBaiDang">
