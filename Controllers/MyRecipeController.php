@@ -8,8 +8,8 @@ class MyRecipeController{
     }
     public function recipe() 
     {
-        
-        require_once('Views/index.php');
+        $data_recipe =  $this->recipe_model->limit(0,6);
+        require_once('Views/personal/my-recipe/my-recipe.php');
     }
     public function create(){
         $data_themes = $this->recipe_model->theme();
