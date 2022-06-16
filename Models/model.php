@@ -3,6 +3,8 @@ require_once("connection.php");
 class model
 {
     var $conn;
+    var $table;
+    var $id;
     function __construct()
     {
         $conn_obj = new connection();
@@ -57,4 +59,26 @@ class model
         
         return $data;
     }
+    function create($data)
+    {
+        $f = "";
+        $v = "";
+        foreach ($data as $key => $value) {
+            $f .= $key . ",";
+            $v .= "'" . $value . "',";
+        }
+        $f = trim($f, ",");
+        $v = trim($v, ",");
+        $query = "INSERT INTO $this->table($f) VALUES ($v);";
+
+        $status = $this->conn->query($query);
+        if ($status == true) {
+            setcookie('msg', 'Thêm mới thành công', time() + 2);
+           
+        } else {
+            setcookie('msg', 'Thêm vào không thành công', time() + 2);
+           
+        }
+    }
+
 }
