@@ -1,5 +1,5 @@
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-<a href="?mod=loaisanpham&act=add" type="button" class="btn btn-primary">Thêm mới</a>
+<a href="?mod=baidang&act=add" type="button" class="btn btn-primary">Thêm mới</a>
 <?php } ?>
 <?php if (isset($_COOKIE['msg'])) { ?>
   <div class="alert alert-success">
@@ -21,9 +21,9 @@
     <?php foreach ($data as $row) { ?>
       <tr>
         <td><?= $row['MaBaiDang'] ?></td>
-        <td><?= $row['hoTen'] ?></td>
-        
+        <td><?= $row['hoTen'] ?></td>        
         <td><?= $row['TieuDe'] ?></td>
+        <td><?= $row['TrangThai'] ?></td>
         <td>
           <a href="?mod=baidang&act=detail&id=<?= $row['MaBaiDang'] ?>" class="btn btn-success">Xem</a>
           <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
