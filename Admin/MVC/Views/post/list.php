@@ -10,10 +10,10 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
   <thead>
     <tr>
-      <th scope="col" style="width:14%">Mã bài đăng</th>
-      <th scope="col" style="width:8%">Tên người dùng</th>
+      <th scope="col" style="width:6%">Mã bài đăng</th>
+      <th scope="col" style="width:12%">Tên người dùng</th>
       <th scope="col" style="width:19%">Tiêu đề</th>
-      <th scope="col" style="width:14%">Trạng thái</th>
+      <th scope="col" style="width:8%">Trạng thái</th>
       <th>#</th>
     </tr>
   </thead>

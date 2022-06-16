@@ -11,7 +11,7 @@ class PostController
 	public function list()
 	{
 		$data = array();
-		$data = $this->post_model->All(); 
+		$data = $this->post_model->BaiDang(); 
 		require_once("MVC/Views/Admin/index.php");
 		//require_once('MVC/views/categories/list.php');
 	}

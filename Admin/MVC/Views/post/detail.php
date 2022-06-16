@@ -3,5 +3,4 @@
     <h2>Tên người dùng: <?= $data['hoTen'] ?></h2>
     <h2>Tiêu đề: <?= $data['TieuDe'] ?></h2>
     <h2>Trạng thái: <?= $data['TrangThai'] ?></h2>
-    
 </table>
