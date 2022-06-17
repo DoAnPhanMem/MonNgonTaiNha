@@ -118,38 +118,14 @@
         <div class="col-12 newest-header">
             <h5 class="">Công thức nấu ăn tiêu biểu</h5>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 ">
-            <img src="public/img/home/newest.png" height="150px" width="240px" alt="">
-            <p class="newest-text">Cách gà chiên mắm</p>
+       
+        <?php foreach ($newestItems as $newestItem) { ?>
+        <div 
+            class="col-lg-3 col-md-6 col-sm-12 newest-item">
+            <img src="<?=$newestItem['HinhAnh']?>" height="150px" width="240px" alt="">
+            <p class="newest-text"><?=$newestItem['TieuDe']?></p>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 ">
-            <img src="public/img/home/newest.png" height="150px" width="240px" alt="">
-            <p class="newest-text">Cách gà chiên mắm</p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 ">
-            <img src="public/img/home/newest.png" height="150px" width="240px" alt="">
-            <p class="newest-text">Cách gà chiên mắm</p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 ">
-            <img src="public/img/home/newest.png" height="150px" width="240px" alt="">
-            <p class="newest-text">Cách gà chiên mắm</p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 ">
-            <img src="public/img/home/newest.png" height="150px" width="240px" alt="">
-            <p class="newest-text">Cách gà chiên mắm</p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 ">
-            <img src="public/img/home/newest.png" height="150px" width="240px" alt="">
-            <p class="newest-text">Cách gà chiên mắm</p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 ">
-            <img src="public/img/home/newest.png" height="150px" width="240px" alt="">
-            <p class="newest-text">Cách gà chiên mắm</p>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 ">
-            <img src="public/img/home/newest.png" height="150px" width="240px" alt="">
-            <p class="newest-text">Cách gà chiên mắm</p>
-        </div>
+        <?php } ?>
     </div>
 
 </div>

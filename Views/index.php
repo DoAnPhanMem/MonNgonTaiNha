@@ -39,19 +39,21 @@
 
     <style>
         <?php include 'public/css/styles/home.css'; ?><?php include 'public/css/styles/list-product.css'; ?>
+        <?php include 'public/css/styles/footer.css'; ?>
+        <?php include 'public/css/styles/header.css'; ?>
     </style>
     <!-- responsive css -->
     <!-- <link rel="stylesheet" href="public/css/responsive.css"> -->
-
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
 
 <body>
     <!-- header section start -->
-    <div class="wrapper grid wide">
+    <!-- <div class="wrapper grid wide"> -->
         <?php
         if ((isset($_GET['act']) && $_GET['act'] == 'personal')) {
         } else {
-            // require_once("header_footer/header.php");
+            require_once("header_footer/header.php");
         }
 
         ?>
@@ -69,7 +71,7 @@
         ?>
 
         <!-- footer section end -->
-    </div>
+    <!-- </div> -->
 
     <!-- all js here -->
 

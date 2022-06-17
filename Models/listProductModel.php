@@ -2,10 +2,10 @@
 require_once("model.php");
 class ListProductModel extends Model
 {
-    function detail_sp($id)
+    function listProduct()
     {
-        $query =  "SELECT * from SanPham where MaSP = $id ";
-        $result = $this->conn->query($query);
-        return $result->fetch_assoc();
+        $query =  "SELECT * FROM baidang, HinhAnh, nguoidung WHERE nguoidung.maND = baidang.MaND and HinhAnh.MaBaiDang = baidang.MaBaiDang GROUP BY baidang.MaBaiDang ORDER BY NgayCapNhat; ";
+        require("result.php");
+        return $data;
     }
 }

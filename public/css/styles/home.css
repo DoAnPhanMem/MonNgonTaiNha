@@ -46,7 +46,10 @@
     justify-content: space-between;
 }
 
-.category .main .category-item {}
+.category .main .category-item:hover {
+    transform: scale(1.05);
+    transition: all 0.9s;
+}
 
 .category-name {
     font-family: 'Roboto';
@@ -58,7 +61,13 @@
     color: #000000;
     text-align: center;
 }
-
+.newest-item {
+    margin:  20px 0;
+}
+.newest-item:hover {
+    transform: scale(1.1);
+    transition: all 0.9s;
+}
 .newest-header h5 {
     font-family: 'Pacifico';
     font-style: normal;
