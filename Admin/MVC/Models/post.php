@@ -1,5 +1,5 @@
 <?php
-require("model.php");
+require_once("model.php");
 class post extends model 
 {
     var $table = "baidang";

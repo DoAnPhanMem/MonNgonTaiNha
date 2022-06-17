@@ -1,0 +1,25 @@
+.container .container-login p {
+    
+    margin: 10px;
+}
+
+.container .container-login h2 {
+    color: #0FA958;
+}
+
+.container .container-login h5 {
+    opacity: 0.5;
+    margin: 10px ;
+}
+
+.container-login .btn-facebook {
+    padding: 10px 10px;
+    color: #3B5998;
+    
+}
+
+.container .btn-facebook i {
+    margin-right: 90px;
+    padding-right: 12px;
+    border-right: solid white ;
+}

@@ -55,10 +55,38 @@ class PostController
 	{
 		$id = isset($_GET['id']) ? $_GET['id'] : 5;
 		$data = $this->post_model->find($id);
-		require_once("MVC/Views/Admin/index.php");
+		require_once("MVC/Views/admin/index.php");
 		//require_once('MVC/views/categories/detail.php');
 	}
 
-	
+	public function delete()
+	{
+		if (isset($_GET['id'])) {
+			$this->post_model->delete($_GET['id']);
+		}
+	}
+
+	public function edit()
+	{
+		$id = isset($_GET['id']) ? $_GET['id'] : 5;
+		$data = $this->post_model->find($id);
+		require_once("MVC/Views/admin/index.php");
+		//require_once('MVC/views/categories/edit.php');
+	}
+
+	public function update()
+	{
+		$data = array(
+			'MaBaiDang' => $_POST['MaBaiDang'],
+			'hoTen' => $_POST['hoTen'],
+		);
+		foreach ($data as $key => $value) {
+            if (strpos($value, "'") != false) {
+                $value = str_replace("'", "\'", $value);
+                $data[$key] = $value;
+            }
+        }
+		$this->post_model->update($data);
+	}
 
 }
