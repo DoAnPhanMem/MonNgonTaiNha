@@ -1,0 +1,90 @@
+.slide-header h5 {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 44px;
+    /* identical to box height */
+
+
+    color: #0FA958;
+}
+
+.carousel-text {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 35px;
+    /* or 175% */
+
+
+    color: #000000;
+}
+
+.carousel-inner {
+    padding: 20px 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.carousel-item {}
+
+.category h5 {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 44px;
+    color: #0FA958;
+    margin: 20px 0;
+}
+
+.category .main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category .main .category-item:hover {
+    transform: scale(1.05);
+    transition: all 0.9s;
+}
+
+.category-name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+
+    color: #000000;
+    text-align: center;
+}
+.newest-item {
+    margin:  20px 0;
+}
+.newest-item:hover {
+    transform: scale(1.1);
+    transition: all 0.9s;
+}
+.newest-header h5 {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 44px;
+    color: #0FA958;
+    margin: 20px 0;
+}
+
+.newest-text {
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 41px;
+    /* identical to box height */
+    color: #000000;
+    text-align: center;
+}

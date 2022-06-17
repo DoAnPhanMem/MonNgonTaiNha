@@ -26,7 +26,6 @@ class MyRecipe extends Model
         return  $id ;
        
     }
-
     function create_themeDetail($data,$MaBaiDang){
         $f = "MaBaiDang,MaChuDe";
         $v = "";

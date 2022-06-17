@@ -1,0 +1,52 @@
+*{
+    font-family: 'Kanit', sans-serif;
+    /* font-family: 'Varela Round', sans-serif; */
+    /* margin: O auto; */
+    
+}
+
+.footer{
+    background-color: #0FA958;
+}
+
+ .item{
+    /* background-color: #6f87bd; */
+    /* height: 200px; */
+    padding: 20px 10px;
+}
+
+ .item .content .title{
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+ .item .content .title-2{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+ .item .content .icon svg{
+    color: white;
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+ .item .content img{
+    width: 100px;
+    padding: 0;
+    margin-top: 2px;
+}
+
+ .item .content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(244, 244, 244);
+}
+ .item .content ul li{
+    margin-top: 10px;
+    font-size: 15px;
+}

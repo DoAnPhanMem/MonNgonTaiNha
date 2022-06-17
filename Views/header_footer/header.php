@@ -1,42 +1,44 @@
-<header class="header-one header-two">
-    <div class="header-top-two">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="middel-top">
-                        <div class="left floatleft">
-                            <p><i class="mdi mdi-clock"></i> T2 - CN : 08:00-19:00</p>
-                        </div>
-                    </div>
-                    <div class="middel-top clearfix">
-                        <ul class="clearfix right floatright">
-                            <li>
-                                <a><i class="mdi mdi-account"></i></a>
-                                <ul>
-                                    <?php  if(isset($_SESSION['login'])){ ?>
-                                    <li><b>Chào <?=$_SESSION['login']['Ho']?> <?=$_SESSION['login']['Ten']?></b></li>
-                                    <li><a href="?act=personal&handle=profile">Tài khoản</a></li>
-                                    <li><a href="?act=account&handle=logout">Đăng xuất</a></li>
-                                    <?php
-                                        if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien'])){ ?>
-                                        <li><a href="admin/?mod=login">Trang quản lý</a></li>
-                                  <?php }}else{ ?>
-                                    <li><b>Khách hàng</b></li>
-                                    <li><a href="?act=account">Đăng nhập</a></li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="right floatright widthfull">
-                            <form action="?act=shop" method="post">
-                                <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                                <input type="text" placeholder="Tìm kiếm..." name="keyword"/>
-                            </form>
-                        </div>
+
+    <div class="container-fluid header bg-white" id="site-header">
+        <div class="row mx-2">
+            <div class="logo_img col-xl-2 col-lg-2 col-md-2 col-2  d-lg-block d-xl-block">
+                <a href="../index.html" class="mx-0">
+                    <img class="img_logo_header " src="public/img/header-footer/logo.png" alt="">
+                </a>
+            </div>
+            <div class="search_bar col-4 col-md-4 col-xl-4 col-lg-4 col-sm-4 mt-2">
+                <div class="container_input input-group mt-3 mb-1 ">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                    <div class="input-group-prepend">
+                        <span class="btn input-group-text bg-white" style="border-radius: 0 50px 50px 0;"
+                            id="basic-addon1"><span class="iconify" data-icon="bx:bx-search-alt-2">
                     </div>
                 </div>
             </div>
+            <div class="img-header col-xl-3 col-lg-3 col-md-3 col-3 col-sm-3 col-xs-3">
+                <img width="100%" src="public/img/header-footer/header.png" alt="">
+            </div>
+            <div
+                class="col-xl-2 col-lg-2 col-md-2 col-2 col-sm-2 col-xs-2 d-flex mt-4 header_group_icon ml-3 justify-content-center align-content-center">
+                <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #0FA958;" data-width="35"
+                    data-height="35"></span>
+                <a href="" class="btn-login">
+                    <span style="color: #0FA958; font-weight: 600;">
+                        Đăng nhập</span>
+                </a>
+            </div>
+        </div>
+        <div class="row menu-header">
+            <div class="container_menu_header d-md-block">
+                <ul class="d-flex p-0 h-100 align-items-center my-auto">
+                    <li class="menu-list"><a class="item-menu" style="  color: #0FA958;" href="">Trang chủ</a></li>
+                    <li class="menu-list"><a class="item-menu" href="#">Công thức</a></li>
+                    <li class="menu-list"><a class="item-menu" href="">Gửi công thức</a></li>
+                    <li class="menu-list"><a class="item-menu" href="#">Về chúng tôi</a></li>
+                    <li class="menu-list"><a class="item-menu" href="#">Trợ giúp</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-
-</header>
+ 

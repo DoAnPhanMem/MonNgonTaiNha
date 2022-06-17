@@ -7,6 +7,11 @@ switch ($mod) {
         $controller_obj = new HomeController();
         $controller_obj->list();
         break;
+    case 'list-product':
+        require_once('Controllers/ListProductController.php');
+        $controller_obj = new ListProductController();
+        $controller_obj->list();
+        break;
     case 'theme':
         require_once('Controllers/ThemeController.php');
         $controller_obj = new ThemeController();
@@ -76,36 +81,35 @@ switch ($mod) {
             }
             break;
         } else {
-                switch ($act) {
-                    case 'login':
-                        $controller_obj->login();
-                        break;
-                    case 'login-action':
-                        $controller_obj->login_action();
-                        break;
-                    case 'register':
-                        $controller_obj->register();
-                        break;
-                    case 'register-action':
-                        $controller_obj->register_action();
-                        break;
-                    default:
-                        $controller_obj->login();
-                        break;
-                }
-                break;
+            switch ($act) {
+                case 'login':
+                    $controller_obj->login();
+                    break;
+                case 'login-action':
+                    $controller_obj->login_action();
+                    break;
+                case 'register':
+                    $controller_obj->register();
+                    break;
+                case 'register-action':
+                    $controller_obj->register_action();
+                    break;
+                default:
+                    $controller_obj->login();
+                    break;
             }
-    case 'personal' :
+            break;
+        }
+    case 'personal':
         require_once('Controllers/PersonalController.php');
         $controller_obj = new PersonalController();
         if ((isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true)) {
             $controller_obj->personal();
             break;
-        }
-        else{
+        } else {
             header('location: ?act=error');
             break;
-        } 
+        }
     default:
         require_once('Controllers/HomeController.php');
         $controller_obj = new HomeController();
