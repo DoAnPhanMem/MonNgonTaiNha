@@ -100,6 +100,27 @@ switch ($mod) {
             }
             break;
         }
+
+    case 'register':
+        $act = isset($_GET['handle']) ? $_GET['handle'] : "account";
+        require_once('Controllers/RegisterController.php');
+        $controller_obj = new RegisterController();
+        switch ($act) {
+            case 'login':
+                $controller_obj->login();
+                break;
+            case 'register':
+                $controller_obj->register();
+                break;
+            case 'register-action':
+                $controller_obj->register_action();
+                break;
+            default:
+                $controller_obj->register();
+                break;
+        }
+        break;
+
     case 'personal':
         require_once('Controllers/PersonalController.php');
         $controller_obj = new PersonalController();

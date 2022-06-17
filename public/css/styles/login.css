@@ -87,6 +87,9 @@
     margin-top: 25px;
 }
 
+/* .container-login .btn-login-register .btn-login:hover {
+    opacity: 0.5;
+} */
 
 .container-login .btn-login-register .btn-login, .btn-register {  
     border: none;
@@ -103,7 +106,7 @@
 
 .container-login .btn-login-register .btn-login {
     background-color: rgb(84, 165, 232);
-    color: #ebedf0;
+    color: white;
 }
 
 .container-login .btn-login-register .btn-register {
@@ -130,7 +133,7 @@
 
 .container-img {
     width: 100%;
-    
+   
 }
 
 .container-img img {
