@@ -1,53 +1,47 @@
-<!-- pages-title-start -->
-<div class="pages-title section-padding">
+<!-- LOGIN -->
+<div class="wrapper">
 	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="pages-title-text text-center">
-					<h2>Đăng nhập</h2>
-					<ul class="text-left">
-						<li><a href="?act=home">Trang chủ</a></li>
-						<li><span> // </span>Đăng nhập</li>
-					</ul>
+		<form action="" method="POST">
+			<div class="container-login">
+				<p>
+					<h2>Đăng nhập tài khoản của bạn</h2>
+					<h5>Chào mừng bạn quay trở lại với Homefood</h5>
+				</p>
+				
+				<button class="btn-facebook button">
+					<i class="fa-brands fa-facebook-square"></i>
+					Đăng ký bằng Facebook
+				</button>
+				
+				<button class="btn-google button">
+					<i class="fa-brands fa-google"></i>
+					Đăng ký bằng Google
+				</button>
+
+				<div class="login-text">
+					<input type="text" placeholder="Email" class="email-input" >
+					<input type="password" placeholder="Mật khẩu" class="pass-input" >
+					<a href="" >Quên mật khẩu ?</a>
 				</div>
+
+				<div class="btn-login-register">
+					<button class="btn-login" type="submit" name="login" onclick="location.href='?act=home' ">
+						Đăng nhập
+					</button>
+					<button class="btn-register" type="submit" name="register" onclick="location.href='?act=register' " >				
+						Đăng ký
+					</button>
+				</div>
+
+				<p class="account-register">Bạn chưa có tài khoản ? <a href="?act=register">Đăng ký</a> </p>
+
 			</div>
-		</div>
+
+			<div class="container-img">
+				<img src="public/img/Login_Register/Avatar_Login.jpg" alt="" class="img-login">
+			</div>
+		</form>
+		
+
 	</div>
 </div>
-<!-- pages-title-end -->
-<!-- login content section start -->
-<section class="pages login-page section-padding">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="main-input padding60" id="dangnhap">
-					<div class="log-title">
-						<h3><strong>Khách hàng đã đăng ký</strong></h3>
-					</div>
-					<div class="login-text">
-						<div class="custom-input">
-							<p>Nếu bạn đã có tài khoản, vui lòng đăng nhập!</p>
-							<?php if (isset($_COOKIE['msg1'])) { ?>
-								<div class="alert alert-success">
-									<strong>Thông báo</strong> <?= $_COOKIE['msg1'] ?>
-								</div>
-							<?php } ?>
-							<form action="?act=account&handle=login-action" method="post" id="form1">
-								<input type="text" name="taikhoan" placeholder="Tài khoản" />
-								<input type="password" name="matkhau" placeholder="Mật khẩu" />
-								<a class="forget" href="#">Quên mật khẩu?</a>
-								<div class="submit-text">
-									<button name="submit" type="submit" form="form1">Đăng nhập</button>
-								</div>
-							</form>
-							<h1>Nếu chưa có vui lòng đăng ký</h1>
-							<a href="?act=account&handle=register">Đăng ký</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		
-		</div>
-	</div>
-</section>
-<!-- login content section end -->

@@ -39,6 +39,8 @@
     <link rel="stylesheet" href="public/css/styles/home.css">
     <link rel="stylesheet" href="public/css/styles/personal.css">
     <link rel="stylesheet" href="public/css/styles/myrecipe.css">
+    <link rel="stylesheet" href="public/css/styles/login.css">
+    <link rel="stylesheet" href="public/css/styles/register.css">
     <!-- Điền link css tự code chổ này -->
 
     <style>

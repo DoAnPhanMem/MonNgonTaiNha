@@ -123,7 +123,7 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
             break;
         
         case 'post':
-            require_once('MVC/controllers/PostController.php');
+            require_once('MVC/Controllers/PostController.php');
             $controller_obj = new PostController();
             switch ($act) {
                 case 'list':
@@ -137,6 +137,18 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
                     break;
                 case 'store':
                     $controller_obj->store();
+                    break;
+                case 'delete':
+                    $controller_obj->delete();
+                    break;
+                case 'edit':
+                    $controller_obj->edit();
+                    break;
+                case 'update':
+                    $controller_obj->update();
+                    break;
+                default:
+                    $controller_obj->list();
                     break;
             }
             break;
