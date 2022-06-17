@@ -1,31 +1,32 @@
 const themeGroup = document.querySelector(".create-recipe__theme-content");
-const imgGroup = document.querySelector(".create-recipe__images");
+const imgGroup = document.querySelector(".edit-recipe__imgs");
 const videoGroup = document.querySelector(".create-recipe__video");
 const stockGroup = document.querySelector(".create-recipe__stocks");
 const stepGroup = document.querySelector(".create-recipe__steps");
 const btnSubmit = document.querySelector(".create-recipe__btn-submit");
-const inputFile = imgGroup.querySelector("#create-recipe__image-input");
-const postTheme = document.getElementsByName("post-themes")[0];
-const postStock = document.getElementsByName("post-stocks")[0];
-const postStep = document.getElementsByName("post-steps")[0];
+
+const postTheme = document.getElementsByClassName("post-themes-edit")[0];
+const postStock = document.getElementsByClassName("post-stocks-edit")[0];
+const postStep = document.getElementsByClassName("post-steps-edit")[0];
+
 const themes_selected = [];
 let imgs_array = [];
 const stock_array = [
-  {
-    name: "",
-    quantity: "",
-    unit: "",
-  },
+  
 ];
 const step_array = [
-  {
-    content: "",
-    hour: "",
-    minute: "",
-    second : "",
-  }
+  
 ];
 
+if(isEdit){
+  //set theme_selected
+  for(let i = 0; i<recipe_themes.length;i++ ){
+    themes_selected.push(Object.values(recipe_themes[i]))
+  }
+
+
+  
+}
 
 
 function removeVietnameseTones(str) {
@@ -170,110 +171,30 @@ function HandleThemes() {
 }
 
 function HandleImages() {
-  
+  const inputFile = imgGroup.querySelectorAll(".create-recipe__image-input");
   const preview = imgGroup.querySelector(".create-recipe__images-preview");
   const labelView = imgGroup.querySelector(".create-recipe__image-label");
   //console.log(labelView);
-  const fileTypes = [
-    "image/apng",
-    "image/bmp",
-    "image/gif",
-    "image/jpeg",
-    "image/pjpeg",
-    "image/png",
-    "image/svg+xml",
-    "image/tiff",
-    "image/webp",
-    "image/x-icon",
-  ];
 
-  function validFileType(file) {
-    return fileTypes.includes(file.type);
-  }
-
-  inputFile.onchange = function () {
-    const itemsView = imgGroup.querySelectorAll(".create-recipe__image-item");
-
-    if (imgGroup.querySelector(".create-recipe__images-preview p")) {
-      preview.removeChild(
-        imgGroup.querySelector(".create-recipe__images-preview p")
-      ); // delete i
-    }
-    for (let j = 0; j < itemsView.length; j++) {
-      console.log(itemsView[j]);
-      preview.removeChild(itemsView[j]);
-    }
-    while (labelView.firstElementChild) {
-      labelView.removeChild(labelView.firstElementChild);
-    }
-    const curFiles = Array.from(inputFile.files);
-    if (imgs_array.length == 4) {
-      imgs_array = [...curFiles];
-    } else {
-      imgs_array = imgs_array.concat(curFiles);
-    }
-    const imgsLength = imgs_array.length;
-
-    if (imgsLength === 0) {
-      const para = document.createElement("p");
-      para.textContent = "No files currently selected for upload";
-      preview.appendChild(para);
-    } else {
-      if (imgsLength > 4) {
-        alert("Only select 4 images");
-        let indexRemove = (imgsLength) - 4;
-        imgs_array.splice(0, indexRemove);
-        preview.classList.remove("more");
-      } else if (imgsLength < 4) {
-        preview.classList.add("more");
-      } else {
-        preview.classList.remove("more");
-      }
-
-
-      let list = new DataTransfer(); // chuỷen dổi để set a new input file
-      imgs_array.forEach((file, i) => {
-        if (validFileType(file)) {
-          preview.classList.add("active");
-          const image = document.createElement("img");
-          image.setAttribute("data-img-index", i);
-          image.classList.add("create-recipe__image-item");
-          image.onclick = function (e) {
-            const imgsBig = labelView.querySelectorAll("img");
-            for (let j = 0; j < imgsBig.length; j++) {
-              imgsBig[j].classList.contains("active") &&
-                imgsBig[j].classList.remove("active");
-              console.log("i : " + e.target.dataset.imgIndex, "j : " + j);
-              if (e.target.dataset.imgIndex == j) {
-                imgsBig[j].classList.add("active");
-              }
+  inputFile.forEach((input, i)=>{
+    input.onchange = function () {
+            const ViewLabel = input.parentNode.querySelector("label");
+            while(ViewLabel.firstChild){
+                ViewLabel.removeChild(ViewLabel.firstChild);
             }
-          };
-          image.src = URL.createObjectURL(file);
-          preview.appendChild(image);
-          labelView.innerHTML += `<img src="${image.src} "/>`;
-
-          //add inputfile to list
-          list.items.add(file);
- 
-        } else {
-          const para = document.createElement("i");
-          para.textContent = "No files is not validateFile";
-          preview.appendChild(para);
+            const img = document.createElement('img');
+            img.className = "active"
+            img.src = URL.createObjectURL(input.files[0]);
+            ViewLabel.appendChild(img);
+            input.parentNode.classList.add("active");
+            ViewLabel.classList.add("active");
+            console.log(img);
         }
       });
-      // set input file
-      let listImgsFile = list.files;
-      inputFile.files  = listImgsFile;
-      //
-      const viewBig = labelView.querySelectorAll("img")[0];
-      viewBig.classList.add("active");
+    
     }
-   
-    //console.log(imgs_array);
-  };
   
-}
+
 function HandleVideo() {
   const labelView = imgGroup.querySelector(".create-recipe__image-label");
   const inputVideo = videoGroup.querySelector("#create-recipe__video-input");
@@ -283,19 +204,30 @@ function HandleVideo() {
     place_play.classList.add("create-recipe__video--play");
     const file = inputVideo.files[0];
     const fileUrl = URL.createObjectURL(file);
-
     console.log(file);
     video_element.src = fileUrl;
   };
 }
-function HandleStock() {
-  
 
+function HandleStock() {
   const stockList = stockGroup.querySelector(".create-recipe__stock-list");
   const btnAddStock = stockGroup.querySelector(".create-recipe__stock-btn-add");
-  renderStock();
+  const defaultLength = setArrayStock();
+
+  renderStock(defaultLength);
+  function setArrayStock(){
+    const stockNode = stockGroup.querySelectorAll(".create-recipe__stock");
+    console.log(stockNode);
+    for(let i=0 ;i< stockNode.length; i++){
+        const name = stockNode[i].querySelector(".create-recipe__stock-name").value  
+        const quantity= stockNode[i].querySelector(".create-recipe__stock-quantity").value
+        const unit = stockNode[i].querySelector(".create-recipe__stock-unit").value
+        stock_array.push({name,quantity,unit})
+    }
+    return stockNode.length;
+  }
+
   function renderStock(init = 0) {
-    console.log("init" + init);
     for (let stock = init; stock < stock_array.length; stock++) {
       const stockNode = document.createElement("div");
       stockNode.innerHTML = `<input required type="text" name=""   value = "${stock_array[stock].name}" placeholder="Tên nguyên liệu "  class="create-recipe__stock-name">  
@@ -312,9 +244,7 @@ function HandleStock() {
   }
 
   function handleDleStock() {
-    const btnsDleStock = stockGroup.querySelectorAll(
-      ".create-recipe__stock-btn-delete"
-    );
+    const btnsDleStock = stockGroup.querySelectorAll(".create-recipe__stock-btn-delete");
     for (let i = 0; i < btnsDleStock.length; i++) {
       btnsDleStock[i].onclick = function () {
         stock_array.splice(i, 1);
@@ -360,7 +290,7 @@ function HandleStock() {
       quantity: "",
       unit: "",
     });
-    renderStock(stock_array.length - 1);
+    renderStock(stock_array.length-1);
   };
 }
 function HandleStep() {
@@ -368,7 +298,20 @@ function HandleStep() {
   
     const stepList = stepGroup.querySelector(".create-recipe__step-list");
     const btnAddStep = stepGroup.querySelector(".create-recipe__step-btn-add");
-    renderStep();
+    const defaultLength = setArrayStep();
+    function setArrayStep(){
+      const stepNode = stepGroup.querySelectorAll(".create-recipe__step");
+      console.log(stepNode);
+      for(let i=0 ;i< stepNode.length; i++){
+          const content = stepNode[i].querySelector(".create-recipe__step-content").value  
+          const hour= stepNode[i].querySelector(".create-recipe__step-hour").value
+          const minute = stepNode[i].querySelector(".create-recipe__step-minute").value
+          const second = stepNode[i].querySelector(".create-recipe__step-second").value
+          step_array.push({content,hour,minute,second})
+      }
+      return stepNode.length;
+    }
+    renderStep(defaultLength);
     function renderStep(init = 0) {
       console.log("init" + init);
       for (let step = init; step < step_array.length; step++) {
@@ -396,8 +339,6 @@ function HandleStep() {
         btnsDleStep[i].onclick = function () {
           step_array.splice(i, 1);
           stepList.removeChild(btnsDleStep[i].parentNode);
-          handleDleStep();
-          handleChangeStepItem();
         };
       }
     }
@@ -445,17 +386,16 @@ function HandleStep() {
   }
 
 
-btnSubmit.onclick = function(e){
+ btnSubmit.onclick = function(e){
   if(themes_selected.length == 0){
     alert("Vui lòng chọn ít nhất một chủ đề");
     e.preventDefault();
   }
-
     postTheme.value = JSON.stringify(themes_selected);
     postStock.value = JSON.stringify(stock_array);
     postStep.value = JSON.stringify(step_array);
 }
- 
+  
 
 HandleImages();
 HandleThemes();
