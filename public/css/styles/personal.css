@@ -3,15 +3,16 @@
 }
 .header-personal{
     background-color: var(--primary);
+    border-radius: 5px ;
     text-align: center;
+    box-shadow: 0 0 4px rgb(97, 97, 97);
 }
 
 .personal-content{
     min-height: 1000px;
     background-color: var(--white);
     margin: 0 10px ;
-    border-radius: 4px ;
-    border: 1px solid rgba(0, 0, 0, 0.005);
+    border-radius: 5px ;
     box-shadow: 0px 0.5px 3px #333;
 }
 .header-personal__info-img{
@@ -39,8 +40,8 @@
     padding: 20px 20px;
 }
 .navbar-item{
-    border: 1px solid #fff;
-   
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 }
 .navbar-item:hover{
     cursor: pointer;

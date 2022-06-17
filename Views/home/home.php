@@ -1,4 +1,4 @@
-<!-- banner-start -->
+
 <?php
 /* require_once("banner.php") */
 ?>

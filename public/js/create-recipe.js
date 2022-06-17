@@ -86,10 +86,13 @@ function HandleThemes() {
         const index = event.target.dataset.themeIndex;
         if (
           !themes_selected.find((currentValue) => {
-            return currentValue[0] == themes_array[index][0];
+            return currentValue[0] == themes_array[index].MaChuDe;
           })
         ) {
-          themes_selected.push(themes_array[index]);
+          const arr = Object.values(themes_array[index]);
+          console.log(arr);
+          themes_selected.push(arr);
+          console.log(themes_selected);
           renderThemeSelected();
           clearThemeSearch();
         } else {
@@ -136,25 +139,20 @@ function HandleThemes() {
   //render result search
   function renderSearchTheme(value) {
     if (themes) {
-      console.log(themes)
-      themes_array = Object.entries(themes);
+     
+      themes_array = (themes);
       
       
-      console.log(themes_array)
+     
       //console.log(themes_array);
-      const html = themes_array
-        .map((theme, index) => {
-         
-          console.log(theme)
+      const html = 
+      themes_array.map((theme, index) => {
           if (
-            theme[1]
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, "")
-              .indexOf(
-                value.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-              ) != -1
+               theme.TenChuDe.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+              .indexOf( value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()) 
+              != -1
           ) {
-            return `<div data-theme-id =${theme[0]} data-theme-index = ${index} class="create-recipe__search-theme-item"> ${theme[1]} </div>`;
+            return `<div data-theme-id =${theme.MaChuDe} data-theme-index = ${index} class="create-recipe__search-theme-item"> ${theme.TenChuDe} </div>`;
           }
         })
         .join("");

@@ -30,10 +30,14 @@
     <link rel="stylesheet" href="public/css/roots/common.css">
     <!-- owl.carousel css -->
     <!-- <link rel="stylesheet" href="public/css/owl.carousel.css"> -->
-
+    <link rel="stylesheet" href="public/library/Toast-Messages/messages.css">
+    <script src="public/library/Toast-Messages/messages.js"></script>
     <!-- style css -->
     <!-- <link rel="stylesheet" href="public/css/styles/home.css"> -->
     <link rel="stylesheet" href="../public/css/styles/home.css" type="text/css">
+    <link rel="stylesheet" href="public/css/styles/footer.css">
+    <link rel="stylesheet" href="public/css/styles/home.css">
+    <link rel="stylesheet" href="public/css/styles/personal.css">
     <link rel="stylesheet" href="public/css/styles/myrecipe.css">
     <!-- Điền link css tự code chổ này -->
 
@@ -65,8 +69,10 @@
         ?>
         <!-- slider section end -->
 
-        <!-- footer section start -->
-        <?php
+        
+    </div>
+   <!-- footer section start -->
+   <?php
         require_once("header_footer/footer.php")
         ?>
 
