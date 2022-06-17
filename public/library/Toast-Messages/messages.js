@@ -62,7 +62,24 @@ function showSuccessInsert(){
     
     });
 }
-
+function showSuccessUpdate(){
+    toast({
+        title: 'Success',
+        message: 'Bạn đã cập nhật thành công !',
+        type : 'success',
+        duration : 3000,
+    
+    });
+}
+function showSuccessDelete(){
+    toast({
+        title: 'Success',
+        message: 'Bạn đã xóa thành công !',
+        type : 'success',
+        duration : 3000,
+    
+    });
+}
 function showError(){
     toast({
         title: 'Error',

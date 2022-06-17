@@ -14,6 +14,7 @@
                         $themes = $data_themes;
                         ?>
                     <script> 
+                        let isEdit = false;
                         var themes = <?php echo json_encode($themes) ?>;
                        
                     </script>
@@ -33,7 +34,7 @@
         <div class="create-recipe__form-item">
             <h2>Tên công thức </h2>
             <div class="create-recipe__item-content">
-                <input required type="text" name="post-name" placeholder="Nhập tên công thức " id="create-recipe__name">  
+                <input required type="text" value="" name="post-name" placeholder="Nhập tên công thức " id="create-recipe__name">  
             </div>
                 
         </div>
@@ -43,14 +44,9 @@
                         <div class="create-recipe__description">
                             <h2>Mô tả </h2>
                             <div class="create-recipe__item-content">
-                                <textarea name="post-description" id="create-recipe__description" cols="30" rows="10">
-
-                                </textarea>
+                                <textarea name="post-description" id="create-recipe__description" cols="30" rows="10"></textarea>
                             </div>
-                            
                         </div>
-                    
-                   
                         <div class="create-recipe__video">
                             <h2>Video </h2>
                             <div class="create-recipe__item-content">
@@ -84,7 +80,8 @@
                         </label>
                     </div>
                        
-                </div>        
+                </div>     
+                   
         </div>
         
         <div class="create-recipe__form-item">

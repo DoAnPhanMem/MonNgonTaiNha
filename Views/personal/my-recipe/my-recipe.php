@@ -1,12 +1,19 @@
 <div class="my-recipe">
-        
+
+    <div class="toast-group">
+    </div>
     <?php 
         if(isset($_COOKIE['msg'])){     
     ?>    
-             <div class="toast-group">
-             </div>
+           
             <script>showSuccessInsert();</script>    
     <?php }
+    if(isset($_COOKIE['upd'])){ ?>
+        <script>showSuccessUpdate();</script> 
+   <?php }
+   if(isset($_COOKIE['del'])){ ?>
+    <script>showSuccessDelete();</script> 
+<?php }
     ?>
     <div class="my-recipe__top">
         <h1 class="my-recipe__title">Công Thức Của Tôi</h1>
@@ -42,7 +49,7 @@
         <div class = "my-recipes" >
 
                 <div class ="row">
-                <?php foreach ($data_recipe  as  $key => $value){ ?>
+                <?php foreach ($data_recipes   as  $key => $value){ ?>
                     <div class="l-4">
                         <div class="recipe-item">
                             <div class = "recipe-item__img">
@@ -56,12 +63,12 @@
                                 <p>Trạng thái:  <span><?= $value['TrangThai'] ?></span></p>
                             </div>
                             <div class="recipe-item__action">
-                                <button class="recipe-item__edit">
+                                <a href="?act=personal&handle=edit-recipe&id=<?=$value['MaBaiDang']?>" class="recipe-item__edit">
                                     <i class="fa-solid fa-pen-ruler"></i>
-                                </button>
-                                <button class="recipe-item__delete">
+                                </a>
+                                <a href="?act=personal&handle=delete-recipe&id=<?=$value['MaBaiDang']?>" class="recipe-item__delete">
                                     <i class="fa-solid fa-trash"></i>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -79,3 +86,4 @@
         </div>
     </div>
 </div>
+<script src="public/js/myrecipe.js"></script>

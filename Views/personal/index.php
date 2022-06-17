@@ -1,4 +1,15 @@
 <section class = "personal">
+    <div class="question">
+        <div class="question-box ">
+           <h3 class = "question-box-ask" > Bạn có chắc muốn xóa ?</h3>
+           <div class="question-box_action">
+           <button class="question-box_yes btn">Xóa</button>
+           <button class="question-box_no">Quay lại</button>
+           </div>
+        </div>
+        <div class="question-back"></div>
+    </div>
+    
     <div class="row">
         <div class="header-personal l-3">
             <div class="header-personal_info">
@@ -31,12 +42,19 @@
                         
                             break;
                         case 'create':
-                           
                             $controller_obj->create();
                             break;
                         case 'create-action' :
-                           
                             $controller_obj->create_action();
+                            break;
+                        case 'edit-recipe' :
+                            $controller_obj->edit_recipe();
+                            break;
+                        case 'editRecipe-action' :
+                            $controller_obj->edit_recipe_action();
+                            break;
+                        case 'delete-recipe':
+                            $controller_obj->delete_recipe();
                             break;
                         default:
                             require_once("profile.php");
