@@ -25,9 +25,7 @@
 				</button>
 			</div>
 
-			<!-- <div class="account-register">
-				
-			</div> -->
+			
 			<p class="account-register">Bạn đã có tài khoản ?<a href="?act=account">Đăng nhập</a> </p>
 
         </div>
