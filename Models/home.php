@@ -10,3 +10,4 @@ class Home extends Model
         return $data;
     }
 }
+?>

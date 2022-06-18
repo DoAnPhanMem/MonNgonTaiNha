@@ -7,4 +7,4 @@ btn_delete.onclick = function(event){
             event.preventDefault();
             
           }
-    }
+}

@@ -76,3 +76,4 @@ class Theme extends Model
         return $this->conn->query($query)->fetch_assoc();
     }
 }
+?>

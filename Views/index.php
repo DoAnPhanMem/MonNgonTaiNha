@@ -1,8 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="vi-vn">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Món Ngon Tại Nhà</title>
@@ -34,20 +32,18 @@
     <script src="public/library/Toast-Messages/messages.js"></script>
     <!-- style css -->
     <!-- <link rel="stylesheet" href="public/css/styles/home.css"> -->
-    <link rel="stylesheet" href="../public/css/styles/home.css" type="text/css">
     <link rel="stylesheet" href="public/css/styles/footer.css">
     <link rel="stylesheet" href="public/css/styles/home.css">
     <link rel="stylesheet" href="public/css/styles/personal.css">
     <link rel="stylesheet" href="public/css/styles/myrecipe.css">
     <link rel="stylesheet" href="public/css/styles/login.css">
     <link rel="stylesheet" href="public/css/styles/register.css">
+    <link rel="stylesheet" href="public/css/styles/list-product.css">
+    <link rel="stylesheet" href="public/css/styles/header.css">
     <!-- Điền link css tự code chổ này -->
 
-    <style>
-        <?php include 'public/css/styles/home.css'; ?><?php include 'public/css/styles/list-product.css'; ?>
-        <?php include 'public/css/styles/footer.css'; ?>
-        <?php include 'public/css/styles/header.css'; ?>
-    </style>
+  
+
     <!-- responsive css -->
     <!-- <link rel="stylesheet" href="public/css/responsive.css"> -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -72,21 +68,21 @@
         <!-- slider section end -->
 
         
-    </div>
+    <!-- </div> -->
    <!-- footer section start -->
    <?php
         require_once("header_footer/footer.php")
         ?>
 
         <!-- footer section end -->
-    <!-- </div> -->
+     </div> 
 
     <!-- all js here -->
 
 
     <!-- main js -->
     <script src="public/js/main.js"></script>
-    <script src="public/js/myrecipe.js"></script>
+    
 </body>
 
 </html>

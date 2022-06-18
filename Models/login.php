@@ -115,3 +115,4 @@ class Login extends Model
         header('location: ?act=errors');
     }
 }
+?>

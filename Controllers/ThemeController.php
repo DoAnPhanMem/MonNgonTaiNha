@@ -67,3 +67,4 @@ class ThemeController
         require_once('Views/index.php');
     }
 }
+?>

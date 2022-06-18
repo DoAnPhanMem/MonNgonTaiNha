@@ -9,3 +9,4 @@ class Personal extends Model
         $this->conn = $conn_obj->conn;
     }
 }
+?>

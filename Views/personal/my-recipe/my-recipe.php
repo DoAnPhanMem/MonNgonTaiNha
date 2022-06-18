@@ -5,7 +5,6 @@
     <?php 
         if(isset($_COOKIE['msg'])){     
     ?>    
-           
             <script>showSuccessInsert();</script>    
     <?php }
     if(isset($_COOKIE['upd'])){ ?>
