@@ -42,6 +42,16 @@
                         case 'delete-recipe':
                             $controller_obj->delete_recipe();
                             break;
+                        case 'create-theme':
+                            require_once("./Controllers/ThemeController.php");
+                            $controller_obj = new ThemeController();
+                            $controller_obj->theme();
+                            break;
+                        case 'create-theme-action':
+                            require_once("./Controllers/ThemeController.php");
+                            $controller_obj = new ThemeController();
+                            $controller_obj->create_action();
+                            break;
                         default:
                             require_once("profile.php");
                             break;

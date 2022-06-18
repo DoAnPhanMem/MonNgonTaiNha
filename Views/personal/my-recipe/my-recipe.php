@@ -1,7 +1,5 @@
-<div class="my-recipe">
 
-    <div class="toast-group">
-    </div>
+<div class="my-recipe">  
     <?php 
         if(isset($_COOKIE['msg'])){     
     ?>    
@@ -11,7 +9,8 @@
         <script>showSuccessUpdate();</script> 
    <?php }
    if(isset($_COOKIE['del'])){ ?>
-    <script>showSuccessDelete();</script> 
+    <script>showSuccessDelete();
+</script> 
 <?php }
     ?>
     <div class="my-recipe__top">
