@@ -13,7 +13,7 @@ class Model
     function All()
     {
         $query = "select * from $this->table ORDER BY $this->contens DESC ";
-
+        
         require("result.php");
 
         return $data;
@@ -21,7 +21,8 @@ class Model
     }
     function find($id)
     {
-        $query = "select * from $this->table where $this->contens =$id";
+        $query = "select * from $this->table where $this->contens ='$id'";
+        //echo $query;
         return $this->conn->query($query)->fetch_assoc();
     }
     function delete($id)

@@ -150,9 +150,6 @@
                         case 'detail':
                           require_once('MVC/Views/post/detail.php');
                           break;
-                        case 'edit':
-                          require_once('MVC/Views/post/edit.php');
-                          break;
                         default:
                           require_once('MVC/Views/post/list.php');
                           break;

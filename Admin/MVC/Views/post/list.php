@@ -21,13 +21,12 @@
     <?php foreach ($data as $row) { ?>
       <tr>
         <td><?= $row['MaBaiDang'] ?></td>
-        <td><?= $row['hoTen'] ?></td>        
+        <td><?= $row['hoTen'] ?></td>         
         <td><?= $row['TieuDe'] ?></td>
         <td><?= $row['TrangThai'] ?></td>
         <td style="width:17%">
-          <a href="?mod=post&act=detail&id=<?= $row['MaBaiDang'] ?>" class="btn btn-success">Xem</a>
+          <a href="?mod=post&act=detail&id=<?= $row['MaBaiDang'] ?>" class="btn btn-success">Xem chi tiết</a>
           <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-          <a href="?mod=post&act=edit&id=<?= $row['MaBaiDang'] ?>" class="btn btn-warning">Sửa</a>
           <a href="?mod=post&act=delete&id=<?= $row['MaBaiDang'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
           <?php }?>
         </td>
