@@ -25,22 +25,25 @@
             </div>
             
                 <select class = "my-recipe-fitter__time-update" id ="time-update">
-                    <option>Mới nhất</option>
-                    <option>Lâu nhất</option>
-                    <option>1 năm trước</option>
+                    <option data-time-sort ="DESC">Mới nhất</option>
+                    <option data-time-sort ="ASC">Lâu nhất</option>
                 </select>
             
             
                 <select  class = "my-recipe-fitter__time-cooking" id = "time-cooking">
-                    <option>Dưới 30 phút</option>
-                    <option>Trên 30 phút</option>
-                    <option>Trên 1 giờ</option>
+                    <option data-time-cooking = "Tất cả">Tất cả</option>
+                    <option data-time-cooking = "00:30:00">Dưới 30 phút</option>
+                    <option data-time-cooking = "01:00:00">Dưới 1 giờ</option>
+                    <option data-time-cooking = "05:00:00">Dưới 5 giờ</option>
                 </select>
             
             
             
                 <select  class = "my-recipe-fitter__theme" id = "theme">
-                    <option>Tất cả</option> 
+                    <option>Tất cả</option>
+                    <option>Đã duyệt</option> 
+                    <option>Chưa duyệt</option> 
+                    <option>Từ chối</option> 
                 </select>
             
         </div>
@@ -85,3 +88,4 @@
     </div>
 </div>
 <script src="public/js/myrecipe.js"></script>
+<script src="public/js/ajax.js"></script>
