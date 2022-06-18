@@ -9,3 +9,4 @@ class ListProductModel extends Model
         return $data;
     }
 }
+?>

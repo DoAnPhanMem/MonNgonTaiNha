@@ -16,3 +16,4 @@ class HomeController
         require_once('Views/index.php');
     }
 }
+?>

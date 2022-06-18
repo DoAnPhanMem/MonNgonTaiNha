@@ -24,3 +24,4 @@ class DetailController
         require_once('Views/index.php');
     }
 }
+?>

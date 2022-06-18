@@ -59,3 +59,4 @@ class Register extends Model
     }
 
 }
+?>

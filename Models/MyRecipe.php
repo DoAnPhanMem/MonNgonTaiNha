@@ -15,6 +15,8 @@ class MyRecipe extends Model
         $status = $this->conn->query($query);
         if($status == true){
             setcookie('del',"kkk", time() + 2);
+            (header('Location:?act=personal&handle=recipe')); 
+            // 
         }
     }
     function getRecipe($id){
@@ -126,20 +128,17 @@ class MyRecipe extends Model
      
     }
     function create_step($data,$MaBaiDang){
-        
         $f = "MaBuocLam,NoiDung,ThoiGian,MaBaiDang";
         $v = "";
         foreach ($data as $key => $value) {
             $time = $value['hour'] . ":" . $value['minute'] .":".$value['second'] ; 
-         //   print_r($value);
             $v .= "('null','$value[content]','$time','$MaBaiDang'),";
         }
         $f = trim($f, ",");
         $v = trim($v, ",");
         $query = "INSERT INTO buoclam ($f) VALUES $v;";
-     //   echo $query;
         $status = $this->conn->query($query);
-     
+        header('Location: ?act=personal&handle=recipe');
     }
     function update($data)
     {
@@ -163,3 +162,4 @@ class MyRecipe extends Model
         }
     }
 }
+?>

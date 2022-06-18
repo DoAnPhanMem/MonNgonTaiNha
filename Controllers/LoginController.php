@@ -110,3 +110,4 @@ class LoginController
         header('location: ?act=taikhoan&xuli=account#doitk');
     }
 }
+?>

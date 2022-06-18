@@ -7,7 +7,9 @@ class MyRecipeController{
         $this->recipe_model = new MyRecipe();
     }
     public function recipe() 
-    {
+    {   $dataInfo = array(
+        'name' => ''
+        );
         $data_recipes =  $this->recipe_model->limit(0,6);
         require_once('Views/personal/my-recipe/my-recipe.php');
     }
@@ -17,7 +19,6 @@ class MyRecipeController{
     }
     public function create_action(){
         if(isset($_POST['post-themes'])){
-
             //set MaBaiDang
             $idRecent =  $this->recipe_model->getIdRecent();
             if((intval($idRecent) + 1) >= 10){
@@ -27,14 +28,9 @@ class MyRecipeController{
                 $idNew = "BD00";
             }
             $idNew .= ($idRecent + 1);
-           
-    
             // set time
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $dateUpdate =  date('Y-m-d H:i:s');
-    
-
-
             //set video 
           //  print_r($_FILES['post-video']);
             $videoFileName = '';
@@ -46,9 +42,6 @@ class MyRecipeController{
                 $newVideoPath = "./public/videos/recipes/" . $videoFile['name'];
                 $status = move_uploaded_file($tmpVideoPath, $newVideoPath);
             }
-           
-
-
             //get step 
             $data_steps =  array();
             foreach(json_decode( $_POST['post-steps']) as $index => $object){ 
@@ -56,7 +49,6 @@ class MyRecipeController{
                     $data_steps [$index][$key] = $value; 
                 }  
             }
-            
             //set DoKho
             $stepCount =  count($data_steps);
             if( $stepCount >= 20){
@@ -74,8 +66,6 @@ class MyRecipeController{
             else {
                 $doKho = 1;
             }
-
-
             $data_recipe = array(
                 'MaBaiDang' =>$idNew,
                 'MaND' => '1', //tạm,
@@ -90,16 +80,12 @@ class MyRecipeController{
                 'NgayCapNhat' => $dateUpdate
             );
             $this->recipe_model->create($data_recipe);
-
-
             $data_themes = json_decode($_POST['post-themes']) ;
-           /*  echo "themes : "; print_r($data_themes) ;   */
             $this->recipe_model->create_themeDetail( $data_themes, $idNew );
             // save imgs to folder 
             $data_imgs = array();
             $imgFiles = array_filter($_FILES['post-imgs']['name']); // xóa các item null
             $imgsLength= count($_FILES['post-imgs']['name']);
-          
             for($i = 0 ; $i < $imgsLength; $i++){
                 $_FILES['post-imgs']['name'][$i] = $idNew.$i.$_FILES['post-imgs']['name'][$i];  
 
@@ -113,11 +99,7 @@ class MyRecipeController{
                      }
                 }
             }
-          
-
             $this->recipe_model->create_img($data_imgs, $idNew);
-
-
             $data_stocks = array();
            // print_r(json_decode($_POST['post-stocks']));
             foreach(json_decode($_POST['post-stocks']) as $index => $object){ 
@@ -126,12 +108,7 @@ class MyRecipeController{
                 }  
             }
             $this->recipe_model->create_stock($data_stocks, $idNew);
-
-           
-          
             $this->recipe_model->create_step($data_steps, $idNew);
-            header('Location:?act=personal&handle=recipe');
-            
         }
     }
     
@@ -164,15 +141,13 @@ class MyRecipeController{
                 }
             }
             if(($lengthPostImg) > 0){
-                echo("------------------------------------------------------");
+               
                 $recipe_imgs = $this->recipe_model->getImgsByRecipe($id);
                 $lengthRecipeImg =  count($recipe_imgs);
                 $lengthRemove = ($lengthRecipeImg  + $lengthPostImg) -  4;
 
                 if($lengthRemove > 0){
-                    echo $lengthRecipeImg;
-                    echo $lengthPostImg;
-                    echo("-----remove--$lengthRemove-------");
+
                     $this->removeImgs($recipe_imgs, $lengthRemove);
                 }
                   
@@ -273,12 +248,12 @@ class MyRecipeController{
          $this->recipe_model->create_themeDetail( $data_themes, $id);
 
 
-          header('Location:?act=personal&handle=recipe');
+        header('Location: ?act=personal&handle=recipe');
     }
     function delete_recipe(){
         $id = $_GET['id'];
         $this->recipe_model->delete_recipe($id);
-        header('Location:?act=personal&handle=recipe');
+        
     }
     function removeImgs($recipe_imgs,$lengthRemove ){
         // remove img in folder 
@@ -290,7 +265,6 @@ class MyRecipeController{
             $index = $index +1;
             if($index  == $lengthRemove){
                 break;
-                echo "break ".$index;
             }
         }
         // remove img name in server 
@@ -298,3 +272,4 @@ class MyRecipeController{
       
     }
 }
+?>

@@ -16,3 +16,4 @@ class ListProductController
         require_once('Views/index.php');
     }
 }
+?>

@@ -9,3 +9,4 @@ class Cart extends Model
         return $result->fetch_assoc();
     }
 }
+?>

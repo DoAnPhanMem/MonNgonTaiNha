@@ -86,12 +86,12 @@ class model
 
         $status = $this->conn->query($query);
         if ($status == true) {
-            setcookie('msg', 'Thêm mới thành công', time() + 2);
+          //  setcookie('msg', 'Thêm mới thành công', time() + 2);
            
         } else {
-            setcookie('msg', 'Thêm vào không thành công', time() + 2);
-           
+            setcookie('msg', 'Thêm vào không thành công', time() + 2);  
         }
     }
 
 }
+?>
