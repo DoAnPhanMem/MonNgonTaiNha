@@ -72,7 +72,13 @@ class model
         $v = "";
         foreach ($data as $key => $value) {
             $f .= $key . ",";
-            $v .= "'" . $value . "',";
+            if($value == ''){
+                $v .= "'" . NULL . "',";
+            }
+            else{
+                $v .= "'" . $value . "',";
+            }
+            
         }
         $f = trim($f, ",");
         $v = trim($v, ",");
