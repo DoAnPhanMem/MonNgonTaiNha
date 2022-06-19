@@ -10,4 +10,14 @@ class post extends model
         require("result.php");
         return $data;
     }
+
+    function trangthai($id){
+        $query = "select * from baidang where TrangThai = $id  ORDER BY MaBaiDang DESC;";
+
+        require("result.php");
+
+        return $data;
+    }
+
+
 }
