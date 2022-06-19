@@ -1,5 +1,6 @@
 <!-- pages-title-start -->
 <?php if (0==0) { ?>
+    
     <div class="create-recipe">
     <div class="create-recipe__top">
         <h1 class="create-recipe__title"><?=$data_recipe[0]['TieuDe']?></h1>
@@ -143,17 +144,30 @@
         </div>
         <?php 
 
-        //ĐỪng xóa cái này
+        //ĐỪng xóa trong cái này
             if(isset($_GET['status'])){ 
                 $status =($_GET['status']);
                 if($status == 'n'){  ?>
                     <a href="admin/?mod=post&act=approval&status=y&id=<?=$data_recipe[0]['MaBaiDang']?>" onclick="return confirm('Công thức này sẽ được hiển thi trên trang web ?');" class = "btn detail-recipe-btn__accept">Duyệt</a>
               <?php }?>
-                    <a href="" class = "btn  detail-recipe-btn__ejct">Từ chối</a>
+                  
+                    <form action="admin/?mod=post&act=approval&status=tc&id=<?=$data_recipe[0]['MaBaiDang']?>" method="post">
+                        <div class ="toast-question-eject">
+                            <h3 class = "question-eject-title">Lý do từ chối : </h3>
+                            <textarea class="question-eject-content" required name="" id="" cols="50" rows="10" placeholder="Nhập lý do"></textarea>
+                            <button class = "btn  detail-recipe-btn__eject-action">Xác Nhận</button>
+                            <button class = "btn btn-gray detail-recipe-btn__eject-exit">Hủy</button>
+                        </div>
+                        
+                    </form>
+                    <button class = "btn  detail-recipe-btn__eject">Từ chối</button>
               <?php  }?>
-            
+            <!-- ĐỪng xóa cái này -->
         
     </div>
 </div>
 
+<!-- ĐỪng xóa cái này -->
+<script src="./public/js/detail-recipe.js"></script>
+<!-- ĐỪng xóa cái này -->
 <?php }?>
