@@ -11,8 +11,18 @@ class post extends model
         return $data;
     }
 
-    function trangthai($id){
-        $query = "select * from baidang where TrangThai = $id  ORDER BY MaBaiDang DESC;";
+    function getPostByStatus($status){
+        echo $status;
+        
+        if($status == "y"){
+            $status = "Đã duyệt";
+        }
+        else{
+            $status = "Chưa duyệt";
+        }
+        $query = "select * from baidang, nguoidung where baidang.TrangThai = '$status'  
+        and nguoidung.MaND = baidang.MaND
+        ORDER BY MaBaiDang DESC;";
 
         require("result.php");
 

@@ -26,7 +26,7 @@
             
                 <select class = "my-recipe-fitter__time-update" id ="time-update">
                     <option data-time-sort ="DESC">Mới nhất</option>
-                    <option data-time-sort ="ASC">Lâu nhất</option>
+                    <option data-time-sort ="ASC">Cũ nhất</option>
                 </select>
             
             
@@ -34,7 +34,7 @@
                     <option data-time-cooking = "Tất cả">Tất cả</option>
                     <option data-time-cooking = "00:30:00">Dưới 30 phút</option>
                     <option data-time-cooking = "01:00:00">Dưới 1 giờ</option>
-                    <option data-time-cooking = "05:00:00">Dưới 5 giờ</option>
+                    <option data-time-cooking = "10:00:00">Dưới 10 giờ</option>
                 </select>
             
             
@@ -79,7 +79,7 @@
                         <div>
                         <i class="padding-icon fa-solid fa-caret-left"></i>
                         <span class="my-recipe__paging-current">1/</span>
-                        <span  class="my-recipe__paging-total">4</span>
+                        <span  class="my-recipe__paging-total"><?= $numRow ?></span>
                         <i class="padding-icon fa-solid fa-caret-right"></i>
                         </div>
                 </div>
