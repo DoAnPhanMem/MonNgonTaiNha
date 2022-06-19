@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="public/css/styles/login.css">
     <link rel="stylesheet" href="public/css/styles/register.css">
     <link rel="stylesheet" href="public/css/styles/list-product.css">
+    <link rel="stylesheet" href="public/css/styles/recipe-detail.css">
     <script src="public/library/Toast-Messages/messages.js"></script>
     <link rel="stylesheet" href="public/library/Toast-Messages/messages.css">
   
