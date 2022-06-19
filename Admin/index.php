@@ -135,18 +135,12 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
                 case 'detail':
                     $controller_obj->detail();
                     break;
-                // case 'store':
-                //     $controller_obj->store();
-                //     break;
+                case 'xetduyet':
+                    $controller_obj->xetduyet();
+                    break;
                 case 'delete':
                     $controller_obj->delete();
                     break;
-                // case 'edit':
-                //     $controller_obj->edit();
-                //     break;
-                // case 'update':
-                //     $controller_obj->update();
-                //     break;
                 default:
                     $controller_obj->list();
                     break;

@@ -19,4 +19,5 @@ class post extends model
         return $data;
     }
 
+
 }

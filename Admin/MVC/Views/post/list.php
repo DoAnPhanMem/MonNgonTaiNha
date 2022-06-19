@@ -1,3 +1,6 @@
+<a href="?mod=post&id= 'đã duyệt' " type="button" class="btn btn-primary">Đã duyệt</a>
+<a href="?mod=post&id= 'chưa duyệt' " type="button" class="btn btn-primary">Chưa duyệt</a>
+
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
 <a href="?mod=post&act=add" type="button" class="btn btn-primary">Thêm mới</a>
 <?php } ?>
@@ -26,9 +29,9 @@
         <td><?= $row['TrangThai'] ?></td>
         <td style="width:17%">
           <a href="?mod=post&act=detail&id=<?= $row['MaBaiDang'] ?>" class="btn btn-success">Xem chi tiết</a>
-          <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
+          
           <a href="?mod=post&act=delete&id=<?= $row['MaBaiDang'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
-          <?php }?>
+          
         </td>
       </tr>
     <?php } ?>
