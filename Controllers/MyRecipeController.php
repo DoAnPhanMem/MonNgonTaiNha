@@ -125,7 +125,6 @@ class MyRecipeController{
             $recipe_stocks = $this->recipe_model->getStocksByRecipe($id);
             $recipe_themes = $this->recipe_model->getThemesByRecipe($id);
             $data_themes = $this->recipe_model->theme();
-/*             print_r($data_themes); */
             require_once('Views/personal/my-recipe/edit.php');
         }   
     }

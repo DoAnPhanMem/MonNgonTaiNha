@@ -25,7 +25,7 @@ switch ($act) {
         }
         break;
     case "detail":
-        require_once("product-detail/product-detail.php");
+        require_once("recipe-detail/recipe-detail.php");
         break;
     case "about":
         require_once("introduce/about.php");

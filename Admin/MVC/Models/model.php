@@ -74,7 +74,7 @@ class Model
         
         if ($result == true) {
             setcookie('msg', 'Duyệt thành công', time() + 2);
-            header('Location: ?mod=' . $this->table);
+            header('Location: ?mod=post');
         } else {
             setcookie('msg', 'Update vào không thành công', time() + 2);
             header('Location: ?mod=' . $this->table . '&act=edit&id=' . $data['id']['id']);

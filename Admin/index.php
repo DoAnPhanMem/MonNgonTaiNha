@@ -102,21 +102,14 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
                 case 'list':
                     $controller_obj->list();
                     break;
-                case 'detail':
-                    $controller_obj->detail();
-                    break;
-                case 'xetduyet':
-                    $controller_obj->xetduyet();
-                    break;
-                case 'delete':
-                    $controller_obj->delete();
+                case 'approval' :
+                    $controller_obj->approval();
                     break;
                 default:
                     $controller_obj->list();
                     break;
             }
             break;
-
             case 'login':
                 require_once('MVC/controllers/LoginController.php');
                 $controller_obj = new LoginController();
