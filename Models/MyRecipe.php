@@ -10,6 +10,35 @@ class MyRecipe extends Model
         $conn_obj = new Connection();
         $this->conn = $conn_obj->conn;
     }
+
+    function fitterRecipe($nameRecipe, $dateUpdate,$timeCooking,$statusRecipe){
+        if($statusRecipe != 'TrangThai'){
+            $statusRecipe = "'$statusRecipe'";
+        }
+        if($timeCooking != 'ThoiGian')
+        {
+            $timeCooking =  "TIME_TO_SEC(countTime.ThoiGian) < TIME_TO_SEC('$timeCooking')";
+        }
+        else{
+            $timeCooking =  'countTime.ThoiGian = countTime.ThoiGian';
+        }
+
+        $query = "SELECT DATE_FORMAT(baidang.NgayCapNhat, '%d-%m-%Y') as Ngay,baidang.*, hinhanh.*, countTime.ThoiGian as ThoiGian from baidang, buoclam, hinhanh,
+        (SELECT baidang.MaBaiDang, SEC_TO_TIME(SUM( TIME_TO_SEC( `buoclam`.`ThoiGian` ) 										) )  as ThoiGian 
+                                      from baidang, buoclam
+                                      WHERE baidang.MaBaiDang = buoclam.MaBaiDang 
+                                      GROUP by baidang.MaBaiDang
+                                      ) as countTime
+        WHERE baidang.MaBaiDang = hinhanh.MaBaiDang  and
+        countTime.MabaiDang = baidang.MaBaiDang and
+        $timeCooking and
+        baidang.TieuDe like '%$nameRecipe%' 
+        and baidang.TrangThai = $statusRecipe
+        GROUP by baidang.MaBaiDang
+        ORDER by NgayCapNhat $dateUpdate";
+        require("result.php");
+        return $data;
+    }
     function delete_recipe($id){
         $query = "DELETE FROM baidang WHERE `baidang`.`MaBaiDang` = '$id'";
         $status = $this->conn->query($query);
@@ -19,6 +48,7 @@ class MyRecipe extends Model
             // 
         }
     }
+
     function getRecipe($id){
         $query = " select * from baidang WHERE baidang.MaBaiDang = '$id'";
         require("result.php");

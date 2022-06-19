@@ -141,9 +141,6 @@ function HandleThemes() {
     if (themes) {
      
       themes_array = (themes);
-      
-      
-     
       //console.log(themes_array);
       const html = 
       themes_array.map((theme, index) => {
@@ -156,8 +153,9 @@ function HandleThemes() {
           }
         })
         .join("");
+        const newThemes = "<a class = 'create-recipe__search-theme-item create-recipe__search-theme-add' href='?act=personal&handle=create-theme'>Thêm chủ đề mới</a>"
       // console.log(html)
-      searchResult.innerHTML = html;
+      searchResult.innerHTML = html + newThemes;
       const search_items = searchResult.querySelectorAll(
         ".create-recipe__search-theme-item"
       );

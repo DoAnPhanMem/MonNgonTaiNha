@@ -3,24 +3,22 @@
     position: fixed;
     top : 35px;
     right : 35px;
-    z-index: 999;
+    background-color: #fff;
+    z-index: 1000;
 }
+
 .toast{
-    z-index: 999;
     min-width: 400px;
     max-width: 450px;
-    background-color:  #fff;
+    z-index: 1000;
     display: flex;
-    border:1px solid rgb(103, 100, 100) ;
     align-items:  center;
     border-radius : 2px;
     border-left: 4px solid ;
     padding: 20px 0;
     transition: all 0.5s linear;
-    
    /*  animation : slideInLeft  .3s ease-in-out, fadeOut linear 1s 3s forwards ; /* 3s mới begin animation */
-                                                             /* forward : dừng lại tại điểm cuối*/ 
-                                                             
+                                                             /* forward : dừng lại tại điểm cuối*/                                                       
 }
 @keyframes slideInLeft {
     from {
@@ -89,24 +87,4 @@
 
 }.toast--error .toast__icon{
     color : #ff623d;
-}
-.btn-toast {
-    cursor: pointer;
-    color : #fff;
-    background-color : #fff;
-    padding : 10px;
-    border-radius: 2px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-}
-.btn:hover{
-    opacity : 0.9;
-}
-.btn:active{
-    opacity: 0.8;
-}
-.btn-success{
-    background-color:#47d864;
-}
-.btn-error{
-    background-color : #ff623d;
 }

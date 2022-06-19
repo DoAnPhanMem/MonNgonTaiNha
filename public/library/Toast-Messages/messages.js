@@ -1,14 +1,13 @@
 function toast ({title='', message='',type ='info', duration = 3000}) {
-    const main = document.getElementsByClassName('toast-group');
+    const main = document.getElementsByClassName('toast-group')[0];
     if(main){
-        for(let i = 0 ; i< main.length ; i++){
         const toast = document.createElement('div');
         const autoRemoveID = setTimeout(() => {
-            main[i].removeChild(toast);
+            main.removeChild(toast);
         }, duration + 1000);
         toast.onclick = function(e){
             if(e.target.closest('.toast__close')){
-                main[i].removeChild(toast);
+                main.removeChild(toast);
                 clearTimeout(autoRemoveID);
             }
         }
@@ -23,12 +22,8 @@ function toast ({title='', message='',type ='info', duration = 3000}) {
         toast.classList.add('toast' , `toast--${type}`);
         toast.style.animation = `slideInLeft  1s ease-in-out, fadeOut linear ${delay}s forwards ;`;
       
-        toast.innerHTML =  `
-       
-            <div class="toast__icon">
-                <i class="fa-solid ${icon}" ></i>
-
-            </div>
+        toast.innerHTML =`<div class="toast__icon">
+                <i class="fa-solid ${icon}" ></i></div>
             <div class="toast__body">
                 <h3 class="toast__title">${title}</h3>
                 <p class="toast__message">${message}</p>
@@ -37,11 +32,11 @@ function toast ({title='', message='',type ='info', duration = 3000}) {
                 <i class="fa-solid fa-xmark"></i>
             </div>
             `;
-            main[i].appendChild(toast);
-        }
+        main.appendChild(toast);
             
     }
 }
+
 
 
 function showSuccess(){
@@ -52,7 +47,7 @@ function showSuccess(){
         duration : 3000,
     
     });
-}
+};
 function showSuccessInsert(){
     toast({
         title: 'Success',
@@ -61,7 +56,7 @@ function showSuccessInsert(){
         duration : 3000,
     
     });
-}
+};
 function showSuccessUpdate(){
     toast({
         title: 'Success',
@@ -70,7 +65,7 @@ function showSuccessUpdate(){
         duration : 3000,
     
     });
-}
+};
 function showSuccessDelete(){
     toast({
         title: 'Success',
@@ -79,7 +74,7 @@ function showSuccessDelete(){
         duration : 3000,
     
     });
-}
+};
 function showError(){
     toast({
         title: 'Error',
@@ -88,4 +83,4 @@ function showError(){
         duration : 3000,
     
     });
-}
+};

@@ -253,7 +253,6 @@ class MyRecipeController{
     function delete_recipe(){
         $id = $_GET['id'];
         $this->recipe_model->delete_recipe($id);
-        
     }
     function removeImgs($recipe_imgs,$lengthRemove ){
         // remove img in folder 

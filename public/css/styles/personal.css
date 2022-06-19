@@ -52,3 +52,7 @@
 .navbar-item + .navbar-item {
     border-top: none ;
 }
+.create-recipe__search-theme-add{
+    display: block;
+    color: #31c475;
+}
