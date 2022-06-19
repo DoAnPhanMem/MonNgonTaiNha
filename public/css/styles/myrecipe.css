@@ -127,6 +127,7 @@ hr{
     
 }
 .recipe-item__delete:hover, .recipe-item__edit:hover {
+    color: red !important;
     opacity: 1;
     animation: jounce 1s linear infinite;
 }

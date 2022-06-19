@@ -9,15 +9,9 @@ class PostController
     }
     function list()
     {
-        $data = array();
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            if ($id > 1) {
-                $id = 0;
-            }
-            $data = $this->post_model->trangthai($id);
-        } else {
-            $data = $this->post_model->BaiDang();
+        $data_post = array();
+        if (isset($_GET['status'])) {
+            $data_post = $this->post_model->getPostByStatus($_GET['status']);
         }
         require_once("MVC/Views/Admin/index.php");
     }

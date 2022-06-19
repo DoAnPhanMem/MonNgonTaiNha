@@ -61,7 +61,7 @@
               <div class="table-responsive">
                 <?php
                 if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
-                  $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
+                  $mod = isset($_GET['mod']) ? $_GET['mod'] : "theme";
                   $act = isset($_GET['act']) ? $_GET['act'] : "admin";
                   switch ($mod) {
                     case 'banner':
@@ -102,22 +102,7 @@
                           break;
                       }
                       break;
-                    case 'recipe':
-                      switch ($act) {
-                        case 'list':
-                          require_once('MVC/views/recipe/list.php');
-                          break;
-                        case 'add':
-                          require_once('MVC/views/recipe/add.php');
-                          break;
-                        case 'edit':
-                          require_once('MVC/views/recipe/edit.php');
-                          break;
-                        default:
-                          require_once('MVC/views/recipe/list.php');
-                          break;
-                      }
-                      break;
+                    
                     case 'theme':
                       switch ($act) {
                         case 'list':
@@ -143,9 +128,6 @@
                         case 'list':
                           require_once('MVC/Views/post/list.php');
                           break;
-                        // case 'add':
-                        //   require_once('MVC/Views/post/add.php');
-                        //   break;
                         case 'detail':
                           require_once('MVC/Views/post/detail.php');
                           break;

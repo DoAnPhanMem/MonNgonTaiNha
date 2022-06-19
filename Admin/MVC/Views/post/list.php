@@ -1,8 +1,8 @@
-<a href="?mod=post&id= 'đã duyệt' " type="button" class="btn btn-primary">Đã duyệt</a>
-<a href="?mod=post&id= 'chưa duyệt' " type="button" class="btn btn-primary">Chưa duyệt</a>
+
+<a href="?mod=post&status=y " type="button" class="btn btn-primary">Đã duyệt</a>
+<a href="?mod=post&status=n" type="button" class="btn btn-primary">Chưa duyệt</a>
 
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-<a href="?mod=post&act=add" type="button" class="btn btn-primary">Thêm mới</a>
 <?php } ?>
 <?php if (isset($_COOKIE['msg'])) { ?>
   <div class="alert alert-success">
@@ -21,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach ($data as $row) { ?>
+    <?php foreach ($data_post as $row) { ?>
       <tr>
         <td><?= $row['MaBaiDang'] ?></td>
         <td><?= $row['hoTen'] ?></td>         
@@ -29,9 +29,6 @@
         <td><?= $row['TrangThai'] ?></td>
         <td style="width:17%">
           <a href="?mod=post&act=detail&id=<?= $row['MaBaiDang'] ?>" class="btn btn-success">Xem chi tiết</a>
-          
-          <a href="?mod=post&act=delete&id=<?= $row['MaBaiDang'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
-          
         </td>
       </tr>
     <?php } ?>
