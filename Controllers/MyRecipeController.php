@@ -10,7 +10,11 @@ class MyRecipeController{
     {   $dataInfo = array(
         'name' => ''
         );
-        $data_recipes =  $this->recipe_model->limit(0,6);
+        $data_CountRow =  $this->recipe_model->getALlRecipe();
+        $data_recipes = $this->recipe_model->limit(0,6);
+        $numRow =ceil(count( $data_CountRow)/6);
+
+
         require_once('Views/personal/my-recipe/my-recipe.php');
     }
     public function create(){

@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">DTP<sup>Shop</sup></div>
+  <div class="sidebar-brand-text mx-3">Món<sup>Ngon</sup></div>
 </a>
 
 <!-- Divider -->
@@ -37,11 +37,7 @@
   </li>
   <?php } ?>
   <!-- Nav Item - Tables -->
-  <li class="nav-item">
-    <a class="nav-link" href="?mod=recipe">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Quản lý Công thức</span></a>
-  </li>
+  
 
   <li class="nav-item">
     <a class="nav-link" href="?mod=theme">

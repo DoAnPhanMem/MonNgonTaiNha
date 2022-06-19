@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>PTD Admin - Dashboard</title>
+  <title>Món ngon tại nhà</title>
 
   <!-- Custom fonts for this template-->
   <link href="public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -54,7 +54,6 @@
               <h6 class="m-0 font-weight-bold text-primary">
                 <?php
                 $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
-                echo "Database " . $mod;
                 ?>
               </h6>
             </div>
@@ -160,7 +159,10 @@
                       break;
 
                     case 'statistical':
-                        require_once('MVC/views/statistical/statistical.php');
+
+                        require_once('MVC/Controllers/StatisticalController.php');
+                        $obj = new StatisticalController();
+                        $obj -> statistical();
                         break;
                     
                     case 'login':
