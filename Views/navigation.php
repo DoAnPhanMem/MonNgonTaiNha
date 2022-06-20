@@ -55,11 +55,9 @@ switch ($act) {
             }
         }
         break;
-
     case 'register':
         require_once("register/register.php");
-        break;
-        
+        break; 
     case "personal":
         require_once("personal/index.php");
         break;

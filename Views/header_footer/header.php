@@ -24,9 +24,9 @@
                 <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #0FA958;" data-width="35"
                     data-height="35"></span>
 
+
                 <a href="?act=account" class="btn-login">
-                    <span style="color: #0FA958; font-weight: 600;">
-                        Đăng nhập</span>
+                    <span style="color: #0FA958; font-weight: 600;">Đăng nhập</span>
                 </a>
                 
             </div>

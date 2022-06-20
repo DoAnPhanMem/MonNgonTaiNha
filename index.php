@@ -68,8 +68,8 @@ switch ($mod) {
         break;
     case 'account':
         $act = isset($_GET['handle']) ? $_GET['handle'] : "account";
-        require_once('Controllers/LoginController.php');
-        $controller_obj = new LoginController();
+        require_once('Controllers/AccountController.php');
+        $controller_obj = new AccountController();
         if ((isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true)) {
             switch ($act) {
                 case 'logout':
@@ -101,7 +101,7 @@ switch ($mod) {
             break;
         }
 
-    case 'register':
+   /*  case 'register':
         $act = isset($_GET['handle']) ? $_GET['handle'] : "account";
         require_once('Controllers/RegisterController.php');
         $controller_obj = new RegisterController();
@@ -119,7 +119,7 @@ switch ($mod) {
                 $controller_obj->register();
                 break;
         }
-        break;
+        break; */
 
     case 'personal':
         require_once('Controllers/PersonalController.php');
