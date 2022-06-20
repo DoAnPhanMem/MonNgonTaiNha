@@ -154,7 +154,9 @@
                           break;
                       }
                       break;
-                 }
+                   
+                    
+                    }
                 } else {
                   if (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true) {
                     $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
