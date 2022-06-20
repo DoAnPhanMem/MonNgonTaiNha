@@ -54,11 +54,7 @@
     </div>
 
     <script>
-<<<<<<< HEAD
-     //  showSuccess();
-=======
        //showSuccess();
->>>>>>> 02bc5bcf1dc1e9e7bc77f88f3b3de562d9214d94
     </script>
 
     <!-- header section start -->

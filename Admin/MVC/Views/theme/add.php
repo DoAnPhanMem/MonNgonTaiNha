@@ -13,14 +13,14 @@
             <label for="">Hình ảnh</label>
             <input type="file" class="form-control" id="" placeholder="" name="HinhAnhChuDe">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="cars">Danh mục: </label>
             <select id="" name="MaChuDe" class="form-control">
                 <?php foreach ($data as $row) { ?>
                     <option value="<?= $row['MaChuDe'] ?>"><?= $row['TenChuDe'] ?></option>
                 <?php } ?>
             </select>
-        </div>
+        </div> -->
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
 </table>

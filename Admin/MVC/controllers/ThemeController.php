@@ -100,6 +100,7 @@ class ThemeController
             unset($data['HinhAnhChuDe']);
         }
 		$this->theme_model->update($data);
+		header('Location: ?act=personal&handle=create');
 	}
 
 	public function create_action()
