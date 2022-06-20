@@ -19,7 +19,7 @@ function toast ({title='', message='',type ='info', duration = 3000}) {
         }
         const icon = icons[type];
         const delay = (duration/1000).toFixed(2);
-        toast.classList.add('toast' , `toast--${type}`);
+        toast.classList.add('toast-group__toast' , `toast--${type}`);
         toast.style.animation = `slideInLeft  1s ease-in-out, fadeOut linear ${delay}s forwards ;`;
       
         toast.innerHTML =`<div class="toast__icon">
@@ -36,22 +36,40 @@ function toast ({title='', message='',type ='info', duration = 3000}) {
             
     }
 }
-
-
-
-function showSuccess(){
-    toast({
+ 
+function showRegisterSusses(){
+    toast(
+        {
         title: 'Success',
-        message: 'Bạn đã xâm nhập thành công !',
+        message: 'Đăng ký thành công, Mời bạn đăng nhập !',
         type : 'success',
-        duration : 1000000,
+        duration : 5000,
     
     });
 };
+
 function showSuccessInsert(){
     toast({
         title: 'Success',
         message: 'Bạn đã đăng bài thành công !',
+        type : 'success',
+        duration : 3000,
+    
+    });
+};
+function showSuccessApproval(){
+    toast({
+        title: 'Success',
+        message: 'Duyệt bài thành công !',
+        type : 'success',
+        duration : 3000,
+    
+    });
+};
+function showSuccessEject(){
+    toast({
+        title: 'Success',
+        message: 'Đã từ chối bài viết!',
         type : 'success',
         duration : 3000,
     

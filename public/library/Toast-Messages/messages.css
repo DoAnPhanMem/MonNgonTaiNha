@@ -3,11 +3,11 @@
     position: fixed;
     top : 35px;
     right : 35px;
-    background-color: #fff;
+    background-color: rgb(241, 238, 238);
     z-index: 1000;
 }
 
-.toast{
+.toast-group__toast{
     min-width: 400px;
     max-width: 450px;
     z-index: 1000; 
@@ -36,7 +36,7 @@
         opacity: 0;
     }
 }
-.toast + .toast{
+.toast-group__toast + .toast-group__toast{
     margin : 30px 0 0 0;
 }
 .toast__icon{

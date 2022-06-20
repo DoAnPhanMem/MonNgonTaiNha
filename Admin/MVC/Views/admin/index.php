@@ -28,12 +28,16 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+  <link rel="stylesheet" href="../public/library/Toast-Messages/messages.css">
+    <script src="../public/library/Toast-Messages/messages.js"></script>
 </head>
 
 <body id="page-top">
   <!-- Page Wrapper -->
   <div id="wrapper">
-
+   <div id="toast-group">
+    </div>
     <?php require_once('menu.php') ?>
 
     <!-- Content Wrapper -->

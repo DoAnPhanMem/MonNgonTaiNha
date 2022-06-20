@@ -53,10 +53,6 @@
     <div id="toast-group">
     </div>
 
-    <script>
-       //showSuccess();
-    </script>
-
     <!-- header section start -->
     <!-- <div class="wrapper grid wide"> -->
         <?php
