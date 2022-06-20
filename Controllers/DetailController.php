@@ -1,26 +1,24 @@
 <?php
-require_once("Models/Detail.php");
+require_once("Models/MyRecipe.php");
 class DetailController
 {
     var $detail_model;
     public function __construct()
     {
-       $this->detail_model = new Detail();
+       $this->detail_model = new MyRecipe();
     }
     
     function list()
     {
-
-        $data_danhmuc = $this->detail_model->danhmuc();
-
-       
-        $id = $_GET['id'];
-
-        $data = $this->detail_model->detail_sp($id);
-
-        if($data!=null){
-        $data_lq = $this->detail_model->sanpham_danhmuc(0,4,$data['MaDM']);
-        }
+        if(isset($_GET['id'])){
+            $id = ($_GET['id']);
+            $data_recipe = $this->detail_model->getRecipe($id);
+            $recipe_imgs = $this->detail_model->getImgsByRecipe($id);
+            $recipe_steps = $this->detail_model->getStepsByRecipe($id);
+            $recipe_stocks = $this->detail_model->getStocksByRecipe($id);
+            $recipe_themes = $this->detail_model->getThemesByRecipe($id);
+            $data_themes = $this->detail_model->theme();
+        }   
         require_once('Views/index.php');
     }
 }

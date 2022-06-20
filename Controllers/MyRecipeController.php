@@ -10,7 +10,11 @@ class MyRecipeController{
     {   $dataInfo = array(
         'name' => ''
         );
-        $data_recipes =  $this->recipe_model->limit(0,6);
+        $data_CountRow =  $this->recipe_model->getALlRecipe();
+        $data_recipes = $this->recipe_model->limit(0,6);
+        $numRow =ceil(count( $data_CountRow)/6);
+
+
         require_once('Views/personal/my-recipe/my-recipe.php');
     }
     public function create(){
@@ -121,7 +125,6 @@ class MyRecipeController{
             $recipe_stocks = $this->recipe_model->getStocksByRecipe($id);
             $recipe_themes = $this->recipe_model->getThemesByRecipe($id);
             $data_themes = $this->recipe_model->theme();
-/*             print_r($data_themes); */
             require_once('Views/personal/my-recipe/edit.php');
         }   
     }
@@ -147,7 +150,6 @@ class MyRecipeController{
                 $lengthRemove = ($lengthRecipeImg  + $lengthPostImg) -  4;
 
                 if($lengthRemove > 0){
-
                     $this->removeImgs($recipe_imgs, $lengthRemove);
                 }
                   
@@ -252,7 +254,11 @@ class MyRecipeController{
     }
     function delete_recipe(){
         $id = $_GET['id'];
+        $recipe_imgs = $this->recipe_model->getImgsByRecipe($id);
+        $lengthRemove = (count($recipe_imgs));
+        $this->removeImgs($recipe_imgs,$lengthRemove);
         $this->recipe_model->delete_recipe($id);
+
     }
     function removeImgs($recipe_imgs,$lengthRemove ){
         // remove img in folder 

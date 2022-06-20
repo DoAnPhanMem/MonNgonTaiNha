@@ -12,22 +12,25 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="d-flex d-block w-100">
-                        <img height="240px" width="500px" class="d-block w-100 mr-5" src="public/img/home/slide.png" alt="First slide">
-                        <div>
-                            <h3>
-                                Khoai tây muối ớt
-                            </h3>
-                            <p class="carousel-text">
-                                Nếu có thứ gì tốt hơn một củ khoai tây nướng hoàn hảo, nó sẽ phải là một củ khoai
-                                tây
-                                nướng hai lần. Tôi chắc rằng tất cả mọi người Mẹ, Bà hoặc hàng xóm kế bên đều có
-                                công
-                                thức làm khoai tây nhồi đôi; cuối cùng, nếu bạn có thể nướng một củ khoai tây và làm
-                                khoai tây nghiền, bạn đã đi được nửa chặng đường
-                            </p>
+                    <a href="?act=detail&id=BD001">
+                        <div class="d-flex d-block w-100">
+                            <img height="240px" width="500px" class="d-block w-100 mr-5" src="public/img/home/slide.png" alt="First slide">
+                            <div>
+                                <h3>
+                                    Khoai tây muối ớt
+                                </h3>
+                                <p class="carousel-text">
+                                    Nếu có thứ gì tốt hơn một củ khoai tây nướng hoàn hảo, nó sẽ phải là một củ khoai
+                                    tây
+                                    nướng hai lần. Tôi chắc rằng tất cả mọi người Mẹ, Bà hoặc hàng xóm kế bên đều có
+                                    công
+                                    thức làm khoai tây nhồi đôi; cuối cùng, nếu bạn có thể nướng một củ khoai tây và làm
+                                    khoai tây nghiền, bạn đã đi được nửa chặng đường
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+                    
                 </div>
                 <div class="carousel-item">
                     <div class="d-flex d-block w-100">

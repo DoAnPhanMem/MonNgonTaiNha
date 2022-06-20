@@ -19,7 +19,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
     <!-- all css here -->
-
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
     <!-- Root CSS -->
     <link rel="stylesheet" href="public/css/roots/grid.css">
@@ -30,22 +30,22 @@
     <!-- <link rel="stylesheet" href="public/css/owl.carousel.css"> -->
  
     <!-- style css -->
-    <!-- <link rel="stylesheet" href="public/css/styles/home.css"> -->
     <link rel="stylesheet" href="public/css/styles/footer.css">
+    <link rel="stylesheet" href="public/css/styles/header.css">
     <link rel="stylesheet" href="public/css/styles/home.css">
     <link rel="stylesheet" href="public/css/styles/personal.css">
     <link rel="stylesheet" href="public/css/styles/myrecipe.css">
     <link rel="stylesheet" href="public/css/styles/login.css">
     <link rel="stylesheet" href="public/css/styles/register.css">
     <link rel="stylesheet" href="public/css/styles/list-product.css">
-    <link rel="stylesheet" href="public/css/styles/header.css">
+    <link rel="stylesheet" href="public/css/styles/recipe-detail.css">
     <script src="public/library/Toast-Messages/messages.js"></script>
     <link rel="stylesheet" href="public/library/Toast-Messages/messages.css">
   
 
     <!-- responsive css -->
     <!-- <link rel="stylesheet" href="public/css/responsive.css"> -->
-    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    
 </head>
 
 <body>

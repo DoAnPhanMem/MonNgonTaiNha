@@ -6,18 +6,29 @@ class post extends model
     var $contens = "MaBaiDang";
 
     function BaiDang() {
-        $query = "SELECT * FROM nguoidung, baidang WHERE baidang.maND = nguoidung.maND;";
+        $query = "SELECT * FROM baidang.NgayCapNhat, '%d-%m-%Y') as NgayCapNhat ,nguoidung, baidang WHERE baidang.maND = nguoidung.maND;";
         require("result.php");
         return $data;
     }
 
-    function trangthai($id){
-        $query = "select * from baidang where TrangThai = $id  ORDER BY MaBaiDang DESC;";
+    function getPostByStatus($status){
+
+        $query = "select * from baidang, nguoidung where baidang.TrangThai = '$status'  
+        and nguoidung.MaND = baidang.MaND
+        ORDER BY MaBaiDang DESC;";
 
         require("result.php");
-
         return $data;
     }
-
+    function updateStatus($id, $status, $reason){
+        if($reason != 'NULL'){
+            $reason = "'".$reason."'";
+        }
+        $query = "UPDATE `baidang` SET `TrangThai` = '$status', `LyDo` =  $reason  WHERE `baidang`.`MaBaiDang` = '$id' ;";
+        $status = $this->conn->query($query);
+        if($status == true){
+            setcookie('del',"kkk", time() + 2);
+        }
+    }
 
 }
