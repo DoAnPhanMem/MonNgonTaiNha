@@ -1,5 +1,5 @@
 function toast ({title='', message='',type ='info', duration = 3000}) {
-    const main = document.getElementsByClassName('toast-group')[0];
+    const main = document.querySelector('#toast-group');
     if(main){
         const toast = document.createElement('div');
         const autoRemoveID = setTimeout(() => {
@@ -44,7 +44,7 @@ function showSuccess(){
         title: 'Success',
         message: 'Bạn đã xâm nhập thành công !',
         type : 'success',
-        duration : 3000,
+        duration : 1000000,
     
     });
 };
