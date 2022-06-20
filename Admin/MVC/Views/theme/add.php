@@ -4,7 +4,7 @@
             <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
         </div>
     <?php } ?>
-    <form action="?mod=theme&act=store" method="POST" role="form" enctype="multipart/form-data">
+    <form action="?mod=theme&act=create_action" method="POST" role="form" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">Tên chủ đề</label>
             <input type="text" class="form-control" id="" placeholder="" name="TenChuDe">

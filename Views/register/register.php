@@ -29,11 +29,6 @@
 			</p>
 		<form method="POST" action="?act=account&handle=register-action">
             <div class="register-text">
-				<input type="text" placeholder="Họ và tên" type="submit" name="name" class="name-input" >
-				<input type="password" placeholder="Mật khẩu" type="submit" name="password" class="pass1-input" >
-                <input type="password" placeholder="Nhập lại mật khẩu" type="submit" name="rPassword" class="repass-input" >
-				<input type="text" placeholder="Email" type="submit" name="email" class="mail-input" >
-                <input type="tel" placeholder="SĐT" type="submit" name="phone" class="phone-input" >
 				<input required type="text" placeholder="Họ và tên"  name="name" class="name-input" >
 				<input required type="text" placeholder="Tên đăng nhập"  name="username" class="name-input" >
 				<input required type="password" placeholder="Mật khẩu"  name="pass" class="pass1-input" >

@@ -1,8 +1,8 @@
 <!-- LOGIN -->
 
+
 <div class="wrapper">
 	<div class="container">
-		<form action="" method="POST" role="form">
 		<form action="?act=account&handle=login-action" method="POST">
 			<div class="container-login">
 				<p>
@@ -21,8 +21,6 @@
 				</button>
 
 				<div class="login-text">
-					<input type="email" placeholder="Email" name="email" class="email-input" >
-					<input type="password" placeholder="Mật khẩu" name="password" class="pass-input" >
 					<input type="text" placeholder="Tên đăng nhập" name = "username" class="email-input" >
 					<input type="password" placeholder="Mật khẩu" name = "pass" class="pass-input" >
 					<a href="" >Quên mật khẩu ?</a>
@@ -31,9 +29,6 @@
 				<div class="btn-login-register">
 					<button class="btn-login" type="submit" onclick="location.href='?act=home'">
 						Đăng nhập
-					</button>
-					<button class="btn-register" type="submit" onclick="location.href='?act=register'">				
-						Đăng ký
 					</button>
 				</div>
 
