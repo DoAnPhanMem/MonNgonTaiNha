@@ -15,5 +15,19 @@ class ListProductController
 
         require_once('Views/index.php');
     }
+    function search($keySearch)
+    {
+        $products = $this->home_model->search($keySearch);
+
+
+        require_once('Views/index.php');
+    }
+    function filterByCategoryId($categoryId)
+    {
+        $products = $this->home_model->getByCategory($categoryId);
+
+
+        require_once('Views/index.php');
+    }
 }
 ?>

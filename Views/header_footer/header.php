@@ -7,14 +7,14 @@
                 </a>
             </div>
             <div class="search_bar col-4 col-md-4 col-xl-4 col-lg-4 col-sm-4 mt-2">
-                <div class="container_input input-group mt-3 mb-1 ">
-                    <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Username"
-                        aria-describedby="basic-addon1">
-                    <div class="input-group-prepend">
-                        <span class="btn input-group-text bg-white" style="border-radius: 0 50px 50px 0;"
+                <form  method="POST" action="?act=search" class="container_input input-group mt-3 mb-1 ">
+                    <input name="key" type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Username"
+                        aria-describedby="basic-addon1" style="font-size:14px">
+                    <button style="border-radius: 0 50px 50px 0;" type="submit" class="input-group-prepend">
+                        <span class="btn input-group-text bg-white h-100" style="border-radius: 0 50px 50px 0;"
                             id="basic-addon1"><span class="iconify" data-icon="bx:bx-search-alt-2">
-                    </div>
-                </div>
+                    </button>
+                </form>
             </div>
             <div class="img-header col-xl-3 col-lg-3 col-md-3 col-3 col-sm-3 col-xs-3">
                 <img width="100%" src="public/img/header-footer/header.png" alt="">
@@ -35,7 +35,7 @@
             <div class="container_menu_header d-md-block">
                 <ul class="d-flex p-0 h-100 align-items-center my-auto">
                     <li class="menu-list"><a class="item-menu" style="  color: #0FA958;" href="?act=home">Trang chủ</a></li>
-                    <li class="menu-list"><a class="item-menu" href="#">Công thức</a></li>
+                    <li class="menu-list"><a class="item-menu" href="?act=list-product">Công thức</a></li>
                     <li class="menu-list"><a class="item-menu" href="">Gửi công thức</a></li>
                     <li class="menu-list"><a class="item-menu" href="#">Về chúng tôi</a></li>
                     <li class="menu-list"><a class="item-menu" href="#">Trợ giúp</a></li>

@@ -12,6 +12,18 @@ switch ($mod) {
         $controller_obj = new ListProductController();
         $controller_obj->list();
         break;
+    case 'search':
+        require_once('Controllers/ListProductController.php');
+        $searchKey = isset($_POST['key']) ? $_POST['key'] : "";
+        $controller_obj = new ListProductController();
+        $controller_obj->search($searchKey);
+        break;
+    case 'category':
+        require_once('Controllers/ListProductController.php');
+        $categoryId = isset($_GET['category']) ? $_GET['category'] : "";
+        $controller_obj = new ListProductController();
+        $controller_obj->filterByCategoryId($categoryId);
+        break;
     case 'theme':
         require_once('Controllers/ThemeController.php');
         $controller_obj = new ThemeController();

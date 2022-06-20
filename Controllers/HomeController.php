@@ -11,6 +11,8 @@ class HomeController
     function list()
     {
         $newestItems = $this->home_model->newestItem();
+        $chuDes = $this->home_model->getChuDe();
+        $congThucNoiBac = $this->home_model->newestItem();
 
         // var_dump($newestItems);
         require_once('Views/index.php');
