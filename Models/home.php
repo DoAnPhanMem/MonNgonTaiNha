@@ -9,5 +9,20 @@ class Home extends Model
         
         return $data;
     }
+
+    function getChuDe() {
+        $query = "SELECT * FROM ChuDe";
+
+        require("result.php");
+        return $data;
+    }
+
+    function getNoiBat() {
+        $query = "SELECT * FROM ChuDe";
+
+        require("result.php");
+        
+        return $data;
+    }
 }
 ?>

@@ -7,6 +7,12 @@ switch ($act) {
     case "list-product":
         require_once("list-congthuc/congthuc.php");
         break;
+    case "search":
+        require_once("list-congthuc/congthuc.php");
+        break;
+    case "category":
+        require_once("list-congthuc/congthuc.php");
+        break;
     case "shop":
         require_once("shop/shop.php");
         break;

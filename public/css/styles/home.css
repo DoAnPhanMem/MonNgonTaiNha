@@ -38,6 +38,7 @@
     line-height: 44px;
     color: #0FA958;
     margin: 20px 0;
+
 }
 
 .category .main {
@@ -49,9 +50,20 @@
 .category .main .category-item:hover {
     transform: scale(1.05);
     transition: all 0.9s;
+    cursor: pointer;
 }
 
 .category-name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+
+    color: #000000;
+    text-align: center;
+}
+.category-name a{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
