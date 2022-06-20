@@ -1,6 +1,6 @@
 <!-- REGISTER -->
 <?php
-	$conn = mysqli_connect('localhost', 'root', '', 'monngon');
+	//$conn = mysqli_connect('localhost', 'root', '', 'monngon');
 
 	if(isset($_POST['name'])) {
 		$name = $_POST['name'];

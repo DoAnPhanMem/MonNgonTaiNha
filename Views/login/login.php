@@ -12,12 +12,12 @@
 				
 				<button class="btn-facebook button">
 					<i class="fa-brands fa-facebook-square"></i>
-					Đăng ký bằng Facebook
+					Đăng nhập bằng Facebook
 				</button>
 				
 				<button class="btn-google button">
 					<i class="fa-brands fa-google"></i>
-					Đăng ký bằng Google
+					Đăng nhập bằng Google
 				</button>
 
 				<div class="login-text">
