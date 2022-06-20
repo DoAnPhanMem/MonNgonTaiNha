@@ -1,6 +1,11 @@
 <!-- LOGIN -->
-
-
+<?php 
+	if(isset($_COOKIE['register-susses'])){
+		echo "<script>
+			showRegisterSusses();
+		</script>";
+	}
+?>
 <div class="wrapper">
 	<div class="container">
 		<form action="?act=account&handle=login-action" method="POST">

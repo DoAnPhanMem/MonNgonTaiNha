@@ -66,7 +66,7 @@ class Account extends Model
                // echo $query;
                 $status = $this->conn->query($query);
                 if ($status == true) {
-                    setcookie('msg', 'Đăng ký thành công', time() + 2);
+                    setcookie('register-susses', 'Đăng ký thành công', time() + 2);
                 } else {
                     setcookie('msg', 'Đăng ký không thành công', time() + 2);
                 }
