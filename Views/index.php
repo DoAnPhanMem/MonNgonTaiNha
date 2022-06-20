@@ -49,13 +49,14 @@
     <!-- <link rel="stylesheet" href="public/css/responsive.css"> -->
     
 </head>
-
 <body>
     <div id="toast-group">
     </div>
+
     <script>
-      //  showSuccess();
+       //showSuccess();
     </script>
+
     <!-- header section start -->
     <!-- <div class="wrapper grid wide"> -->
         <?php

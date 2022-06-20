@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
-    $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
+    $mod = isset($_GET['mod']) ? $_GET['mod'] : "theme";
     $act = isset($_GET['act']) ? $_GET['act'] : "admin";
     switch ($mod) {
         case 'banner':
