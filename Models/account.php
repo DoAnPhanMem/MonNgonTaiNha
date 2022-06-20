@@ -11,20 +11,12 @@ class Account extends Model
     function login_action($data)
     {
         $query = "SELECT * from nguoidung  WHERE username = '" . $data['username'] . "' AND password = '" . $data['password'] . "' AND trangthai = 1";
-
         $login = $this->conn->query($query)->fetch_assoc();
-        
         if ($login !== NULL) {
             $_SESSION['isLogin'] = true;
             $_SESSION['login'] = $login;
-            if($login['MaQuyen'] == 2){
+            if($login['maQuyen'] == 2){
                 $_SESSION['isLogin_Admin'] = true;
-                $_SESSION['login'] = $login;
-            }else{
-                if($login['MaQuyen'] == 3){
-                $_SESSION['isLogin_Nhanvien'] = true;
-                $_SESSION['login'] = $login;
-                }
             }
             header('Location: ?mod=login');
         } else {
