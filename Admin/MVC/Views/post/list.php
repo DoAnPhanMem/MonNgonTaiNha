@@ -4,10 +4,15 @@
 <a href="?mod=post&status=e" type="button" style="background : <?= $_GET['status'] == 'e'?'#888' : ''?>" class="btn btn-primary">Đã từ chối</a>
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
 <?php } ?>
-<?php if (isset($_COOKIE['msg'])) { ?>
-  <div class="alert alert-success">
-    <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
-  </div>
+<?php if (isset($_COOKIE['approval-susses'])) { ?>
+  <script>
+      showSuccessApproval()
+  </script>
+<?php } ?>
+<?php if (isset($_COOKIE['eject-susses'])) { ?>
+  <script>
+      showSuccessEject();
+  </script>
 <?php } ?>
 <hr>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

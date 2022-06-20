@@ -23,8 +23,7 @@ class PostController
             }
             $data_post = $this->post_model->getPostByStatus($status);
         }
-        require_once("MVC/Views/Admin/index.php");
-       
+        require_once("MVC/Views/Admin/index.php");  
     }
 
     function approval()
