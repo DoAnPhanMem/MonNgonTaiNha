@@ -25,8 +25,7 @@
                     data-height="35"></span>
 
                 <a href="?act=account" class="btn-login">
-                    <span style="color: #0FA958; font-weight: 600;">
-                        Đăng nhập</span>
+                    <span style="color: #0FA958; font-weight: 600;"><?= isset($_SESSION['isLogin'])?$_SESSION['login']['hoTen'] : 'Đăng nhập'?></span>
                 </a>
                 
             </div>

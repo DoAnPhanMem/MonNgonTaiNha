@@ -1,6 +1,6 @@
 <?php
 require_once("model.php");
-class Login extends Model
+class Account extends Model
 {
     var $conn;
     function __construct()
@@ -10,7 +10,7 @@ class Login extends Model
     }
     function login_action($data)
     {
-        $query = "SELECT * from nguoidung  WHERE taikhoan = '" . $data['taikhoan'] . "' AND matkhau = '" . $data['matkhau'] . "' AND trangthai = 1";
+        $query = "SELECT * from nguoidung  WHERE username = '" . $data['username'] . "' AND password = '" . $data['password'] . "' AND trangthai = 1";
 
         $login = $this->conn->query($query)->fetch_assoc();
         
@@ -29,7 +29,8 @@ class Login extends Model
             header('Location: ?mod=login');
         } else {
             setcookie('msg1', 'Đăng nhập không thành công', time() + 5);
-            header('Location: ?act=taikhoan#dangnhap');
+            echo $query;
+            //header('Location: ?act=account#login');
         }
         
     }
@@ -51,7 +52,7 @@ class Login extends Model
     }
     function check_account()
     {
-        $query =  "SELECT * from NguoiDung";
+        $query =  "SELECT * from nguoidung";
 
         require("result.php");
 
@@ -69,8 +70,8 @@ class Login extends Model
                 }
                 $f = trim($f, ",");
                 $v = trim($v, ",");
-                $query = "INSERT INTO NguoiDung($f) VALUES ($v);";
-
+                $query = "INSERT INTO nguoidung($f) VALUES ($v);";
+               // echo $query;
                 $status = $this->conn->query($query);
                 if ($status == true) {
                     setcookie('msg', 'Đăng ký thành công', time() + 2);
@@ -83,7 +84,7 @@ class Login extends Model
         } else {
             setcookie('msg', 'Tên tài khoản hoặc Email  đã tồn tại', time() + 2);
         }
-        header('Location: ?act=taikhoan#dangky');
+        header('Location: ?act=account#register');
     }
     function account()
     {

@@ -1,13 +1,13 @@
 <!-- LOGIN -->
 
-
 <div class="wrapper">
 	<div class="container">
 		<form action="" method="POST" role="form">
+		<form action="?act=account&handle=login-action" method="POST">
 			<div class="container-login">
 				<p>
 					<h2>Đăng nhập tài khoản của bạn</h2>
-					<h5>Chào mừng bạn quay trở lại với Homefood</h5>
+					<h5>Chào mừng bạn quay trở lại với Món Ngon</h5>
 				</p>
 				
 				<button class="btn-facebook button">
@@ -23,6 +23,8 @@
 				<div class="login-text">
 					<input type="email" placeholder="Email" name="email" class="email-input" >
 					<input type="password" placeholder="Mật khẩu" name="password" class="pass-input" >
+					<input type="text" placeholder="Tên đăng nhập" name = "username" class="email-input" >
+					<input type="password" placeholder="Mật khẩu" name = "pass" class="pass-input" >
 					<a href="" >Quên mật khẩu ?</a>
 				</div>
 

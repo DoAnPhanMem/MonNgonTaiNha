@@ -39,8 +39,10 @@
     <link rel="stylesheet" href="public/css/styles/register.css">
     <link rel="stylesheet" href="public/css/styles/list-product.css">
     <link rel="stylesheet" href="public/css/styles/recipe-detail.css">
-    <script src="public/library/Toast-Messages/messages.js"></script>
+    
     <link rel="stylesheet" href="public/library/Toast-Messages/messages.css">
+    <script src="public/library/Toast-Messages/messages.js"></script>
+   
   
 
     <!-- responsive css -->
@@ -49,8 +51,11 @@
 </head>
 
 <body>
-    <div class="toast-group">
+    <div id="toast-group">
     </div>
+    <script>
+      //  showSuccess();
+    </script>
     <!-- header section start -->
     <!-- <div class="wrapper grid wide"> -->
         <?php
