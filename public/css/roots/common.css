@@ -15,6 +15,9 @@
 .btn-rounded{
     border-radius: 999px ;
 }
+.btn-primary-eject{
+    background-color: red;;
+}
 .btn-gray{
     background-color: rgb(173, 172, 169);
 }

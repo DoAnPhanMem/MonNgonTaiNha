@@ -147,14 +147,12 @@
         //ĐỪng xóa trong cái này
             if(isset($_GET['status'])){ 
                 $status =($_GET['status']);
-                if($status == 'n'){  ?>
+                if($status == 'n' || $status == 'e' ){  ?>
                 <div class="action-approval">
-
-                
                     <a href="admin/?mod=post&act=approval&status=y&id=<?=$data_recipe[0]['MaBaiDang']?>" onclick="return confirm('Công thức này sẽ được hiển thi trên trang web ?');" class = "btn detail-recipe-btn__accept">Duyệt</a>
-              <?php }?>
-                  
-                    <form action="admin/?mod=post&act=approval&status=tc&id=<?=$data_recipe[0]['MaBaiDang']?>" method="post">
+              <?php }if($status != 'e'){?>
+                    
+                    <form action="admin/?mod=post&act=approval&status=e&id=<?=$data_recipe[0]['MaBaiDang']?>" method="post">
                         <div class ="toast-question-eject">
                             <h3 class = "question-eject-title">Lý do từ chối : </h3>
                             <textarea class="question-eject-content" required name="post-reason" id="" cols="50" rows="10" placeholder="Nhập lý do"></textarea>
@@ -162,7 +160,9 @@
                             <button class = "btn btn-gray detail-recipe-btn__eject-exit">Hủy</button>
                         </div>    
                     </form>
-                    <button class = "btn btn-gray  detail-recipe-btn__eject">Từ chối</button>
+
+                    <button class = "btn btn-primary-eject  detail-recipe-btn__eject">Từ chối</button>
+                    <?php }?>
                     </div>
               <?php  }?>
             <!-- ĐỪng xóa cái này -->
