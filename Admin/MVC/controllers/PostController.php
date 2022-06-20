@@ -26,13 +26,14 @@ class PostController
     {
         if($_GET['status']){
             $status = $_GET['status'];
+            $reason = isset($_POST['post-reason'])?$_POST['post-reason'] : 'NULL';
             if($status == "y"){
                 $status = "Đã duyệt";
             }
             else{
                 $status = "Từ chối";
             }
-            $this->post_model->updateStatus( $_GET['id'],$status );
+            $this->post_model->updateStatus( $_GET['id'],$status,$reason );
             $data_post = $this->post_model->getPostByStatus('Đã duyệt');   
         }
         require_once("MVC/Views/Admin/index.php");

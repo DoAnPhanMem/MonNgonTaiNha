@@ -20,8 +20,11 @@ class post extends model
         require("result.php");
         return $data;
     }
-    function updateStatus($id, $status){
-        $query = "UPDATE `baidang` SET `TrangThai` = '$status' WHERE `baidang`.`MaBaiDang` = '$id';";
+    function updateStatus($id, $status, $reason){
+        if($reason != 'NULL'){
+            $reason = "'".$reason."'";
+        }
+        $query = "UPDATE `baidang` SET `TrangThai` = '$status', `LyDo` =  $reason  WHERE `baidang`.`MaBaiDang` = '$id' ;";
         $status = $this->conn->query($query);
         if($status == true){
             setcookie('del',"kkk", time() + 2);

@@ -32,3 +32,9 @@
     display: block;
     margin: 10px 0;
 }
+.action-approval{
+    display: flex;
+}
+.detail-recipe-btn__eject{
+    margin-left: 10px;
+}
