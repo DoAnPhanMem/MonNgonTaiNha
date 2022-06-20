@@ -71,7 +71,7 @@ class Account extends Model
                 $f = trim($f, ",");
                 $v = trim($v, ",");
                 $query = "INSERT INTO nguoidung($f) VALUES ($v);";
-                echo $query;
+               // echo $query;
                 $status = $this->conn->query($query);
                 if ($status == true) {
                     setcookie('msg', 'Đăng ký thành công', time() + 2);
@@ -84,7 +84,7 @@ class Account extends Model
         } else {
             setcookie('msg', 'Tên tài khoản hoặc Email  đã tồn tại', time() + 2);
         }
-       // header('Location: ?act=account#register');
+        header('Location: ?act=account#register');
     }
     function account()
     {

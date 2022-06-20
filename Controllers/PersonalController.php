@@ -6,9 +6,9 @@ class PersonalController{
     {
         $this->personal_model = new Personal();
     }
+    
     public function personal() 
     {
-        
         require_once('Views/index.php');
     }
 }

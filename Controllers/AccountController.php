@@ -50,7 +50,6 @@ class AccountController
             $data = array(
                 'hoTen' =>    $_POST['name'],
                 'GioiTinh' => "",
-                'sdt' => "",
                 'email' =>    $_POST['email'],
                 'DiaChi'  =>   "",
                 'username' => $_POST['username'],
