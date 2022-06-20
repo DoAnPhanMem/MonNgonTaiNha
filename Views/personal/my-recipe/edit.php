@@ -4,7 +4,12 @@
         <hr />
     </div>
     <form method="POST" action="?act=personal&handle=editRecipe-action" enctype="multipart/form-data" >
-      
+        <?php if($data_recipe[0]['LyDo'] != 'NULL'){?>
+        <div class="create-recipe__form-item">
+            <h2 class = "edit-recipe__title">Lý do bị từ chối:  </h2>
+            <i class = "edit-recipe__reason"><?= $data_recipe[0]['LyDo'] ?></i>
+        </div>
+        <?php }?>
         <div class="create-recipe__form-item">
         <input required type="hidden" name="id" value="<?=$data_recipe[0]['MaBaiDang']?>" >  
 

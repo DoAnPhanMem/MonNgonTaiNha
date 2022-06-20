@@ -15,13 +15,18 @@ class PostController
             if($status == "y"){
                 $status = "Đã duyệt";
             }
-            else{
+            else if($status == "n"){ 
                 $status = "Chưa duyệt";
+            }
+            else{
+                $status = "Từ chối";
             }
             $data_post = $this->post_model->getPostByStatus($status);
         }
         require_once("MVC/Views/Admin/index.php");
+       
     }
+
     function approval()
     {
         if($_GET['status']){
@@ -36,8 +41,8 @@ class PostController
             $this->post_model->updateStatus( $_GET['id'],$status,$reason );
             $data_post = $this->post_model->getPostByStatus('Đã duyệt');   
         }
-        require_once("MVC/Views/Admin/index.php");
-        // header('Location: ?act=personal&handle=recipe');
+        //require_once("MVC/Views/Admin/index.php");
+        header('Location: ?mod=post&status='.$_GET["status"]);
     }
     
 

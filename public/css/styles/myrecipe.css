@@ -126,6 +126,17 @@ hr{
     cursor: pointer;  
     
 }
+.edit-recipe__title{
+    color: red;
+    padding: 5px 0;
+    margin-bottom: 10px;
+   
+}
+.edit-recipe__reason{
+    border: 1px solid #333 ;
+    margin-top: 20px ;
+    padding: 10px;
+}
 .recipe-item__delete:hover, .recipe-item__edit:hover {
     color: red !important;
     opacity: 1;
