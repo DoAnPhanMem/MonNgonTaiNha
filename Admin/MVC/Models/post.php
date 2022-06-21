@@ -25,9 +25,13 @@ class post extends model
             $reason = "'".$reason."'";
         }
         $query = "UPDATE `baidang` SET `TrangThai` = '$status', `LyDo` =  $reason  WHERE `baidang`.`MaBaiDang` = '$id' ;";
-        $status = $this->conn->query($query);
-        if($status == true){
-            setcookie('del',"kkk", time() + 2);
+        $result = $this->conn->query($query);
+
+        if($status == "Đã duyệt"){
+            setcookie('approval-susses',"kkk", time() + 2);
+        }
+        if($status == "Từ chối"){
+            setcookie('eject-susses',"kkk", time() + 2);
         }
     }
 

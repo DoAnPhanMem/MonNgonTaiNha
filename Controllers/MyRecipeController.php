@@ -13,8 +13,6 @@ class MyRecipeController{
         $data_CountRow =  $this->recipe_model->getALlRecipe();
         $data_recipes = $this->recipe_model->limit(0,6);
         $numRow =ceil(count( $data_CountRow)/6);
-
-
         require_once('Views/personal/my-recipe/my-recipe.php');
     }
     public function create(){
@@ -72,7 +70,7 @@ class MyRecipeController{
             }
             $data_recipe = array(
                 'MaBaiDang' =>$idNew,
-                'MaND' => '1', //tạm,
+                'MaND' => $_SESSION['login']['maND'], //tạm,
                 'Video' =>$videoFileName,
                 'TieuDe' => $_POST['post-name'],
                 'MoTa' => $_POST['post-description'],
@@ -224,7 +222,7 @@ class MyRecipeController{
 
          $data_recipe = array(
              'MaBaiDang' =>$id,
-             'MaND' => '1', //tạm,
+             'MaND' => $_SESSION['login']['maND'], //tạm,
              'Video' =>$videoName,
              'TieuDe' => $_POST['post-name'],
              'MoTa' => $_POST['post-description'],

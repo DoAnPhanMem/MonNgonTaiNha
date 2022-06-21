@@ -18,6 +18,7 @@ class DetailController
             $recipe_stocks = $this->detail_model->getStocksByRecipe($id);
             $recipe_themes = $this->detail_model->getThemesByRecipe($id);
             $data_themes = $this->detail_model->theme();
+            $comments =  $this->detail_model->getCommmentByRecipe($id);
         }   
         require_once('Views/index.php');
     }
