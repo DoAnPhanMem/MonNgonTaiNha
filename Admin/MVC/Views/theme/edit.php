@@ -9,12 +9,12 @@
         <input type="hidden" name="MaChuDe" value="<?= $data_detail['MaChuDe'] ?>">
         <div class="form-group">
             <label for="">Tên chủ đề</label>
-            <input type="text" class="form-control" id="" placeholder="" name="TenChuDe" value="<?=$data_detail['TenChuDe'] ?>">
+            <input type="text" class="form-control" id="" placeholder="" name="name" value="<?=$data_detail['TenChuDe'] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh</label>
             <img src="../public/img/themes/<?=$data_detail['HinhAnhChuDe']?>" height="200px" width="200px">
-            <input type="file" class="form-control" id="" placeholder="" name="HinhAnhChuDe" >
+            <input type="file" class="form-control" id="" placeholder="" name="post-img" >
         </div>
        
         <div class="form-group">

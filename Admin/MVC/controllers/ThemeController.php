@@ -31,7 +31,9 @@ class ThemeController
 	}
 	public function delete()
 	{
-		if (isset($_GET['id'])) {
+		if (isset($_GET['id'])) {	
+			$data_theme_old = $this->theme_model->find($_GET['id']);
+			unlink("../public/img/themes/".$data_theme_old['HinhAnhChuDe']);	
 			$this->theme_model->delete($_GET['id']);
 		}
 	}
@@ -48,57 +50,59 @@ class ThemeController
 	}
 
 	public function update()
-	{
-		$target_dir = "../public/img/themes/";  // thư mục chứa file upload
-
-        $HinhAnh = "";
-        $target_file = $target_dir . basename($_FILES["HinhAnhChuDe"]["name"]); // link sẽ upload file lên
-
-        $status_upload = move_uploaded_file($_FILES["HinhAnhChuDe"]["tmp_name"], $target_file);
-
-        if ($status_upload) { // nếu upload file không có lỗi 
-            $HinhAnh =  basename($_FILES["HinhAnhChuDe"]["name"]);
-		}
-
+	{	
+		
 		$data = array(
 			'MaChuDe' => $_POST['MaChuDe'],
-			'TenChuDe' => $_POST['TenChuDe'],
-			'HinhAnhChuDe' => $HinhAnh			
+			'TenChuDe' => $_POST['name']		
 		);
+		if(isset($_FILES['post-img']) && $_FILES['post-img']['size'] > 0){
+            $imgFile = $_FILES['post-img'] ;
+            $imgFile['name'] = $_POST['name'].$imgFile['name'];
+            $imgFileName = $imgFile['name'] ;
+            $tmpimgPath = $imgFile['tmp_name'];
+            $newimgPath = "../public/img/themes/" . $imgFile['name'];
+            $status = move_uploaded_file($tmpimgPath, $newimgPath);
+			$data['HinhAnhChuDe'] = $imgFileName;
 
-		foreach ($data as $key => $value) {
-            if (strpos($value, "'") != false) {
-                $value = str_replace("'", "\'", $value);
-                $data[$key] = $value;
-            }
+			$data_theme_old = $this->theme_model->find($_POST['MaChuDe']);
+			unlink("../public/img/themes/".$data_theme_old['HinhAnhChuDe']);		
 		}
-		if ($HinhAnh == "") {
-            unset($data['HinhAnhChuDe']);
-        }
+
+	
+		
+		
+		foreach ($data as $key => $value) {
+			if (strpos($value, "'") != false) {
+				$value = str_replace("'", "\'", $value);
+				$data[$key] = $value;
+			}
+		}
 		$this->theme_model->update($data);
-		header('Location: ?act=personal&handle=create');
+		header('Location: ?mod=theme');
 	}
 
 	public function create_action()
     {
-
         $imgFileName = '';
         if(isset($_FILES['post-img']) && $_FILES['post-img']['size'] > 0){
             $imgFile = $_FILES['post-img'] ;
-            $imgFile['name'] = $imgFile['name'];
+            $imgFile['name'] = $_POST['name'].$imgFile['name'];
             $imgFileName = $imgFile['name'] ;
             $tmpimgPath = $imgFile['tmp_name'];
             $newimgPath = "../public/img/themes/" . $imgFile['name'];
             $status = move_uploaded_file($tmpimgPath, $newimgPath);
         }
+
         $data_theme = array(
             'MaChuDe'  => 'null',
             'TenChuDe' => $_POST['post-name'],
             'HinhAnhChuDe' =>  $imgFileName
         );
+
         $this->theme_model->create($data_theme);
 		$data = $this->theme_model->All(); 
-        require_once("MVC/Views/Admin/index.php");
+        header("Location: ?mod=theme");
     }
 
 }
