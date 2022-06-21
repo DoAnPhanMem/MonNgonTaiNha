@@ -24,6 +24,7 @@ class UserController
     {
         require_once("MVC/Views/Admin/index.php");
         //require_once("MVC/Views/authors/add.php");
+        
     }
     public function store()
     {
@@ -45,11 +46,13 @@ class UserController
             }
         }
         $this->user_model->store($data);
+        header('Location: ?act=personal&handle=create');
     }
     public function delete()
     {
         $id = $_GET['id'];
         $this->user_model->delete($id);
+        header('Location: ?act=personal&handle=create');
     }
     public function edit()
     {
@@ -79,6 +82,6 @@ class UserController
             }
         }
         $this->user_model->update($data);
-        
+        header('Location: ?act=personal&handle=create');
     }
 }
