@@ -79,5 +79,6 @@ class UserController
             }
         }
         $this->user_model->update($data);
+        
     }
 }
