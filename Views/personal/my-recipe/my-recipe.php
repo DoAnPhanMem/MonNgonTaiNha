@@ -14,10 +14,12 @@
 <?php }
     ?>
     <div class="my-recipe__top">
+        
         <h1 class="my-recipe__title">Công Thức Của Tôi</h1>
-        <a class="btn-rounded btn" href = "?act=personal&handle=create"> Tạo mới</a>
+        <a class="btn-rounded btn"  href = "?act=personal&handle=create"> Tạo mới</a>
     </div>
     <div class="my-recipe__content">
+    <input type="hidden" class="inputMaND" value=<?= $_SESSION['login']['maND'] ?>>
         <div class="my-recipe__fitter">
             <div class ="my-recipe__fitter-search">
                 <i class="my-recipe__search-icon fa-solid fa-magnifying-glass"></i>

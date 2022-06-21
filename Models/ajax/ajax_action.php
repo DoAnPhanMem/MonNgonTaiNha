@@ -1,15 +1,14 @@
 
     <?php 
-    if(isset($_POST['nameRecipe'])){   
-       echo "<script>alert('ngu ngo')</script>";  
+    if(isset($_POST['nameRecipe'])){    
         $nameRecipe = $_POST['nameRecipe'];
         $dateUpdate = $_POST['dateUpdate'];
         $timeCooking = $_POST['timeCooking'];
         $statusRecipe  = $_POST['statusRecipe'];
-       
+        $maND = $_POST['maND'];
         include("../MyRecipe.php");
         $controller_obj = new MyRecipe();
-        $data_recipes  = $controller_obj->fitterRecipe($nameRecipe, $dateUpdate,$timeCooking,$statusRecipe);
+        $data_recipes  = $controller_obj->fitterRecipe($nameRecipe, $dateUpdate,$timeCooking,$statusRecipe,$maND);
         foreach ($data_recipes   as  $key => $value){ ?>
                     <div class="l-4">
                         <div class="recipe-item">

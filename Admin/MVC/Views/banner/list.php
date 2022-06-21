@@ -17,7 +17,7 @@
     <?php foreach ($data as $row) { ?>
       <tr>
         <td><?= $row['Id'] ?></td>
-        <td><?= $row['HinhAnh'] ?></td>
+        <td><?= $row['HinhAnhChuDe'] ?></td>
         <td>
           <a href="?mod=banner&act=detail&id=<?= $row['Id'] ?>" class="btn btn-success">Xem</a>
           <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>

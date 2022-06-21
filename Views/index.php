@@ -53,21 +53,7 @@
 <body>
     <div id="toast-group">
     </div>
-    <?php
-    // if(isset($_SESSION['isLogin_Admin'])){
-    //     unset($_SESSION['isLogin_Admin']);
-    //     unset($_SESSION['login']);
-    // }
-    // if(isset($_SESSION['isLogin_Nhanvien'])){
-    //     unset($_SESSION['isLogin_Nhanvien']);
-    //     unset($_SESSION['login']);
-    // }
-    // if(isset($_SESSION['isLogin'])){
-    //     unset($_SESSION['isLogin']);
-    //     unset($_SESSION['login']);
-    // }
-
-     ?>
+    
     <!-- header section start -->
     <!-- <div class="wrapper grid wide"> -->
         <?php
