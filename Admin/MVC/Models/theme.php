@@ -35,4 +35,16 @@ class theme extends Model
             setcookie('msg', 'Thêm vào không thành công', time() + 2);  
         }
     }
+    function delete($id)
+    {
+        $query = "DELETE from $this->table where $this->contens=$id";
+        
+        $status = $this->conn->query($query);
+        if ($status == true) {
+            setcookie('msg', 'Xóa thành công', time() + 2);
+        } else {
+            setcookie('msg', 'Xóa không thành công', time() + 2);
+        }
+        header('Location: ?mod=theme');
+    }
 }

@@ -73,8 +73,8 @@ class Model
         $result = $this->conn->query($query);
         
         if ($result == true) {
-            setcookie('msg', 'Duyệt thành công', time() + 2);
-            header('Location: ?mod=post');
+            setcookie('msg', 'Cập nhật thành công', time() + 2);
+            header('Location: ?mod=theme');
         } else {
             setcookie('msg', 'Update vào không thành công', time() + 2);
             header('Location: ?mod=' . $this->table . '&act=edit&id=' . $data['id']['id']);
