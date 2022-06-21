@@ -20,9 +20,8 @@ class Account extends Model
             }
             header('Location: ?mod=login');
         } else {
-            setcookie('msg1', 'Đăng nhập không thành công', time() + 5);
-            echo $query;
-            //header('Location: ?act=account#login');
+            setcookie('login-fail', 'Đăng nhập không thành công', time() + 5);
+            header('Location: ?act=account#login');
         }
         
     }

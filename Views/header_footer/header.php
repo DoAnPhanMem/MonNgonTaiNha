@@ -29,9 +29,13 @@
                 <?php if(isset($_SESSION['login'])){?>
                 <div class="menu-down">
                     <ul class="list-group">
-                        <li class="list-group-item active"><a>Tài khoản</a></li>
-                        <li class="list-group-item"><a>Quản lý</a></li>
-                        <li class="list-group-item"><a>Đăng xuất</a></li>
+                        <li class="list-group-item active"><a href="?act=personal">Tài khoản</a></li>
+                        <?php 
+                            if(isset($_SESSION['isLogin_Admin'])){?>
+                            <li class="list-group-item"><a href="./admin">Quản lý</a></li>
+                        <?php  } ?>
+                        
+                        <li class="list-group-item"><a href="?act=account&handle=logout" > Đăng xuất</a></li>
                     </ul>
                 </div>
                 <?php } ?>

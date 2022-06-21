@@ -102,3 +102,14 @@ function showError(){
     
     });
 };
+
+ 
+function showLoginError(){
+    toast(
+        {
+        title: 'Error',
+        message: 'Đăng nhập không thành cônng !',
+        type : 'error',
+        duration : 3000,
+    });
+};
