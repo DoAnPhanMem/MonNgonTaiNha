@@ -70,7 +70,7 @@ class MyRecipeController{
             }
             $data_recipe = array(
                 'MaBaiDang' =>$idNew,
-                'MaND' => $_SESSION['login']['MaND'], //tạm,
+                'MaND' => $_SESSION['login']['maND'], //tạm,
                 'Video' =>$videoFileName,
                 'TieuDe' => $_POST['post-name'],
                 'MoTa' => $_POST['post-description'],
@@ -222,7 +222,7 @@ class MyRecipeController{
 
          $data_recipe = array(
              'MaBaiDang' =>$id,
-             'MaND' => $_SESSION['login']['MaND'], //tạm,
+             'MaND' => $_SESSION['login']['maND'], //tạm,
              'Video' =>$videoName,
              'TieuDe' => $_POST['post-name'],
              'MoTa' => $_POST['post-description'],
