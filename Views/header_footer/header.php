@@ -24,15 +24,17 @@
                 <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #0FA958;" data-width="35"
                     data-height="35"></span>
                 <a href="?act=account" class="btn-login">
-                    <span style="color: #0FA958; font-weight: 600;">Đăng nhập</span>
+                    <span style="color: #0FA958; font-weight: 600;"><?= (isset($_SESSION['login']))? $_SESSION['login']['hoTen']: 'Đăng nhập' ?></span>
                 </a>
+                <?php if(isset($_SESSION['login'])){?>
                 <div class="menu-down">
-                        <ul class="list-group">
-                            <li class="list-group-item active"><a>Tài khoản</a></li>
-                            <li class="list-group-item"><a>Quản lý</a></li>
-                            <li class="list-group-item"><a>Đăng xuất</a></li>
-                        </ul>
-                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item active"><a>Tài khoản</a></li>
+                        <li class="list-group-item"><a>Quản lý</a></li>
+                        <li class="list-group-item"><a>Đăng xuất</a></li>
+                    </ul>
+                </div>
+                <?php } ?>
             </div>
         </div>
         <div class="row menu-header">

@@ -38,11 +38,11 @@ class Comment extends Model
      
     }
     function getCommentByRecipe($id){
-        $query = "select binhluan.*, nguoidung.* from binhluan, baidang, nguoidung WHERE baidang.MaBaiDang = '$id' 
-        and nguoidung.MaND = baidang.MaND 
-        and binhluan.MaBaiDang = baidang.MaBaiDang";
+        $query = "select binhluan.*, nguoidung.* 
+        from binhluan, nguoidung WHERE binhluan.MaBaiDang = '$id'  
+            and nguoidung.maND = binhluan.MaND";
         require("result.php");
-     //   echo $query;
+       // echo $query;
         return $data;
     }
     function delete_cmt($id){
