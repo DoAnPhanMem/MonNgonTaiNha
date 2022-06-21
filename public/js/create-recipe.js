@@ -373,9 +373,9 @@ function HandleStep() {
         const stepNode = document.createElement("div");
         stepNode.innerHTML = `
           <input required type="text"  name=""   value ="${step_array[step].content}" placeholder="Nội dung "  class="create-recipe__step-content">  
-          <input required type="number" min=1  name="" value = "${step_array[step].hour  }" placeholder="Giờ "  class="create-recipe__step-hour">  
-          <input required type="number" min=1  name="" value = "${step_array[step].minute}" placeholder="Phút"  class="create-recipe__step-minute">  
-          <input required type="number" min=1 name="" value = "${step_array[step].second}" placeholder="Giây"  class="create-recipe__step-second">  
+          <input required type="number" min=0  name="" value = "${step_array[step].hour  }" placeholder="Giờ "  class="create-recipe__step-hour">  
+          <input required type="number" min=0  name="" value = "${step_array[step].minute}" placeholder="Phút"  class="create-recipe__step-minute">  
+          <input required type="number" min=0 name="" value = "${step_array[step].second}" placeholder="Giây"  class="create-recipe__step-second">  
           <span  class="create-recipe__step-btn-delete">
               <i class="fa-solid fa-circle-minus"></i>
           </span>`;
