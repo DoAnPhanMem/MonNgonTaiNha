@@ -95,6 +95,8 @@ body{
 }
 .menu-list .item-menu{
     color: #000;
+    font-size: 18px;
+
 }
 .menu-list{ 
     font-size: 15px;
@@ -165,7 +167,7 @@ body{
         margin: 0 5px;
     }
     .menu-list .item-menu{
-        font-size: 12px;
+        font-size: 18px;
         
     }
 }
@@ -192,5 +194,13 @@ body{
     padding: 6px 10px !important;
 }
 .list-group-item a{
-    font-size: 14px;
+    font-size: 16px;
+    color: #0FA958 !important;
+}
+.menu-down .list-group .active{
+    background-color: #0FA958 !important;
+}
+.menu-down .list-group .active a{
+    color: #FFFFFF !important;
+
 }

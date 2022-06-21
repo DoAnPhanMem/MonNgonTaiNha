@@ -4,7 +4,7 @@
 ?>
 <!-- banner-end -->
 <!-- tab-products section start -->
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-12 slide-header">
             <h5>Công thức nấu ăn hàng đầu trong ngày</h5>
@@ -16,7 +16,7 @@
                         <div class="d-flex d-block w-100">
                             <img height="240px" width="500px" class="d-block w-100 mr-5" src="public/img/home/slide.png" alt="First slide">
                             <div>
-                                <h3>
+                                <h3 style="color: #0FA958">
                                     Khoai tây muối ớt
                                 </h3>
                                 <p class="carousel-text">
