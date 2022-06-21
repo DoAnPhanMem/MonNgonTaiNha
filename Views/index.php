@@ -20,7 +20,8 @@
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
     <!-- all css here -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Root CSS -->
     <link rel="stylesheet" href="public/css/roots/grid.css">
     <link rel="stylesheet" href="public/css/roots/reset.css">

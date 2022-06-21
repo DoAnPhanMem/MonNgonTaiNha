@@ -169,3 +169,28 @@ body{
         
     }
 }
+.header_group_icon:hover .menu-down{
+    display: block;
+    transition: all 0.3s linear;
+
+}
+.menu-down{
+    position: absolute;
+    top: 40px;
+    display: none;
+    width: 60%;
+}
+.menu-down .menu-down-list{
+    list-style-type: none;
+    border-bottom: #615757 1px;
+}
+.list-group{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.list-group-item {
+    padding: 6px 10px !important;
+}
+.list-group-item a{
+    font-size: 14px;
+}
