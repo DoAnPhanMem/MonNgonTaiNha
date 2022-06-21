@@ -1,176 +1,174 @@
 <!-- pages-title-start -->
-<?php if (0==0) { ?>
-    
-    <div class="create-recipe">
-    <div class="create-recipe__top">
-        <h1 class="create-recipe__title"><?=$data_recipe[0]['TieuDe']?></h1>
-        <hr />
-    </div>
-    <div>
-      
-        <div class="create-recipe__form-item">
-        <input required type="hidden" name="id" value="<?=$data_recipe[0]['MaBaiDang']?>" >  
-            <h2>Chủ đề </h2>
-            <div class="create-recipe__item-content">
-                <div class="create-recipe__theme-content">
-                    <div class="create-recipe__themes-selected">
-                        <?php 
-                            foreach($recipe_themes as $key => $value){
-                                ?>
-                                <div class="create-recipe__theme-item">
-                                <p><?= $value['TenChuDe']?></p>
-                                </i>
-                            </div>
-                          <?php  }
-                        ?>
-                    </div>
 
-                   
-                    <div class="create-recipe__theme-results">
-                        
-                    </div>
-                    <input type="hidden"  class = "post-themes-edit" name="post-themes" value="">
-                </div>
+<div class="grid wide">
+    <div class="row">
+        <div class="recipe-detail">
+            <div class="recipe-detail__top">
+                <h1 class="recipe-detail__title"><?= $data_recipe[0]['TieuDe'] ?></h1>
+                <p class="recipe-detail-time"><?= $data_recipe[0]['Ngay']  ?></p>
+                <hr />
+
             </div>
-        </div>
-        <div class="create-recipe__form-item">
-                <div class="create-recipe__form-row">
-                
-                        <div class="create-recipe__description">
-                            <h2>Mô tả </h2>
-                            <div class="create-recipe__item-content">
-                                <p name="post-description"  id="create-recipe__description" cols="30" rows="10"><?=trim($data_recipe[0]['MoTa'])?></p>
-                            </div>
-                        </div>
+            <div>
+                <div class="recipe-detail__theme">
+                    <h2 class="recipe-detail__theme-title">Ẩm thực : </h2>
+                    <?php
+                    $description = "";
+                    foreach ($recipe_themes as $key => $value) {
+                        $description .= $value['TenChuDe'] . ", ";
+                    ?>
+                        
+                    <?php 
                     
-                        <?php 
-                        if($data_recipe[0]['Video'] != ''){ ?>
-                                 <div class="create-recipe__video">
-                                    <h2>Video </h2>
-                                    <div class="create-recipe__item-content">
-                                        <input type="file" name="post-video" id="create-recipe__video-input" accept="video/*">
-                                        <?php if(isset($data_recipe[0]['Video']) && $data_recipe[0]['Video']!=''&& $data_recipe[0]['Video']!=NUll){ ?>
-                                        <input type="hidden" name="post-video-old" value="./public/videos/recipes/<?= $data_recipe[0]['Video'] ?>">
-                                        <div class="create-recipe__video-group  create-recipe__video--play">
-                                            <label  class="create-recipe__video-label create-recipe__video-label--change" for="create-recipe__video-input">
-                                                <i class="create-recipe__add-icon fa-solid fa-plus"></i>
-                                                <i class="create-recipe__change-icon fa-solid fa-repeat"></i>
-                                            </label>
-                                            <video controls src="./public/videos/recipes/<?= $data_recipe[0]['Video'] ?>" class="create-recipe__video-tag"></video>
-                                        </div>
-                                        <?php } else{?>
-                                            <div class="create-recipe__video-group">
-                                            <label  class="create-recipe__video-label create-recipe__video-label--change" for="create-recipe__video-input">
-                                                <i class="create-recipe__add-icon fa-solid fa-plus"></i>
-                                                <i class="create-recipe__change-icon fa-solid fa-repeat"></i>
-                                            </label>
-                                            <video controls src="" class="create-recipe__video-tag"></video>
-                                                </div>
-                                            <?php }?>
-                            </div>
-                        </div> 
-                      <?php } ?>
-                       
-                       
-                   
+                    }
+                    ?>
+                     <p class="recipe-detail__theme-item"><i> <?= trim($description, ", ") ?></i></p>
                 </div>
-               
-                <div class="edit-recipe__imgs">
-                <h2>Hình ảnh</h2>
-                    <div class="create-recipe__form-row">
-                        <?php foreach($recipe_imgs as $key => $value) { ?>
-                            <div class="create-recipe__images">
-                                <div class="create-recipe__item-content">
-                                    <label  class="create-recipe__image-label">
-                                        <img class="active" src="./public/img/recipes/<?= $value['HinhAnh'] ?>" alt=""/>  
-                                    </label>
-                                </div>
-                            </div>   
+                <div class="recipe-detail__img">
+                    <div class="recipe-detail__img-view">
+                        <?php foreach ($recipe_imgs as $key => $value) { ?>
+                            <img class="<?= $value['HinhAnh'] == $recipe_imgs[0]['HinhAnh'] ? 'active' : ''  ?>" src="./public/img/recipes/<?= $value['HinhAnh'] ?>" alt="" />
                         <?php } ?>
-                    </div>  
-                </div>
-                   
-        </div>
-        
-        <div class="create-recipe__form-item">
-            <h2>Thành phần </h2>
-            <div class="create-recipe__stocks">
-                <div class="create-recipe__stock-list">
-                <?php foreach($recipe_stocks as $key => $value){ ?>
-                    <div class = "create-recipe__stock data-index-stock = <?= $key ?>">
-                    <input required type="text" name=""   value = "<?= $value['TenNguyenLieu'] ?>" placeholder="Tên nguyên liệu "  class="create-recipe__stock-name">  
-                        <input required min=1  type="number" name="" value = "<?= $value['SoLuong'] ?>" placeholder="Số lượng "  class="create-recipe__stock-quantity">  
-                        <input  required type="text" name="" value = "<?= $value['DonVi'] ?>" placeholder="Đơn vị "  class="create-recipe__stock-unit">  
                     </div>
-                <?php }?>
+                    <div class="recipe-detail__img-list">
+                        <?php foreach ($recipe_imgs as $key => $value) { ?>
+                            <div class="recipe-detail__img-item">
+                                <img class="active" src="./public/img/recipes/<?= $value['HinhAnh'] ?>" alt="" />
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+                <div class="recipe-detail__time-cooking">
+                    <p> <strong>Thời gian nấu :</strong> <?= $data_recipe[0]['ThoiGian'] ?></p>
+                    <p> <strong>Khẩu phần : </strong><?= $data_recipe[0]['KhauPhan'] ?> </p>
+                </div>
+                </div>
+
+                <div class="recipe-detail__form-item">
+                    <div class="recipe-detail__form-row">
+
+                        <div class="recipe-detail__description">
+                            <h2> <strong>Mô tả</strong> </h2>
+                            <p class="recipe-detail__description"><?= trim($data_recipe[0]['MoTa']) ?></p>
+                        </div>
+
+                        <?php
+                        if ($data_recipe[0]['Video'] != '') { ?>
+                            <div class="recipe-detail__video">
+                                <h2>Video </h2>
+                                <div class="recipe-detail__item-content">
+                                    <input type="file" name="post-video" id="recipe-detail__video-input" accept="video/*">
+                                    <?php if (isset($data_recipe[0]['Video']) && $data_recipe[0]['Video'] != '' && $data_recipe[0]['Video'] != NUll) { ?>
+                                        <input type="hidden" name="post-video-old" value="./public/videos/recipes/<?= $data_recipe[0]['Video'] ?>">
+                                        <div class="recipe-detail__video-group  recipe-detail__video--play">
+                                            <label class="recipe-detail__video-label recipe-detail__video-label--change" for="recipe-detail__video-input">
+                                                <i class="recipe-detail__add-icon fa-solid fa-plus"></i>
+                                                <i class="recipe-detail__change-icon fa-solid fa-repeat"></i>
+                                            </label>
+                                            <video controls src="./public/videos/recipes/<?= $data_recipe[0]['Video'] ?>" class="recipe-detail__video-tag"></video>
+                                        </div>
+                                    <?php } else { ?>
+                                        <div class="recipe-detail__video-group">
+                                            <label class="recipe-detail__video-label recipe-detail__video-label--change" for="recipe-detail__video-input">
+                                                <i class="recipe-detail__add-icon fa-solid fa-plus"></i>
+                                                <i class="recipe-detail__change-icon fa-solid fa-repeat"></i>
+                                            </label>
+                                            <video controls src="" class="recipe-detail__video-tag"></video>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        <?php } ?>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="recipe-detail__form-item">
+                    <h2> <strong>Nguyên liệu </strong></h2>
+                    <div class="recipe-detail__stock-list">
+                        <?php foreach ($recipe_stocks as $key => $value) { ?>
+                            <div class="recipe-detail__stock data-index-stock = <?= $key ?>">
+                                <p> 
+                                    <?= $value['SoLuong'] ?>
+                                    <?= $value['DonVi'] ?>
+                                    <?= $value['TenNguyenLieu'] ?>
+                                <p>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+                <div class="recipe-detail__form-item">
+                    <h2> <strong>Công thức</strong>  </h2>
+   
+                        <div class="recipe-detail__step-list">
+
+                            <?php foreach ($recipe_steps as $key => $value) {
+                               
+                            ?>
+                                <div class="recipe-detail__step data-index-step= <?= $key ?>">
+                                    <h3 class = "recipe-detail__step-title">Bước <?= $key +1 ?></h3>
+                                    <div class="recipe-detail__step-content">
+                                        <p>Thời gian: <span><?= $value['ThoiGian'] ?></span></p>
+                                        <p><?= $value["NoiDung"] ?> </p> 
+                                    </div>
+                                    
+                                </div>
+
+                            <?php } ?>
+                        </div>
                 </div>
                 
-                
+                <div class="recipe-detail__form-item">
+                    <h2> <strong>Ghi chú</strong></h2>
+                    <div class="recipe-detail__step-content">
+                        <p><?= $data_recipe[0]['GhiChu'] ?> </p>
+                    </div>
+                     
+                </div>
+                <div class="recipe-detail__form-item">
+                    <h2><strong>Nhận xét</strong></h2>
+                    <?php
+                    require_once("comment.php");
+                    ?>
+                </div> 
+                <?php
+
+                //ĐỪng xóa trong cái này
+                if (isset($_GET['status'])) {
+                    $status = ($_GET['status']);
+                    if ($status == 'n' || $status == 'e') {  ?>
+                        <div class="action-approval">
+                            <a href="admin/?mod=post&act=approval&status=y&id=<?= $data_recipe[0]['MaBaiDang'] ?>" onclick="return confirm('Công thức này sẽ được hiển thi trên trang web ?');" class="btn detail-recipe-btn__accept">Duyệt</a>
+                        <?php }
+                    if ($status != 'e') { ?>
+
+                            <form action="admin/?mod=post&act=approval&status=e&id=<?= $data_recipe[0]['MaBaiDang'] ?>" method="post">
+                                <div class="toast-question-eject">
+                                    <h3 class="question-eject-title">Lý do từ chối : </h3>
+                                    <textarea class="question-eject-content" required name="post-reason" id="" cols="50" rows="10" placeholder="Nhập lý do"></textarea>
+                                    <button class="btn  detail-recipe-btn__eject-action">Xác Nhận</button>
+                                    <button class="btn btn-gray detail-recipe-btn__eject-exit">Hủy</button>
+                                </div>
+                            </form>
+
+                            <button class="btn btn-primary-eject  detail-recipe-btn__eject">Từ chối</button>
+                        <?php } ?>
+                        </div>
+                    <?php  } ?>
+                    <!-- ĐỪng xóa cái này -->
+
             </div>
         </div>
-        <div class="create-recipe__form-item">
-            <h2>Công thức </h2>
-            <div class="create-recipe__steps">
-                <div class="create-recipe__step-list">
-
-                    <?php foreach($recipe_steps as $key => $value){ 
-                        $hour = substr( $value['ThoiGian'],  0,2 );
-                        $minute = substr( $value['ThoiGian'],  3, 2);
-                        $second = substr( $value['ThoiGian'],  6, 2 );
-                        ?>
-                         <div class="create-recipe__step data-index-step= <?= $key ?>" >
-                            <input disabled type="text"  name=""   value ="<?= $value["NoiDung"] ?>" placeholder="Nội dung "  class="create-recipe__step-content">  
-                            <input disabled type="number" min=0  name="" value = "<?= $hour ?>" placeholder="Giờ "  class="create-recipe__step-hour">  
-                            <input disabled type="number" min=0  name="" value = "<?= $minute ?>" placeholder="Phút"  class="create-recipe__step-minute">  
-                            <input disabled type="number" min=0 name="" value = "<?= $second ?>" placeholder="Giây"  class="create-recipe__step-second">  
-                           
-                         </div>
-                        
-                    <?php }?>
-                </div>
-                
-               
-                <input type="hidden"  class = "post-steps-edit" name="post-steps">
-            </div>
-        </div>
-        <div class="create-recipe__form-item">
-            <h2>Khẩu phần </h2>
-            <input value="<?=$data_recipe[0]['KhauPhan']?>" required min=1 type="number" name="post-ration"  placeholder="Khẩu phần " id="create-recipe__ration">  
-
-        </div>
-        <div class="create-recipe__form-item">
-            <h2>Ghi chú</h2>
-            <input type="text" name="post-note" value="<?=$data_recipe[0]['GhiChu']?>"id="create-recipe__note">
-        </div>
-        <?php 
-
-        //ĐỪng xóa trong cái này
-            if(isset($_GET['status'])){ 
-                $status =($_GET['status']);
-                if($status == 'n' || $status == 'e' ){  ?>
-                <div class="action-approval">
-                    <a href="admin/?mod=post&act=approval&status=y&id=<?=$data_recipe[0]['MaBaiDang']?>" onclick="return confirm('Công thức này sẽ được hiển thi trên trang web ?');" class = "btn detail-recipe-btn__accept">Duyệt</a>
-              <?php }if($status != 'e'){?>
-                    
-                    <form action="admin/?mod=post&act=approval&status=e&id=<?=$data_recipe[0]['MaBaiDang']?>" method="post">
-                        <div class ="toast-question-eject">
-                            <h3 class = "question-eject-title">Lý do từ chối : </h3>
-                            <textarea class="question-eject-content" required name="post-reason" id="" cols="50" rows="10" placeholder="Nhập lý do"></textarea>
-                            <button class = "btn  detail-recipe-btn__eject-action">Xác Nhận</button>
-                            <button class = "btn btn-gray detail-recipe-btn__eject-exit">Hủy</button>
-                        </div>    
-                    </form>
-
-                    <button class = "btn btn-primary-eject  detail-recipe-btn__eject">Từ chối</button>
-                    <?php }?>
-                    </div>
-              <?php  }?>
-            <!-- ĐỪng xóa cái này -->
         
     </div>
-</div>
 
+
+</div>
 <!-- ĐỪng xóa cái này -->
 <script src="./public/js/detail-recipe.js"></script>
 <!-- ĐỪng xóa cái này -->
-<?php }?>
