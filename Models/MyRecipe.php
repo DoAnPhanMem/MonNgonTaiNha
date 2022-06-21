@@ -131,6 +131,7 @@ class MyRecipe extends Model
         $query = "DELETE FROM ChiTietChuDe WHERE `ChiTietChuDe`.`MaBaiDang` = '$id'";
         $status = $this->conn->query($query);
     }
+
     function create_img($data,$MaBaiDang){
         $f = "MaHinhAnh,MaBaiDang,HinhAnh";
         $v = "";
@@ -144,6 +145,7 @@ class MyRecipe extends Model
         $status = $this->conn->query($query);
      
     }
+    
     function create_stock($data,$MaBaiDang){
         
         $f = "MaNguyenLieu,MaBaiDang,TenNguyenLieu,SoLuong,DonVi";
@@ -195,11 +197,12 @@ class MyRecipe extends Model
             
         }
     }
-    function getCommmentByRecipe($id){
+    function getCommentByRecipe($id){
         $query = "select binhluan.*, nguoidung.* from binhluan, baidang, nguoidung WHERE baidang.MaBaiDang = '$id' 
         and nguoidung.MaND = baidang.MaND 
         and binhluan.MaBaiDang = baidang.MaBaiDang";
         require("result.php");
+       // echo $query;
         return $data;
     }
 }
