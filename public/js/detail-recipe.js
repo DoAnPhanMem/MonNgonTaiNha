@@ -13,3 +13,22 @@ if(tostExit){
         tostGroup.classList.remove("active");
     }
 }
+
+// img 
+
+const imgs = document.querySelectorAll('.recipe-detail__img-item');
+const views = document.querySelectorAll('.recipe-detail__img-view img');
+//console.log(views);
+// destruct active view 
+function destructActive(){
+    views.forEach((img)=>{
+        img.classList.remove('active');
+    })
+}
+
+imgs.forEach((img,index)=>{
+    img.onclick = function(){
+        destructActive();
+        views[index].classList.add('active');
+    }
+})

@@ -49,8 +49,12 @@ class MyRecipe extends Model
         }
     }
 
+    
     function getRecipe($id){
-        $query = " select * from baidang WHERE baidang.MaBaiDang = '$id'";
+        $query = "select DATE_FORMAT(baidang.NgayCapNhat, '%d-%m-%Y') as Ngay, SEC_TO_TIME(SUM( TIME_TO_SEC( `buoclam`.`ThoiGian` ) )) as ThoiGian ,baidang.* 
+        from baidang, buoclam WHERE baidang.MaBaiDang = '$id' and baidang.MaBaiDang =  buoclam.MaBaiDang
+        GROUP by baidang.MaBaiDang
+        ";
         require("result.php");
         return $data;
     }
@@ -190,6 +194,13 @@ class MyRecipe extends Model
             setcookie('fail', 'Update vào không thành công', time() + 2);
             
         }
+    }
+    function getCommmentByRecipe($id){
+        $query = "select binhluan.*, nguoidung.* from binhluan, baidang, nguoidung WHERE baidang.MaBaiDang = '$id' 
+        and nguoidung.MaND = baidang.MaND 
+        and binhluan.MaBaiDang = baidang.MaBaiDang";
+        require("result.php");
+        return $data;
     }
 }
 ?>

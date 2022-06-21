@@ -27,6 +27,7 @@
 }
 .question-eject-title{
     font-weight: bold;
+   
 }
 .question-eject-content{
     display: block;
@@ -37,4 +38,105 @@
 }
 .detail-recipe-btn__eject{
     margin-left: 10px;
+}
+
+.recipe-detail{
+    margin: 20px 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+/*  */
+.recipe-detail__title{
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+h2 strong {
+    color: var(--primary);
+}
+.recipe-detail-time{
+    font-size: 1.5rem;
+    margin: 5px ;
+}
+.recipe-detail__img{
+    text-align: center;
+    float: none;
+}
+.recipe-detail__img-view{
+    width: 100%;
+    height: 370px;
+    border: 1px solid var(--primary);
+}
+.recipe-detail__img-view img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 5px;
+  
+}
+.recipe-detail__img-view img.active{
+    display: block;
+    transition: all 0.5s linear;
+}
+.recipe-detail__img-list{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    height: 100px;
+    
+}
+.recipe-detail__img-item{
+    width: 100px;
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid var(--primary);
+}
+.recipe-detail__img-item + .recipe-detail__img-item{
+    margin-left: 10px;
+}
+.recipe-detail__img-item  img{ 
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/* theme */ 
+.recipe-detail__theme{
+    font-size: 1.7rem;
+    margin-bottom: 6px;
+}
+.recipe-detail__theme-title{
+    display: inline-block;
+    font-weight: 600;
+}
+.recipe-detail__theme-item{
+    display: inline;
+}
+.recipe-detail__time-cooking{
+    margin: 20px 0;
+}
+.recipe-detail__time-cooking p + p{
+    margin-top: 10px;
+}
+.recipe-detail__description{
+    width: 90%;
+}
+.recipe-detail__form-item{
+    margin: 30px 0;
+}
+.recipe-detail__description{
+    line-height: 2.5rem;
+    text-align: justify;
+}
+.recipe-detail__description p, .recipe-detail__stock-list,.recipe-detail__step {
+    margin: 10px;
+}
+
+.recipe-detail__step-title{
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.recipe-detail__step-content{
+    margin-left: 10px;
+    text-align: justify;
+    line-height: 2.5rem;
 }
