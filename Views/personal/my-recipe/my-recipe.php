@@ -1,18 +1,25 @@
-<div class="my-recipe">
-        
+
+<div class="my-recipe">  
     <?php 
         if(isset($_COOKIE['msg'])){     
     ?>    
-             <div class="toast-group">
-             </div>
             <script>showSuccessInsert();</script>    
     <?php }
+    if(isset($_COOKIE['upd'])){ ?>
+        <script>showSuccessUpdate();</script> 
+   <?php }
+   if(isset($_COOKIE['del'])){ ?>
+    <script>showSuccessDelete();
+</script> 
+<?php }
     ?>
     <div class="my-recipe__top">
+        
         <h1 class="my-recipe__title">Công Thức Của Tôi</h1>
-        <a class="btn-rounded btn" href = "?act=personal&handle=create"> Tạo mới</a>
+        <a class="btn-rounded btn"  href = "?act=personal&handle=create"> Tạo mới</a>
     </div>
     <div class="my-recipe__content">
+    <input type="hidden" class="inputMaND" value=<?= $_SESSION['login']['maND'] ?>>
         <div class="my-recipe__fitter">
             <div class ="my-recipe__fitter-search">
                 <i class="my-recipe__search-icon fa-solid fa-magnifying-glass"></i>
@@ -20,29 +27,32 @@
             </div>
             
                 <select class = "my-recipe-fitter__time-update" id ="time-update">
-                    <option>Mới nhất</option>
-                    <option>Lâu nhất</option>
-                    <option>1 năm trước</option>
+                    <option data-time-sort ="DESC">Mới nhất</option>
+                    <option data-time-sort ="ASC">Cũ nhất</option>
                 </select>
             
             
                 <select  class = "my-recipe-fitter__time-cooking" id = "time-cooking">
-                    <option>Dưới 30 phút</option>
-                    <option>Trên 30 phút</option>
-                    <option>Trên 1 giờ</option>
+                    <option data-time-cooking = "Tất cả">Tất cả</option>
+                    <option data-time-cooking = "00:30:00">Dưới 30 phút</option>
+                    <option data-time-cooking = "01:00:00">Dưới 1 giờ</option>
+                    <option data-time-cooking = "10:00:00">Dưới 10 giờ</option>
                 </select>
             
             
             
                 <select  class = "my-recipe-fitter__theme" id = "theme">
-                    <option>Tất cả</option> 
+                    <option>Tất cả</option>
+                    <option>Đã duyệt</option> 
+                    <option>Chưa duyệt</option> 
+                    <option>Từ chối</option> 
                 </select>
             
         </div>
         <div class = "my-recipes" >
 
                 <div class ="row">
-                <?php foreach ($data_recipe  as  $key => $value){ ?>
+                <?php foreach ($data_recipes   as  $key => $value){ ?>
                     <div class="l-4">
                         <div class="recipe-item">
                             <div class = "recipe-item__img">
@@ -56,12 +66,12 @@
                                 <p>Trạng thái:  <span><?= $value['TrangThai'] ?></span></p>
                             </div>
                             <div class="recipe-item__action">
-                                <button class="recipe-item__edit">
+                                <a href="?act=personal&handle=edit-recipe&id=<?=$value['MaBaiDang']?>" class="recipe-item__edit">
                                     <i class="fa-solid fa-pen-ruler"></i>
-                                </button>
-                                <button class="recipe-item__delete">
+                                </a>
+                                <a href="?act=personal&handle=delete-recipe&id=<?=$value['MaBaiDang']?>" class="recipe-item__delete">
                                     <i class="fa-solid fa-trash"></i>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +81,7 @@
                         <div>
                         <i class="padding-icon fa-solid fa-caret-left"></i>
                         <span class="my-recipe__paging-current">1/</span>
-                        <span  class="my-recipe__paging-total">4</span>
+                        <span  class="my-recipe__paging-total"><?= $numRow ?></span>
                         <i class="padding-icon fa-solid fa-caret-right"></i>
                         </div>
                 </div>
@@ -79,3 +89,5 @@
         </div>
     </div>
 </div>
+<script src="public/js/myrecipe.js"></script>
+<script src="public/js/ajax.js"></script>

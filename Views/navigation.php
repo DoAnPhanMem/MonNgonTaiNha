@@ -4,6 +4,15 @@ switch ($act) {
     case "home":
         require_once("home/home.php");
         break;
+    case "list-product":
+        require_once("list-congthuc/congthuc.php");
+        break;
+    case "search":
+        require_once("list-congthuc/congthuc.php");
+        break;
+    case "category":
+        require_once("list-congthuc/congthuc.php");
+        break;
     case "shop":
         require_once("shop/shop.php");
         break;
@@ -22,7 +31,7 @@ switch ($act) {
         }
         break;
     case "detail":
-        require_once("product-detail/product-detail.php");
+        require_once("recipe-detail/recipe-detail.php");
         break;
     case "about":
         require_once("introduce/about.php");
@@ -38,24 +47,27 @@ switch ($act) {
         if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
             require_once("login/login.php");
             break;
-        }else{
+        } else {
             switch ($act) {
-                    case 'login':
-                        require_once("login/login.php");
-                        break;
-                    case 'register' :
-                        require_once("login/register.php");
-                        break;
-                    default:
-                        require_once("login/login.php");
-                        break;
-                }
+                case 'login':
+                    require_once("login/login.php");
+                    break;
+                case 'register':
+                    require_once("login/register.php");
+                    break;
+                default:
+                    require_once("login/login.php");
+                    break;
             }
-            break;
-        case "personal" : 
-            require_once("personal/index.php");
-           break;
-        default:
+        }
+        break;
+    case 'register':
+        require_once("register/register.php");
+        break; 
+    case "personal":
+        require_once("personal/index.php");
+        break;
+    default:
         require_once("error-404.php");
         break;
 }

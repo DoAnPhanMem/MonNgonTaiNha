@@ -1,0 +1,66 @@
+/* REGISTER */
+.container-2 {
+    display: flex;
+    margin-bottom: 16px;
+    
+}
+
+.container-img-register {
+    width: 100%;
+    
+}
+
+.container-img-register img {
+    width: 45%;
+    margin-left: 300px;
+    margin-top: 16px;
+}
+
+/* ---------------------- */
+.container-2 .container-register p  {
+    padding-right: 700px;
+    margin-top: 10px;
+}
+
+.container-2 .container-register h2 {
+    color: #0FA958;
+}
+
+.container-2 .container-register h4 {
+    margin-top: 10px;
+    opacity: 0.5;
+}
+
+.container-register .register-text {
+    margin-top: 20px ;
+   
+}
+
+.container-register .register-text .name-input, .pass1-input, .repass-input, .mail-input, .phone-input {
+    padding: 8px;
+    width: 60%;
+    border-radius: 10px;
+    border-color: #089d4d;
+    margin-top: 16px;
+    
+}
+
+.container-register .btn-login-register .btn-register {  
+    border: none;
+    padding: 15px 90px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 20px 2px;
+    border-radius: 10px;
+    margin-left: 100px;
+    background-color: #0FA958;
+    color: white;
+}
+
+.container-register .account-register {
+    display: inline;
+    
+}
+

@@ -1,5 +1,6 @@
 .personal{
-    margin: 10px 0;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
 }
 .header-personal{
     background-color: var(--primary);
@@ -35,9 +36,9 @@
 .navbar-list a{
     color: var(--white);
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.7rem;
     display: block;
-    padding: 20px 20px;
+    padding: 30px 40px;
 }
 .navbar-item{
     border-top: 1px solid #fff;
@@ -50,4 +51,8 @@
 }
 .navbar-item + .navbar-item {
     border-top: none ;
+}
+.create-recipe__search-theme-add{
+    display: block;
+    color: #31c475;
 }

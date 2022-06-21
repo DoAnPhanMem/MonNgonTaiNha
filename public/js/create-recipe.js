@@ -4,6 +4,7 @@ const videoGroup = document.querySelector(".create-recipe__video");
 const stockGroup = document.querySelector(".create-recipe__stocks");
 const stepGroup = document.querySelector(".create-recipe__steps");
 const btnSubmit = document.querySelector(".create-recipe__btn-submit");
+const inputFile = imgGroup.querySelector("#create-recipe__image-input");
 const postTheme = document.getElementsByName("post-themes")[0];
 const postStock = document.getElementsByName("post-stocks")[0];
 const postStep = document.getElementsByName("post-steps")[0];
@@ -24,6 +25,8 @@ const step_array = [
     second : "",
   }
 ];
+
+
 
 function removeVietnameseTones(str) {
   str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
@@ -57,15 +60,12 @@ function removeVietnameseTones(str) {
   return str;
 }
 function HandleThemes() {
-  const inputSearch = themeGroup.querySelector(".create-recipe__theme-input");
-  const searchResult = themeGroup.querySelector(
-    ".create-recipe__theme-results"
-  );
-  const themeSelected = themeGroup.querySelector(
-    ".create-recipe__themes-selected"
-  );
-  let themes_array = [];
   
+  const inputSearch = themeGroup.querySelector(".create-recipe__theme-input");
+  const searchResult = themeGroup.querySelector( ".create-recipe__theme-results");
+  const themeSelected = themeGroup.querySelector(".create-recipe__themes-selected");
+  let themes_array = [];
+  renderThemeSelected();
 
   //handle input change
   inputSearch.oninput = function (e) {
@@ -141,9 +141,6 @@ function HandleThemes() {
     if (themes) {
      
       themes_array = (themes);
-      
-      
-     
       //console.log(themes_array);
       const html = 
       themes_array.map((theme, index) => {
@@ -156,8 +153,9 @@ function HandleThemes() {
           }
         })
         .join("");
+        const newThemes = "<a class = 'create-recipe__search-theme-item create-recipe__search-theme-add' href='?act=personal&handle=create-theme'>Thêm chủ đề mới</a>"
       // console.log(html)
-      searchResult.innerHTML = html;
+      searchResult.innerHTML = html + newThemes;
       const search_items = searchResult.querySelectorAll(
         ".create-recipe__search-theme-item"
       );
@@ -171,7 +169,6 @@ function HandleThemes() {
 
 function HandleImages() {
   
-  const inputFile = imgGroup.querySelector("#create-recipe__image-input");
   const preview = imgGroup.querySelector(".create-recipe__images-preview");
   const labelView = imgGroup.querySelector(".create-recipe__image-label");
   //console.log(labelView);
@@ -222,7 +219,8 @@ function HandleImages() {
     } else {
       if (imgsLength > 4) {
         alert("Only select 4 images");
-        imgs_array.splice(4, imgsLength - 1);
+        let indexRemove = (imgsLength) - 4;
+        imgs_array.splice(0, indexRemove);
         preview.classList.remove("more");
       } else if (imgsLength < 4) {
         preview.classList.add("more");
@@ -262,7 +260,6 @@ function HandleImages() {
           preview.appendChild(para);
         }
       });
-
       // set input file
       let listImgsFile = list.files;
       inputFile.files  = listImgsFile;
@@ -320,6 +317,8 @@ function HandleStock() {
       btnsDleStock[i].onclick = function () {
         stock_array.splice(i, 1);
         stockList.removeChild(btnsDleStock[i].parentNode);
+        handleDleStock();
+        handleChangeStockItem();
       };
     }
   }
@@ -395,6 +394,8 @@ function HandleStep() {
         btnsDleStep[i].onclick = function () {
           step_array.splice(i, 1);
           stepList.removeChild(btnsDleStep[i].parentNode);
+          handleDleStep();
+          handleChangeStepItem();
         };
       }
     }

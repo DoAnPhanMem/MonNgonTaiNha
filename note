@@ -1,0 +1,10 @@
+<div class="question">
+        <div class="question-box ">
+           <h3 class = "question-box-ask" > Bạn có chắc muốn xóa ?</h3>
+           <div class="question-box_action">
+           <button class="question-box_yes btn">Xóa</button>
+           <button class="question-box_no">Quay lại</button>
+           </div>
+        </div>
+        <div class="question-back"></div>
+    </div>

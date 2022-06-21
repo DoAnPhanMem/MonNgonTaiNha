@@ -37,3 +37,4 @@ class Checkout extends Model
     }
   }
 }
+?>

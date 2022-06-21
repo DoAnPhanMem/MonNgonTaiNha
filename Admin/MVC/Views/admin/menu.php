@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">DTP<sup>Shop</sup></div>
+  <div class="sidebar-brand-text mx-3">Món<sup>Ngon</sup></div>
 </a>
 
 <!-- Divider -->
@@ -21,15 +21,19 @@
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->
-<?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-  <li class="nav-item">
-    <a class="nav-link" href="index.php">
-      <i class="fas fa-fw fa-chart-area"></i>
-      <span>Trang chủ</span></a>
-  </li>
-  <?php } ?>
   <!-- Nav Item - Charts -->
   <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
+    <li class="nav-item">
+    <a class="nav-link" href="?mod=theme">
+      <i class="fas fa-fw fa-table"></i>
+      <span>Quản lý Chủ đề</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="?mod=post&status=y">
+      <i class="fas fa-fw fa-table"></i>
+      <span>Quản lý Bài đăng</span></a>
+  </li>
+
   <li class="nav-item">
     <a class="nav-link" href="?mod=user">
       <i class="fas fa-fw fa-table"></i>
@@ -37,29 +41,13 @@
   </li>
   <?php } ?>
   <!-- Nav Item - Tables -->
-  <li class="nav-item">
-    <a class="nav-link" href="?mod=recipe">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Quản lý Công thức</span></a>
-  </li>
+  
 
-  <li class="nav-item">
-    <a class="nav-link" href="?mod=theme">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Quản lý Chủ đề</span></a>
-  </li>
 
-  <li class="nav-item">
-    <a class="nav-link" href="?mod=post">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Quản lý Bài đăng</span></a>
-  </li>
 
-  <li class="nav-item">
-    <a class="nav-link" href="?mod=statistical">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Thống Kê</span></a>
-  </li>
+  
+
+  
 
 
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
@@ -69,7 +57,11 @@
       <span>Quản lý Banner</span></a>
   </li>
   <?php }?>
-
+  <li class="nav-item">
+    <a class="nav-link" href="?mod=statistical">
+      <i class="fas fa-fw fa-table"></i>
+      <span>Thống Kê</span></a>
+  </li>
 
 
   <!-- Sidebar Toggler (Sidebar) -->

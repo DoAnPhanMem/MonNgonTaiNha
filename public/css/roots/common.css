@@ -8,9 +8,16 @@
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0,0 , 0.4 );
 }
+
 .btn:hover{
     opacity: 0.8;
 }
 .btn-rounded{
     border-radius: 999px ;
+}
+.btn-primary-eject{
+    background-color: red;;
+}
+.btn-gray{
+    background-color: rgb(173, 172, 169);
 }

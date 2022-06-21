@@ -1,0 +1,142 @@
+/* LOGIN */
+.container .container-login p {
+    margin-top: 10px;   
+}
+
+.container .container-login h2 {
+    color: #0FA958;
+}
+
+.container .container-login h5 {
+    opacity: 0.5;
+    margin: 10px ; 
+}
+
+.container .container-login  h2, h5 {
+    text-align: center;
+}
+
+.container-login .btn-facebook, .btn-google {
+    padding: 10px 10px;   
+    padding-right: 190px;
+    color: white;
+    
+}
+
+.container-login .btn-google {
+    display: block;
+    padding-right: 207px;
+    margin-top: 15px;
+}
+
+.container-login .btn-facebook {
+    background-color: #3B5998;
+}
+
+.container-login .btn-google {
+    background-color: #4285F4;
+}
+
+.container-login .button {
+    border-radius: 15px;
+    box-shadow: 1px 1px #888888;
+}
+
+.container-login .button:hover {
+    /* background-color: #ccc; */
+    opacity: 0.8;
+}
+
+.container .btn-facebook .fa-facebook-square, .btn-google .fa-google {
+    margin-right: 90px;
+    padding-right: 12px;
+    border: 1px  white ;
+    border-right-style:  solid;
+
+}
+
+.container-login .login-text {
+    margin-top: 40px ;
+    margin-left: 40px;
+    
+}
+
+.container-login .login-text .email-input, .pass-input {
+    padding: 8px;
+    width: 80%;
+    border-radius: 10px;
+    border-color: #089d4d;
+}
+
+.container-login .login-text .pass-input {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.container-login .login-text a {
+    color: #333;
+    padding: 10px;
+}
+
+.container-login .login-text a:hover {
+    color: #0FA958;
+}
+
+.container-login .btn-login-register {
+    margin-top: 25px;
+}
+
+/* .container-login .btn-login-register .btn-login:hover {
+    opacity: 0.5;
+} */
+
+.container-login .btn-login-register .btn-login, .btn-register {  
+    border: none;
+    padding: 15px 90px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    margin-left: 100px;
+    
+}
+
+.container-login .btn-login-register .btn-login {
+    background-color: rgb(84, 165, 232);
+    color: white;
+}
+
+.container-login .btn-login-register .btn-register {
+    display: block;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 93.5px;
+    padding-right: 106px;
+    background-color: #0FA958;
+    color: white;
+}
+
+.container-login .account-register {
+    margin-left: 110px;
+    
+}
+/* ------------------------------- */
+
+/* IMAGE */
+.container-login {
+    float: left;
+}
+
+.container-img {
+    width: 100%;
+   
+}
+
+.container-img img {
+    width: 30.8%;
+    margin-left: 80px;
+}

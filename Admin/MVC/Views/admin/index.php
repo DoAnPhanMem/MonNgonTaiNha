@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>PTD Admin - Dashboard</title>
+  <title>Món ngon tại nhà</title>
 
   <!-- Custom fonts for this template-->
   <link href="public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,12 +28,16 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+  <link rel="stylesheet" href="../public/library/Toast-Messages/messages.css">
+    <script src="../public/library/Toast-Messages/messages.js"></script>
 </head>
 
 <body id="page-top">
   <!-- Page Wrapper -->
   <div id="wrapper">
-
+   <div id="toast-group">
+    </div>
     <?php require_once('menu.php') ?>
 
     <!-- Content Wrapper -->
@@ -54,7 +58,6 @@
               <h6 class="m-0 font-weight-bold text-primary">
                 <?php
                 $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
-                echo "Database " . $mod;
                 ?>
               </h6>
             </div>
@@ -62,7 +65,7 @@
               <div class="table-responsive">
                 <?php
                 if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
-                  $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
+                  $mod = isset($_GET['mod']) ? $_GET['mod'] : "theme";
                   $act = isset($_GET['act']) ? $_GET['act'] : "admin";
                   switch ($mod) {
                     case 'banner':
@@ -103,22 +106,7 @@
                           break;
                       }
                       break;
-                    case 'recipe':
-                      switch ($act) {
-                        case 'list':
-                          require_once('MVC/views/recipe/list.php');
-                          break;
-                        case 'add':
-                          require_once('MVC/views/recipe/add.php');
-                          break;
-                        case 'edit':
-                          require_once('MVC/views/recipe/edit.php');
-                          break;
-                        default:
-                          require_once('MVC/views/recipe/list.php');
-                          break;
-                      }
-                      break;
+                    
                     case 'theme':
                       switch ($act) {
                         case 'list':
@@ -144,14 +132,8 @@
                         case 'list':
                           require_once('MVC/Views/post/list.php');
                           break;
-                        case 'add':
-                          require_once('MVC/Views/post/add.php');
-                          break;
                         case 'detail':
                           require_once('MVC/Views/post/detail.php');
-                          break;
-                        case 'edit':
-                          require_once('MVC/Views/post/edit.php');
                           break;
                         default:
                           require_once('MVC/Views/post/list.php');
@@ -160,7 +142,10 @@
                       break;
 
                     case 'statistical':
-                        require_once('MVC/views/statistical/statistical.php');
+
+                        require_once('MVC/Controllers/StatisticalController.php');
+                        $obj = new StatisticalController();
+                        $obj -> statistical();
                         break;
                     
                     case 'login':
@@ -173,7 +158,9 @@
                           break;
                       }
                       break;
-                 }
+                   
+                    
+                    }
                 } else {
                   if (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true) {
                     $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";

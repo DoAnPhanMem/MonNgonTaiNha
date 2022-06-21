@@ -10,3 +10,4 @@ class Detail extends Model
     }
    
 }
+?>

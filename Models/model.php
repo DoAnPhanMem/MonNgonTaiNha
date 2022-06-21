@@ -10,18 +10,38 @@ class model
         $conn_obj = new connection();
         $this->conn = $conn_obj->conn;
     }
-    function limit($a, $b)
+    function limit($maND,$a, $b)
     {
         $query =  "SELECT DATE_FORMAT(baidang.NgayCapNhat, '%d-%m-%Y') as Ngay, baidang.*, hinhanh.*, countTime.ThoiGian as ThoiGian
-        from baidang,hinhanh, (SELECT baidang.MaBaiDang, SEC_TO_TIME(SUM( TIME_TO_SEC( `buoclam`.`ThoiGian` ) 										) )  as ThoiGian 
+        from baidang, nguoidung ,hinhanh, (SELECT baidang.MaBaiDang, SEC_TO_TIME(SUM( TIME_TO_SEC( `buoclam`.`ThoiGian` ) 										) )  as ThoiGian 
                                                      from baidang, buoclam
                                                        WHERE baidang.MaBaiDang = buoclam.MaBaiDang 
                                                       GROUP by baidang.MaBaiDang
                                       ) as countTime
-        where baidang.MaBaiDang = hinhanh.MaBaiDang and countTime.MabaiDang = baidang.MaBaiDang
+        where baidang.MaBaiDang = hinhanh.MaBaiDang 
+        and baidang.MaND = nguoidung.MaND
+        and nguoidung.maND = $maND
+        and countTime.MabaiDang = baidang.MaBaiDang
         GROUP by baidang.MaBaiDang
         ORDER BY NgayCapNhat DESC limit $a, $b";
-
+        //echo $query;
+        require("result.php");
+        return $data;
+    }
+    function getALlRecipe($maND)
+    {
+        $query =  "SELECT DATE_FORMAT(baidang.NgayCapNhat, '%d-%m-%Y') as Ngay, baidang.*, hinhanh.*, countTime.ThoiGian as ThoiGian
+        from baidang,nguoidung,hinhanh, (SELECT baidang.MaBaiDang, SEC_TO_TIME(SUM( TIME_TO_SEC( `buoclam`.`ThoiGian` ) 										) )  as ThoiGian 
+                                                     from baidang, buoclam
+                                                       WHERE baidang.MaBaiDang = buoclam.MaBaiDang 
+                                                      GROUP by baidang.MaBaiDang
+                                      ) as countTime
+        where baidang.MaBaiDang = hinhanh.MaBaiDang 
+        and baidang.MaND = nguoidung.MaND
+        and nguoidung.maND = $maND
+        and countTime.MabaiDang = baidang.MaBaiDang
+        GROUP by baidang.MaBaiDang
+        ORDER BY NgayCapNhat DESC ";
         require("result.php");
         return $data;
     }
@@ -72,20 +92,26 @@ class model
         $v = "";
         foreach ($data as $key => $value) {
             $f .= $key . ",";
-            $v .= "'" . $value . "',";
+            if($value == ''){
+                $v .= "'" . NULL . "',";
+            }
+            else{
+                $v .= "'" . $value . "',";
+            }
+            
         }
         $f = trim($f, ",");
         $v = trim($v, ",");
         $query = "INSERT INTO $this->table($f) VALUES ($v);";
-
+       // echo $query;
         $status = $this->conn->query($query);
         if ($status == true) {
             setcookie('msg', 'Thêm mới thành công', time() + 2);
            
         } else {
-            setcookie('msg', 'Thêm vào không thành công', time() + 2);
-           
+            setcookie('msg', 'Thêm vào không thành công', time() + 2);  
         }
     }
 
 }
+?>

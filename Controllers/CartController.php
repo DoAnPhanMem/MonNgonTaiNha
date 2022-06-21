@@ -78,3 +78,4 @@ class CartController
         header('Location: ?act=cart#dxd');
     }
 }
+?>

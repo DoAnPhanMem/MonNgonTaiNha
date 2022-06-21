@@ -5,26 +5,23 @@
 <?php } ?>
 <hr>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <form action="?mod=loaisanpham&act=update" method="POST" role="form" enctype="multipart/form-data">
-        <input type="hidden" name="MaLSP" value="<?= $data_detail['MaLSP'] ?>">
+    <form action="?mod=theme&act=update" method="POST" role="form" enctype="multipart/form-data">
+        <input type="hidden" name="MaChuDe" value="<?= $data_detail['MaChuDe'] ?>">
         <div class="form-group">
-            <label for="">Tên loại sản phẩm</label>
-            <input type="text" class="form-control" id="" placeholder="" name="TenLSP" value="<?=$data_detail['TenLSP'] ?>">
+            <label for="">Tên chủ đề</label>
+            <input type="text" class="form-control" id="" placeholder="" name="TenChuDe" value="<?=$data_detail['TenChuDe'] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh</label>
-            <img src="../public/img/company/<?=$data_detail['HinhAnh']?>" height="200px" width="200px">
-            <input type="file" class="form-control" id="" placeholder="" name="HinhAnh" >
+            <img src="../public/img/themes/<?=$data_detail['HinhAnhChuDe']?>" height="200px" width="200px">
+            <input type="file" class="form-control" id="" placeholder="" name="HinhAnhChuDe" >
         </div>
-        <div class="form-group">
-            <label for="">Mô tả</label>
-            <input type="text" class="form-control" id="" placeholder="" name="MoTa"  value="<?=$data_detail['Mota'] ?>">
-        </div>
+       
         <div class="form-group">
             <label for="cars">Danh mục: </label>
-            <select id="" name="MaDM" class="form-control">
+            <select id="" name="MaChuDe" class="form-control">
                 <?php foreach ($data as $row) { ?>
-                    <option <?= ($data_detail['MaDM'] == $row['MaDM'] ) ? 'selected' : '' ?> value="<?= $row['MaDM'] ?>"> <?=$row['TenDM']?></option>
+                    <option <?= ($data_detail['MaChuDe'] == $row['MaChuDe'] ) ? 'selected' : '' ?> value="<?= $row['MaChuDe'] ?>"> <?=$row['TenChuDe']?></option>
                 <?php } ?>
             </select>
         </div>

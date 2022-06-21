@@ -7,7 +7,7 @@
             $server ="localhost"; 
             $username ="root";
             $password =""; 
-            $db_name ="monngontainha";
+            $db_name ="monngon";
  
             //Tao ket noi CSDL
             $this->conn = new mysqli($server,$username,$password,$db_name);

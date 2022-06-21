@@ -24,20 +24,20 @@ class UserController
     {
         require_once("MVC/Views/Admin/index.php");
         //require_once("MVC/Views/authors/add.php");
+        
     }
     public function store()
     {
         $data = array(
-            'Ho' =>    $_POST['Ho'],
-            'Ten'  =>   $_POST['Ten'],
-            'GioiTinh' => $_POST['GioiTinh'],
-            'SDT' => $_POST['SDT'],
-            'Email' =>    $_POST['Email'],
-            'DiaChi'  =>   $_POST['DiaChi'],
-            'TaiKhoan' => $_POST['TaiKhoan'],
-            'MatKhau' => md5($_POST['MatKhau']),
-            'MaQuyen' =>  '2',
-            'TrangThai'  =>  '1'
+            'hoTen'  =>   $_POST['hoTen'],
+            'gioiTinh' => $_POST['gioiTinh'],
+            'sdt' => $_POST['sdt'],
+            'email' =>    $_POST['email'],
+            'diaChi'  =>   $_POST['diaChi'],
+            'username' => $_POST['username'],
+            'password' => md5($_POST['password']),
+            'maQuyen' =>  '2',
+            'trangThai'  =>  '1'
         );
         foreach ($data as $key => $value) {
             if (strpos($value, "'") != false) {
@@ -46,11 +46,13 @@ class UserController
             }
         }
         $this->user_model->store($data);
+        header('Location: ?act=personal&handle=create');
     }
     public function delete()
     {
         $id = $_GET['id'];
         $this->user_model->delete($id);
+        header('Location: ?act=personal&handle=create');
     }
     public function edit()
     {
@@ -62,17 +64,16 @@ class UserController
     public function update()
     {
         $data = array(
-            'MaND' => $_POST['MaND'],
-            'Ho' =>    $_POST['Ho'],
-            'Ten'  =>   $_POST['Ten'],
-            'GioiTinh' => $_POST['GioiTinh'],
-            'SDT' => $_POST['SDT'],
-            'Email' =>    $_POST['Email'],
-            'DiaChi'  =>   $_POST['DiaChi'],
-            'TaiKhoan' => $_POST['TaiKhoan'],
-            'MatKhau' => md5($_POST['MatKhau']),
-            'MaQuyen' =>  $_POST['MaQuyen'],
-            'TrangThai'  =>  $_POST['TrangThai'],
+
+            'hoTen' =>    $_POST['hoTen'],
+            'gioiTinh' => $_POST['gioiTinh'],
+            'sdt' => $_POST['sdt'],
+            'email' =>    $_POST['email'],
+            'diaChi'  =>   $_POST['diaChi'],
+            'username' => $_POST['username'],
+            'password' => md5($_POST['password']),
+            'maQuyen' =>  $_POST['maQuyen'],
+            'trangThai'  =>  $_POST['trangThai'],
         );
         foreach ($data as $key => $value) {
             if (strpos($value, "'") != false) {
@@ -81,5 +82,6 @@ class UserController
             }
         }
         $this->user_model->update($data);
+        header('Location: ?act=personal&handle=create');
     }
 }

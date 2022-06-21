@@ -126,7 +126,19 @@ hr{
     cursor: pointer;  
     
 }
+.edit-recipe__title{
+    color: red;
+    padding: 5px 0;
+    margin-bottom: 10px;
+   
+}
+.edit-recipe__reason{
+    border: 1px solid #333 ;
+    margin-top: 20px ;
+    padding: 10px;
+}
 .recipe-item__delete:hover, .recipe-item__edit:hover {
+    color: red !important;
     opacity: 1;
     animation: jounce 1s linear infinite;
 }
@@ -281,6 +293,9 @@ hr{
     width: 100%;
     height: 100%;
 }
+.create-recipe__image-label.active i{
+    display: none;
+}
 .create-recipe__image-label img.active{
     display: block;
     
@@ -316,7 +331,7 @@ hr{
     display: block;
     font-size: 1.5rem;
 }
-#create-recipe__video-input, #create-recipe__image-input{
+#create-recipe__video-input, #create-recipe__image-input, .img-input{
    z-index: -1px;
    position: absolute;
    width: 0;

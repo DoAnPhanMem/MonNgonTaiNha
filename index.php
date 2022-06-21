@@ -7,6 +7,23 @@ switch ($mod) {
         $controller_obj = new HomeController();
         $controller_obj->list();
         break;
+    case 'list-product':
+        require_once('Controllers/ListProductController.php');
+        $controller_obj = new ListProductController();
+        $controller_obj->list();
+        break;
+    case 'search':
+        require_once('Controllers/ListProductController.php');
+        $searchKey = isset($_POST['key']) ? $_POST['key'] : "";
+        $controller_obj = new ListProductController();
+        $controller_obj->search($searchKey);
+        break;
+    case 'category':
+        require_once('Controllers/ListProductController.php');
+        $categoryId = isset($_GET['category']) ? $_GET['category'] : "";
+        $controller_obj = new ListProductController();
+        $controller_obj->filterByCategoryId($categoryId);
+        break;
     case 'theme':
         require_once('Controllers/ThemeController.php');
         $controller_obj = new ThemeController();
@@ -63,8 +80,8 @@ switch ($mod) {
         break;
     case 'account':
         $act = isset($_GET['handle']) ? $_GET['handle'] : "account";
-        require_once('Controllers/LoginController.php');
-        $controller_obj = new LoginController();
+        require_once('Controllers/AccountController.php');
+        $controller_obj = new AccountController();
         if ((isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true)) {
             switch ($act) {
                 case 'logout':
@@ -76,36 +93,56 @@ switch ($mod) {
             }
             break;
         } else {
-                switch ($act) {
-                    case 'login':
-                        $controller_obj->login();
-                        break;
-                    case 'login-action':
-                        $controller_obj->login_action();
-                        break;
-                    case 'register':
-                        $controller_obj->register();
-                        break;
-                    case 'register-action':
-                        $controller_obj->register_action();
-                        break;
-                    default:
-                        $controller_obj->login();
-                        break;
-                }
-                break;
+            switch ($act) {
+                case 'login':
+                    $controller_obj->login();
+                    break;
+                case 'login-action':
+                    $controller_obj->login_action();
+                    break;
+                case 'register':
+                    $controller_obj->register();
+                    break;
+                case 'register-action':
+                    $controller_obj->register_action();
+                    break;
+                default:
+                    $controller_obj->login();
+                    break;
             }
-    case 'personal' :
+            break;
+        }
+
+   /*  case 'register':
+        $act = isset($_GET['handle']) ? $_GET['handle'] : "account";
+        require_once('Controllers/RegisterController.php');
+        $controller_obj = new RegisterController();
+        switch ($act) {
+            case 'login':
+                $controller_obj->login();
+                break;
+            case 'register':
+                $controller_obj->register();
+                break;
+            case 'register-action':
+                $controller_obj->register_action();
+                break;
+            default:
+                $controller_obj->register();
+                break;
+        }
+        break; */
+
+    case 'personal':
         require_once('Controllers/PersonalController.php');
         $controller_obj = new PersonalController();
         if ((isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true)) {
             $controller_obj->personal();
             break;
-        }
-        else{
+        } else {
             header('location: ?act=error');
             break;
-        } 
+        }
     default:
         require_once('Controllers/HomeController.php');
         $controller_obj = new HomeController();
