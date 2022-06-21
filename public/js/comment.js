@@ -15,9 +15,9 @@
                 maND : inputUser.value,
                 MaBaiDang : inputRecipe.value
             },
-            success : function (result){
-                listenEvent();
+            success : function (result){  
                 comment_group.innerHTML =(result);
+                listenEvent();
             }
         });
         inputCmt.value = "";

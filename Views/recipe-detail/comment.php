@@ -6,7 +6,6 @@
         <button class="btn btnCmt">Gửi</button>
     </div>
     <div class="comment-list">
-
         <?php foreach($comments as $key => $value) {?>
             <div class="comment-item">
                 <img src="https://thuthuatnhanh.com/wp-content/uploads/2019/10/anh-avatar-girl-then-thung-391x390.jpg" class="comment-item__avatar"/>
