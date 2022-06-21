@@ -23,12 +23,16 @@
                 class="col-xl-2 col-lg-2 col-md-2 col-2 col-sm-2 col-xs-2 d-flex mt-4 header_group_icon ml-3 justify-content-center align-content-center">
                 <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #0FA958;" data-width="35"
                     data-height="35"></span>
-
-
                 <a href="?act=account" class="btn-login">
                     <span style="color: #0FA958; font-weight: 600;">Đăng nhập</span>
                 </a>
-                
+                <div class="menu-down">
+                        <ul class="list-group">
+                            <li class="list-group-item active"><a>Tài khoản</a></li>
+                            <li class="list-group-item"><a>Quản lý</a></li>
+                            <li class="list-group-item"><a>Đăng xuất</a></li>
+                        </ul>
+                    </div>
             </div>
         </div>
         <div class="row menu-header">
