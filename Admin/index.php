@@ -77,8 +77,8 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
                 case 'add':
                     $controller_obj->add();
                     break;
-                case 'store':
-                    $controller_obj->store();
+                case 'create_action' :
+                    $controller_obj->create_action();
                     break;
                 case 'delete':
                     $controller_obj->delete();
