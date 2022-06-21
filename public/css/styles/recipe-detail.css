@@ -57,6 +57,11 @@ h2 strong {
     font-size: 1.5rem;
     margin: 5px ;
 }
+.recipe-detail__video video{
+    height: 200px;
+    width: 500px;
+    margin: 10px;
+}
 .recipe-detail__img{
     text-align: center;
     float: none;

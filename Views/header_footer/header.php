@@ -44,8 +44,8 @@
         <div class="row menu-header">
             <div class="container_menu_header d-md-block">
                 <ul class="d-flex p-0 h-100 align-items-center my-auto">
-                    <li class="menu-list"><a class="item-menu" style="  color: #0FA958;" href="?act=home">Trang chủ</a></li>
-                    <li class="menu-list"><a class="item-menu" href="?act=list-product">Công thức</a></li>
+                    <li class="menu-list"><a class="item-menu" style="<?= !isset($_GET['act']) || ($_GET['act']) == 'home'? 'color: #0FA958; ':''?>" href="?act=home">Trang chủ</a></li>
+                    <li class="menu-list"><a class="item-menu"  style=" <?= isset($_GET['act']) && $_GET['act'] == 'list-product' ? 'color: #0FA958;':''  ?>" href="?act=list-product">Công thức</a></li>
                     <li class="menu-list"><a class="item-menu" href="">Gửi công thức</a></li>
                     <li class="menu-list"><a class="item-menu" href="#">Về chúng tôi</a></li>
                     <li class="menu-list"><a class="item-menu" href="#">Trợ giúp</a></li>
