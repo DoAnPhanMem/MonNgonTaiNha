@@ -29,9 +29,13 @@
                 <?php if(isset($_SESSION['login'])){?>
                 <div class="menu-down">
                     <ul class="list-group">
-                        <li class="list-group-item active"><a>Tài khoản</a></li>
-                        <li class="list-group-item"><a>Quản lý</a></li>
-                        <li class="list-group-item"><a>Đăng xuất</a></li>
+                        <li class="list-group-item active"><a href="?act=personal">Tài khoản</a></li>
+                        <?php 
+                            if(isset($_SESSION['isLogin_Admin'])){?>
+                            <li class="list-group-item"><a href="./admin">Quản lý</a></li>
+                        <?php  } ?>
+                        
+                        <li class="list-group-item"><a href="?act=account&handle=logout" > Đăng xuất</a></li>
                     </ul>
                 </div>
                 <?php } ?>
@@ -40,8 +44,8 @@
         <div class="row menu-header">
             <div class="container_menu_header d-md-block">
                 <ul class="d-flex p-0 h-100 align-items-center my-auto">
-                    <li class="menu-list"><a class="item-menu" style="  color: #0FA958;" href="?act=home">Trang chủ</a></li>
-                    <li class="menu-list"><a class="item-menu" href="?act=list-product">Công thức</a></li>
+                    <li class="menu-list"><a class="item-menu" style="<?= !isset($_GET['act']) || ($_GET['act']) == 'home'? 'color: #0FA958; ':''?>" href="?act=home">Trang chủ</a></li>
+                    <li class="menu-list"><a class="item-menu"  style=" <?= isset($_GET['act']) && $_GET['act'] == 'list-product' ? 'color: #0FA958;':''  ?>" href="?act=list-product">Công thức</a></li>
                     <li class="menu-list"><a class="item-menu" href="">Gửi công thức</a></li>
                     <li class="menu-list"><a class="item-menu" href="#">Về chúng tôi</a></li>
                     <li class="menu-list"><a class="item-menu" href="#">Trợ giúp</a></li>
