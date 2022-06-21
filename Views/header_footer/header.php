@@ -2,7 +2,7 @@
     <div class="container-fluid header bg-white" id="site-header">
         <div class="row mx-2">
             <div class="logo_img col-xl-2 col-lg-2 col-md-2 col-2  d-lg-block d-xl-block">
-                <a href="../index.html" class="mx-0">
+                <a href="?act=home" class="mx-0">
                     <img class="img_logo_header " src="public/img/header-footer/logo.png" alt="">
                 </a>
             </div>
@@ -23,18 +23,29 @@
                 class="col-xl-2 col-lg-2 col-md-2 col-2 col-sm-2 col-xs-2 d-flex mt-4 header_group_icon ml-3 justify-content-center align-content-center">
                 <span class="iconify" data-icon="carbon:user-avatar-filled-alt" style="color: #0FA958;" data-width="35"
                     data-height="35"></span>
-
                 <a href="?act=account" class="btn-login">
-                    <span style="color: #0FA958; font-weight: 600;"><?= isset($_SESSION['isLogin'])?$_SESSION['login']['hoTen'] : 'Đăng nhập'?></span>
+                    <span style="color: #0FA958; font-weight: 600;"><?= (isset($_SESSION['login']))? $_SESSION['login']['hoTen']: 'Đăng nhập' ?></span>
                 </a>
-                
+                <?php if(isset($_SESSION['login'])){?>
+                <div class="menu-down">
+                    <ul class="list-group">
+                        <li class="list-group-item active"><a href="?act=personal">Tài khoản</a></li>
+                        <?php 
+                            if(isset($_SESSION['isLogin_Admin'])){?>
+                            <li class="list-group-item"><a href="./admin">Quản lý</a></li>
+                        <?php  } ?>
+                        
+                        <li class="list-group-item"><a href="?act=account&handle=logout" > Đăng xuất</a></li>
+                    </ul>
+                </div>
+                <?php } ?>
             </div>
         </div>
         <div class="row menu-header">
             <div class="container_menu_header d-md-block">
                 <ul class="d-flex p-0 h-100 align-items-center my-auto">
-                    <li class="menu-list"><a class="item-menu" style="  color: #0FA958;" href="?act=home">Trang chủ</a></li>
-                    <li class="menu-list"><a class="item-menu" href="?act=list-product">Công thức</a></li>
+                    <li class="menu-list"><a class="item-menu" style="<?= !isset($_GET['act']) || ($_GET['act']) == 'home'? 'color: #0FA958; ':''?>" href="?act=home">Trang chủ</a></li>
+                    <li class="menu-list"><a class="item-menu"  style=" <?= isset($_GET['act']) && $_GET['act'] == 'list-product' ? 'color: #0FA958;':''  ?>" href="?act=list-product">Công thức</a></li>
                     <li class="menu-list"><a class="item-menu" href="">Gửi công thức</a></li>
                     <li class="menu-list"><a class="item-menu" href="#">Về chúng tôi</a></li>
                     <li class="menu-list"><a class="item-menu" href="#">Trợ giúp</a></li>

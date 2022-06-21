@@ -1,11 +1,11 @@
-
     console.log('hhahah');
     const fitters = 
         {
             nameRecipe : '',
             dateUpdate : '',
             timeCooking : '',
-            statusRecipe : ''
+            statusRecipe : '',
+            maND :''
         }
     
 
@@ -35,21 +35,21 @@
         const timeCooking = myRecipe.querySelector('.my-recipe-fitter__time-cooking');
         const statusRecipe = myRecipe.querySelector('.my-recipe-fitter__theme');
         const resultDropdown = myRecipe.querySelector('.my-recipes .row');
-        console.log(resultDropdown);
+        const maND = myRecipe.querySelector('.inputMaND').value;
         const arrFitter = [search, dateUpdate, timeCooking , statusRecipe ];
         arrFitter.forEach((fitter) => {
             fitter.oninput =  function(){
                 handleEvent(arrFitter);
-                ajaxAction(resultDropdown);
+                ajaxAction(resultDropdown,maND);
             }
         })
     })();
 
-    function ajaxAction(resultDropdown){
+    function ajaxAction(resultDropdown, maND){
         $.ajax({
             url : "./Models/ajax/ajax_action.php",
             type : "post",
-            data : fitters,
+            data : {...fitters,maND},
             success : function (result){
                 resultDropdown.innerHTML =(result);
             }

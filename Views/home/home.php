@@ -61,11 +61,13 @@
         </div>
        
         <?php foreach ($newestItems as $newestItem) { ?>
-        <div 
-            class="col-lg-3 col-md-6 col-sm-12 newest-item">
+        <div  class="col-lg-3 col-md-6 col-sm-12 newest-item" >
+        <a href="?act=detail&id=<?=$newestItem['MaBaiDang']?>">
             <img src="public/img/recipes/<?=$newestItem['HinhAnh']?>" height="150px" width="240px" alt="">
             <p class="newest-text"><?=$newestItem['TieuDe']?></p>
+            </a>
         </div>
+       
         <?php } ?>
     </div>
 

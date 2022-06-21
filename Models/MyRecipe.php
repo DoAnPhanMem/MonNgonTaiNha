@@ -11,9 +11,12 @@ class MyRecipe extends Model
         $this->conn = $conn_obj->conn;
     }
 
-    function fitterRecipe($nameRecipe, $dateUpdate,$timeCooking,$statusRecipe){
+    function fitterRecipe($nameRecipe, $dateUpdate,$timeCooking,$statusRecipe,$maND){
         if($statusRecipe != 'TrangThai'){
             $statusRecipe = "'$statusRecipe'";
+        }
+        else {
+            $statusRecipe = "baidang.".$statusRecipe;
         }
         if($timeCooking != 'ThoiGian')
         {
@@ -23,15 +26,18 @@ class MyRecipe extends Model
             $timeCooking =  'countTime.ThoiGian = countTime.ThoiGian';
         }
 
-        $query = "SELECT DATE_FORMAT(baidang.NgayCapNhat, '%d-%m-%Y') as Ngay,baidang.*, hinhanh.*, countTime.ThoiGian as ThoiGian from baidang, buoclam, hinhanh,
+        $query ="SELECT DATE_FORMAT(baidang.NgayCapNhat, '%d-%m-%Y') as Ngay,
+        baidang.*, hinhanh.*, countTime.ThoiGian as ThoiGian from  nguoidung, baidang, buoclam, hinhanh,
         (SELECT baidang.MaBaiDang, SEC_TO_TIME(SUM( TIME_TO_SEC( `buoclam`.`ThoiGian` ) 										) )  as ThoiGian 
                                       from baidang, buoclam
                                       WHERE baidang.MaBaiDang = buoclam.MaBaiDang 
                                       GROUP by baidang.MaBaiDang
                                       ) as countTime
-        WHERE baidang.MaBaiDang = hinhanh.MaBaiDang  and
-        countTime.MabaiDang = baidang.MaBaiDang and
-        $timeCooking and
+        WHERE baidang.MaBaiDang = hinhanh.MaBaiDang 
+        and baidang.MaND = nguoidung.MaND
+        and nguoidung.maND = $maND
+        and countTime.MabaiDang = baidang.MaBaiDang 
+        and $timeCooking and
         baidang.TieuDe like '%$nameRecipe%' 
         and baidang.TrangThai = $statusRecipe
         GROUP by baidang.MaBaiDang
@@ -131,6 +137,7 @@ class MyRecipe extends Model
         $query = "DELETE FROM ChiTietChuDe WHERE `ChiTietChuDe`.`MaBaiDang` = '$id'";
         $status = $this->conn->query($query);
     }
+
     function create_img($data,$MaBaiDang){
         $f = "MaHinhAnh,MaBaiDang,HinhAnh";
         $v = "";
@@ -144,6 +151,7 @@ class MyRecipe extends Model
         $status = $this->conn->query($query);
      
     }
+    
     function create_stock($data,$MaBaiDang){
         
         $f = "MaNguyenLieu,MaBaiDang,TenNguyenLieu,SoLuong,DonVi";
@@ -195,11 +203,12 @@ class MyRecipe extends Model
             
         }
     }
-    function getCommmentByRecipe($id){
-        $query = "select binhluan.*, nguoidung.* from binhluan, baidang, nguoidung WHERE baidang.MaBaiDang = '$id' 
-        and nguoidung.MaND = baidang.MaND 
-        and binhluan.MaBaiDang = baidang.MaBaiDang";
+    function getCommentByRecipe($id){
+        $query = "select binhluan.*, nguoidung.* 
+        from binhluan, nguoidung WHERE binhluan.MaBaiDang = '$id'  
+            and nguoidung.maND = binhluan.MaND";
         require("result.php");
+       // echo $query;
         return $data;
     }
 }

@@ -5,6 +5,12 @@
 			showRegisterSusses();
 		</script>";
 	}
+	if(isset($_COOKIE['login-fail'])){
+		echo "<script>
+			showLoginError();
+		</script>";
+	}
+
 ?>
 <div class="wrapper">
 	<div class="container">
