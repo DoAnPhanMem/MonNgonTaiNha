@@ -112,11 +112,11 @@
                 $status = ($_GET['status']);
                 if ($status == 'n' || $status == 'e') {  ?>
                     <div class="action-approval">
-                        <a href="admin/?mod=post&act=approval&status=y&id=<?= $data_recipe[0]['MaBaiDang'] ?>" onclick="return confirm('Công thức này sẽ được hiển thi trên trang web ?');" class="btn detail-recipe-btn__accept">Duyệt</a>
+                        <a href="admin/?mod=post&act=approval&status=y&page=<?= $status ?>&id=<?= $data_recipe[0]['MaBaiDang'] ?>" onclick="return confirm('Công thức này sẽ được hiển thi trên trang web ?');" class="btn detail-recipe-btn__accept">Duyệt</a>
                     <?php }
                 if ($status != 'e') { ?>
 
-                        <form action="admin/?mod=post&act=approval&status=e&id=<?= $data_recipe[0]['MaBaiDang'] ?>" method="post">
+                        <form action="admin/?mod=post&act=approval&status=e&page=<?= $status ?>&id=<?= $data_recipe[0]['MaBaiDang'] ?>" method="post">
                             <div class="toast-question-eject">
                                 <h3 class="question-eject-title">Lý do từ chối : </h3>
                                 <textarea class="question-eject-content" required name="post-reason" id="" cols="50" rows="10" placeholder="Nhập lý do"></textarea>

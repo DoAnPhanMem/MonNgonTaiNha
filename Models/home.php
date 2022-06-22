@@ -9,7 +9,7 @@ class Home extends Model
                                                        WHERE baidang.MaBaiDang = buoclam.MaBaiDang 
                                                       GROUP by baidang.MaBaiDang
                                       ) as countTime
-        where baidang.MaBaiDang = hinhanh.MaBaiDang 
+        where baidang.MaBaiDang = hinhanh.MaBaiDang and baidang.TrangThai like 'Đã Duyệt'
         and countTime.MabaiDang = baidang.MaBaiDang
         GROUP by baidang.MaBaiDang
         ORDER BY NgayCapNhat DESC limit 8";
@@ -20,7 +20,7 @@ class Home extends Model
     }
 
     function getChuDe() {
-        $query = "SELECT * FROM ChuDe";
+        $query = "SELECT * FROM ChuDe limit 12";
 
         require("result.php");
         return $data;
