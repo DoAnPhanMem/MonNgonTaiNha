@@ -137,6 +137,8 @@
 }
 
 .container-img img {
-    width: 30.8%;
+    height: 500px;
+    width: 46%;
     margin-left: 80px;
+    object-fit: cover;
 }

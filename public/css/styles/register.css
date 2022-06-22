@@ -1,44 +1,50 @@
 /* REGISTER */
-.container-2 {
+/* .container {
     display: flex;
-    margin-bottom: 16px;
     
+} */
+.body-container{
+    display: flex;
 }
-
 .container-img-register {
     width: 100%;
     
 }
 
 .container-img-register img {
-    width: 45%;
-    margin-left: 300px;
+    width: 90%;
+    margin-left: 0;
+    height: 600px;
+    object-fit: cover;
     margin-top: 16px;
 }
 
 /* ---------------------- */
-.container-2 .container-register p  {
-    padding-right: 700px;
+.container-register{
+    width: 100%;
+}
+.container .container-register p  {
     margin-top: 10px;
 }
 
-.container-2 .container-register h2 {
+.container .container-register h2 {
     color: #0FA958;
 }
 
-.container-2 .container-register h4 {
+.container .container-register h4 {
     margin-top: 10px;
     opacity: 0.5;
 }
 
 .container-register .register-text {
     margin-top: 20px ;
+    width: 100%;
    
 }
 
 .container-register .register-text .name-input, .pass1-input, .repass-input, .mail-input, .phone-input {
     padding: 8px;
-    width: 60%;
+    width: 100%;
     border-radius: 10px;
     border-color: #089d4d;
     margin-top: 16px;

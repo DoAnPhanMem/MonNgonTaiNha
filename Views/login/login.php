@@ -12,7 +12,7 @@
 	}
 
 ?>
-<div class="wrapper">
+<div class="wrapper mb-5 mt-5">
 	<div class="container">
 		<form action="?act=account&handle=login-action" method="POST">
 			<div class="container-login">

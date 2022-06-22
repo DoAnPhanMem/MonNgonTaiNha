@@ -47,15 +47,15 @@
         <h5 class="col-12">Chủ đề</h5>
         <div class="main row">
         <?php foreach ($chuDes as $chuDe) { ?>
-            <div class="category-item col-2 mt-5">
-                <img style="border-radius: 15px; object-fit: cover;" height="100px" width="100px" src="<?=$chuDe['HinhAnhChuDe']?>" alt="">
+            <div class="category-item col-2 col-xl-2 col-md-2 mt-5">
+                <img style="border-radius: 15px; object-fit: cover;" height="100px" width="100px" src="public/img/themes/<?=$chuDe['HinhAnhChuDe']?>" alt="">
                <p class="category-name"> <a href="?act=category&category=<?=$chuDe['MaChuDe']?>" ><?=$chuDe['TenChuDe']?></a></p>
             </div>
             <?php } ?>
         </div>
 
     </div>
-    <div class="row newest">
+    <div class="row newest mb-5">
         <div class="col-12 newest-header">
             <h5 class="">Công thức nấu ăn tiêu biểu</h5>
         </div>

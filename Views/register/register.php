@@ -16,13 +16,13 @@
 	
 ?>
 
-<div class="wrapper">
-	<div class="container-2">    
-        <div class="container-img-register">
+<div class="wrapper mb-5 mt-5">
+	<div class="container body-container">    
+        <div class="container-img-register col-6">
             <img src="public/img/Login_Register/Avatar_Register.jpg" alt="" class="img-register">
 		</div>
 
-        <div class="container-register">
+        <div class="container-register col-6">
             <p>
 				<h2 class="myAccount">Tạo tài khoản của bạn</h2>
 				<h4 class="homeFood">Chào mừng bạn đến với Homefood</h4>
