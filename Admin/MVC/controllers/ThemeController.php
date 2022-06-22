@@ -88,7 +88,7 @@ class ThemeController
         if(isset($_FILES['post-img']) && $_FILES['post-img']['size'] > 0){
             $imgFile = $_FILES['post-img'] ;
             $imgFile['name'] = $_POST['name'].$imgFile['name'];
-            $imgFileName = $imgFile['name'] ;
+            $imgFileName = $imgFile['name'];
             $tmpimgPath = $imgFile['tmp_name'];
             $newimgPath = "../public/img/themes/" . $imgFile['name'];
             $status = move_uploaded_file($tmpimgPath, $newimgPath);
