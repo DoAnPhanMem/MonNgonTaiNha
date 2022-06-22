@@ -25,7 +25,12 @@
     text-overflow: ellipsis;
 
 }
-
+.cart .title a{
+    color: #000000 !important;
+}
+.cart .title a:hover{
+    color: #0FA958 !important;
+}
 .cart .content {
     padding: 5px 15px 10px 15px;
 }
