@@ -1,0 +1,31 @@
+h2 {
+	font-size: 30px;
+}
+
+h2, .form-group {
+	width: 70%;
+	margin: 16px;
+	padding: 4px 10px;
+}
+
+.form-group label {
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.form-group input {
+	width: 80%;
+	padding: 20px 10px;
+	border-radius: 10px;
+}
+
+.btn-primary {
+	margin-left: 16px;
+	border-radius: 10px;
+	padding: 8px 24px;
+}
+
+.btn-1 {
+	color: #0FA958;
+	background-color: white;
+}

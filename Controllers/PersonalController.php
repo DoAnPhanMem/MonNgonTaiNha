@@ -11,5 +11,8 @@ class PersonalController{
     {
         require_once('Views/index.php');
     }
+
+    
+
 }
 ?>
