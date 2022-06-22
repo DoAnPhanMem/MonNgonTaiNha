@@ -45,9 +45,9 @@
     </div>
     <div class="row category my-3">
         <h5 class="col-12">Chủ đề</h5>
-        <div class="main">
+        <div class="main row">
         <?php foreach ($chuDes as $chuDe) { ?>
-            <div class="category-item">
+            <div class="category-item col-2 mt-5">
                 <img style="border-radius: 15px; object-fit: cover;" height="100px" width="100px" src="<?=$chuDe['HinhAnhChuDe']?>" alt="">
                <p class="category-name"> <a href="?act=category&category=<?=$chuDe['MaChuDe']?>" ><?=$chuDe['TenChuDe']?></a></p>
             </div>
