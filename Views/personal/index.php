@@ -6,7 +6,7 @@
                     src="public/img/avatar/avatarDefault.png"
                     class="header-personal__info-img" 
                 />
-                <h4 class = "header-personal__info-name">Phạm Văn Thiên</h4>
+                <h4 class = "header-personal__info-name"><?= $_SESSION['login']['hoTen'] ?></h4>
             </div>
             <nav>
                 <ul class = "navbar-list">
