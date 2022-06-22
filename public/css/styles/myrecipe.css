@@ -85,8 +85,13 @@ hr{
     font-size: 1.7rem;
 }
 .recipe-item__title{
+    width: 100%;
     font-size: 2rem;
     margin: 4px 0;
+    -webkit-line-clamp: 1 ;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
 }
 .my-recipe__info p {
     line-height: 2.5rem;
