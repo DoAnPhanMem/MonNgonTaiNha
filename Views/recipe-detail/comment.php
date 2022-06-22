@@ -1,10 +1,16 @@
 <div class="comment">
+    <?php 
+        if(isset($_SESSION['login'])){
+    ?>
+
     <div class="comment-wrap">
         <input type="text" class="input-cmt">
         <input type="hidden" value="<?= $_SESSION['login']['maND'] ?>" class="input-user">
         <input type="hidden" value="<?= $_GET['id']?>" class="input-recipe">
         <button class="btn btnCmt">Gửi</button>
     </div>
+
+    <?php } ?>
     <div class="comment-list">
         <?php foreach($comments as $key => $value) {?>
             <div class="comment-item">
@@ -18,13 +24,17 @@
                     </div>
                     
                 </div>
-                <div class="comment-item__more">
-                    <i class="fa-solid fa-ellipsis"></i>
-                    <div data-id-cmt = "<?=$value['MaBinhLuan']?>" class="comment-item__more-options">
-                        <button class = "cmt-remove">Xóa</button>
-                        <button class = "cmt-delete">Chỉnh sửa</button>
+                <?php 
+                   if(isset($_SESSION['login']) && $_SESSION['login']['maND'] == $value['MaND']){
+                ?>
+                    <div class="comment-item__more">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <div data-id-cmt = "<?=$value['MaBinhLuan']?>" class="comment-item__more-options">
+                            <button class = "cmt-remove">Xóa</button>
+                            <button class = "cmt-delete">Chỉnh sửa</button>
+                        </div>
                     </div>
-                </div>
+                <?php }?>
             </div>
         <?php }?>
     </div>
