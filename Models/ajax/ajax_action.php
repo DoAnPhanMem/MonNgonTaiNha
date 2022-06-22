@@ -1,5 +1,6 @@
 
     <?php 
+    session_start();
     if(isset($_POST['nameRecipe'])){    
         $nameRecipe = $_POST['nameRecipe'];
         $dateUpdate = $_POST['dateUpdate'];
@@ -67,17 +68,22 @@
                     <h3 class="comment-item__main-user"><?= $value['hoTen'] ?></h3>
                     <p class="comment-item__main-content"><?= $value['Noidung'] ?></p>
                     <div class="comment-item__main-edit">
-                        <input autofocus type="text" class = "comment-item__main-edit-input">
+                        <input type="text" class = "comment-item__main-edit-input">
                         <button class = "comment-item__main-edit-btn">Lưu</button>
                     </div>
+                    
                 </div>
-                <div class="comment-item__more">
-                    <i class="fa-solid fa-ellipsis"></i>
-                    <div data-id-cmt = "<?=$value['MaBinhLuan']?>" class="comment-item__more-options">
-                        <button class = "cmt-remove">Xóa</button>
-                        <button class = "cmt-delete">Chỉnh sửa</button>
+                <?php 
+                   if(isset($_SESSION['login']) && $_SESSION['login']['maND'] == $value['MaND']){
+                ?>
+                    <div class="comment-item__more">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <div data-id-cmt = "<?=$value['MaBinhLuan']?>" class="comment-item__more-options">
+                            <button class = "cmt-remove">Xóa</button>
+                            <button class = "cmt-delete">Chỉnh sửa</button>
+                        </div>
                     </div>
-                </div>
+                <?php }?>
             </div>
         <?php }
      }

@@ -38,12 +38,13 @@
                 if(e.target.closest('.cmt-remove')){
                     ajax_delete(id);
                 }
-                else{
+                else{ 
                     removeEditClass(itemsCmt);
-                    itemsCmt[index].classList.add('edit');
-                    const inputEdit = itemsCmt[index].querySelector('input');
+                    const itemCmt =  option.closest('.comment-item').querySelector('.comment-item__main');   
+                    itemCmt.classList.add('edit');
+                    const inputEdit = itemCmt.querySelector('input');
                     inputEdit.focus();
-                    const buttonEdit = itemsCmt[index].querySelector('button');
+                    const buttonEdit = itemCmt.querySelector('button');
                     buttonEdit.onclick = function(){
                         ajax_update(id,inputEdit);
                     }

@@ -41,7 +41,7 @@ class PostController
             $data_post = $this->post_model->getPostByStatus('Đã duyệt');   
         }
         //require_once("MVC/Views/Admin/index.php");
-        header('Location: ?mod=post&status='.$_GET["status"]);
+        header('Location: ?mod=post&status='.$_GET["page"]);
     }
     
 
