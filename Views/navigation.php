@@ -55,6 +55,7 @@ switch ($act) {
                 case 'register':
                     require_once("login/register.php");
                     break;
+                
                 default:
                     require_once("login/login.php");
                     break;

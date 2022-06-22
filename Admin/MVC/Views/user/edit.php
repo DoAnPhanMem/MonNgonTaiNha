@@ -5,7 +5,7 @@
 <?php } ?>
 <hr>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <form action="?mod=user&act=update" method="POST" role="form" enctype="multipart/form-data">
+    <form action="?mod=personal&act=update" method="POST" role="form" enctype="multipart/form-data">
         <input type="hidden" name="maND" value="<?= $data['maND']?>">
             <div class="form-group">
                <label for="">Họ và tên</label>

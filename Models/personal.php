@@ -8,5 +8,7 @@ class Personal extends Model
         $conn_obj = new Connection();
         $this->conn = $conn_obj->conn;
     }
+
+    
 }
 ?>

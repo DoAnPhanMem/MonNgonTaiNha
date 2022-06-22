@@ -139,6 +139,8 @@ switch ($mod) {
         if ((isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true)) {
             $controller_obj->personal();
             break;
+          
+            
         } else {
             header('location: ?act=error');
             break;
