@@ -11,27 +11,27 @@
 
 			<div class="form-group">
                <label for="">Tên người dùng</label>
-               <input type="text" class="form-control" id="" placeholder="" name="username" value="<?= $data['hoTen']?>">
+               <input type="text" class="form-control" id="" placeholder="Tên người dùng" >
            </div>
            
            <div class="form-group">
                <label for="">Tài Khoản</label>
-               <input type="text" class="form-control" id="" placeholder="" name="username" value="<?= $data['username']?>">
+               <input type="text" class="form-control" id="" placeholder="Tài khoản" >
            </div>
           
 		   <div class="form-group">
                <label for="">Email</label>
-               <input type="Email" class="form-control" id="" placeholder="" name="email" value="<?= $data['email']?>">
+               <input type="Email" class="form-control" id="" placeholder="Email" >
            </div>
            
            <div class="form-group">
                <label for="">Mật Khẩu</label>
-               <input type="Password" class="form-control" id="" placeholder="" name="password" value="<?= $data['password']?>">
+               <input type="Password" class="form-control" id="" placeholder="Mật khẩu">
            </div>
 
 		   <div class="form-group">
                <label for="">Nhập lại mật khẩu</label>
-               <input type="text" class="form-control" id="" placeholder="" name="sdt" value="<?= $data['password']?>">
+               <input type="text" class="form-control" id="" placeholder="Nhập lại mật khẩu" >
            </div>
           
            <button type="submit" class="btn  btn-primary btn-1">Hủy</button>
