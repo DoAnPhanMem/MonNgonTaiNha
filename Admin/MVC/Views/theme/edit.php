@@ -17,14 +17,6 @@
             <input type="file" class="form-control" id="" placeholder="" name="post-img" >
         </div>
        
-        <div class="form-group">
-            <label for="cars">Danh mục: </label>
-            <select id="" name="MaChuDe" class="form-control">
-                <?php foreach ($data as $row) { ?>
-                    <option <?= ($data_detail['MaChuDe'] == $row['MaChuDe'] ) ? 'selected' : '' ?> value="<?= $row['MaChuDe'] ?>"> <?=$row['TenChuDe']?></option>
-                <?php } ?>
-            </select>
-        </div>
         <button type="submit" class="btn btn-primary">Cập nhật</button>
     </form>
 </table>

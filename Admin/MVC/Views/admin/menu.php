@@ -41,21 +41,9 @@
   </li>
   <?php } ?>
   <!-- Nav Item - Tables -->
-  
-
-
-
-  
-
-  
-
 
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-  <li class="nav-item">
-    <a class="nav-link" href="?mod=banner">
-      <i class="fas fa-fw fa-table"></i>
-      <span>Quản lý Banner</span></a>
-  </li>
+  
   <?php }?>
   <li class="nav-item">
     <a class="nav-link" href="?mod=statistical">
